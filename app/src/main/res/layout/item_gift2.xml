@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/y120">
+
+
+    <RelativeLayout
+        android:id="@+id/rlparent"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/y70"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/x20"
+        android:background="@drawable/bg_radius_top_black">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/crvheadimage"
+            android:layout_width="@dimen/x70"
+            android:layout_height="@dimen/x70"
+            android:layout_marginLeft="@dimen/x1" />
+
+        <ImageView
+            android:id="@+id/crvheadimage_bz"
+            android:layout_width="@dimen/y22"
+            android:layout_height="@dimen/y22"
+            android:layout_alignBottom="@+id/crvheadimage"
+            android:layout_alignRight="@+id/crvheadimage" />
+
+        <RelativeLayout
+            android:id="@+id/rl_xx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/crvheadimage"
+            android:layout_alignTop="@+id/crvheadimage"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@+id/crvheadimage"
+            android:orientation="vertical"
+            android:padding="@dimen/x5">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x22"
+                tools:text="安安" />
+
+            <TextView
+                android:id="@+id/gift_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="3dp"
+                android:textColor="#F8E81C"
+                android:textSize="@dimen/x22"
+                tools:text="打赏给主播" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical"
+        android:text="¥0"
+        android:textColor="@color/red"
+        android:textSize="@dimen/y44"
+        android:id="@+id/ivgift"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x70"
+        android:layout_alignBottom="@+id/rlparent"
+        android:layout_alignRight="@+id/rlparent"
+        android:layout_marginLeft="@dimen/x10" />
+
+
+
+
+    <com.live.tv.mvp.activity.live.ui.MagicTextView
+        android:id="@+id/giftNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/x30"
+        android:layout_marginRight="@dimen/x20"
+        android:layout_toRightOf="@+id/rlparent"
+        android:text="x1"
+        android:textColor="#F8E81C"
+        android:textSize="@dimen/y66"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/design_bottom_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/translate">
+
+
+    <View
+        android:id="@+id/top_view"
+        android:layout_width="0dp"
+        android:layout_height="15dp"
+        android:background="@color/translate"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="0dp"
+        android:layout_height="430dp"
+        android:background="@color/pure_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_view"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/top_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top_view">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="vertical"
+            app:cardBackgroundColor="@color/pure_white"
+            app:cardCornerRadius="1dp"
+            app:cardElevation="0px"
+            app:cardUseCompatPadding="false"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_margin="2dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/pic_defaults" />
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="¥0"
+            android:textColor="@color/red"
+            android:textSize="15dp"
+            app:layout_constraintLeft_toRightOf="@+id/cardView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/stock"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:singleLine="true"
+            android:text="库存0"
+            android:textColor="@color/tx_3"
+            android:textSize="12dp"
+            app:layout_constraintLeft_toRightOf="@+id/cardView"
+            app:layout_constraintRight_toLeftOf="@+id/close"
+            app:layout_constraintTop_toBottomOf="@+id/price" />
+
+        <TextView
+            android:id="@+id/select"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/tx_3"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toRightOf="@+id/cardView"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stock" />
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="22dp"
+            android:scaleType="fitXY"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/food_icon_return" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="选择购买数量"
+        android:textColor="@color/tx_l"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/jia"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/jia" />
+
+    <ImageView
+        android:id="@+id/jia"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:src="@drawable/shop_goods_details_plusx"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+    <TextView
+        android:id="@+id/num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="@+id/jia"
+        app:layout_constraintRight_toLeftOf="@+id/jia"
+        app:layout_constraintTop_toTopOf="@+id/jia" />
+
+    <ImageView
+        android:id="@+id/jian"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:src="@drawable/shop_goods_details_minux"
+        app:layout_constraintBottom_toBottomOf="@+id/jia"
+        app:layout_constraintRight_toLeftOf="@+id/num"
+        app:layout_constraintTop_toTopOf="@+id/jia" />
+
+    <TextView
+        android:id="@+id/btnAction"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/pure_white"
+        app:layout_constraintBottom_toBottomOf="@+id/view5"
+        app:layout_constraintLeft_toLeftOf="@+id/view5"
+        app:layout_constraintRight_toRightOf="@+id/view5" />
+
+
+    <TextView
+        android:id="@+id/addCar"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@color/bg_add_cart"
+        android:gravity="center"
+        android:text="加入购物车"
+        android:textColor="@color/colorAccent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/view5"
+        app:layout_constraintRight_toLeftOf="@+id/pay" />
+
+    <TextView
+        android:id="@+id/pay"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="立即购买"
+        android:textColor="@color/pure_white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/addCar"
+        app:layout_constraintRight_toRightOf="@+id/view5" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="19dp"
+        android:background="@color/pure_white"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/view5"
+        app:layout_constraintRight_toRightOf="@+id/view5"
+        app:layout_constraintTop_toBottomOf="@+id/top_layout" />
+
+
+</android.support.constraint.ConstraintLayout>

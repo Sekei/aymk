@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/show_ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pure_white"
+    android:orientation="vertical">
+    <include
+        android:id="@+id/include2"
+        layout="@layout/top_back_title_bar" />
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:background="@color/bank_bg"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:layout_below="@+id/include2"
+        android:text="标题" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include2"
+        android:layout_above="@+id/ll_bottom_content"
+        android:layout_marginBottom="8dp"
+        android:focusableInTouchMode="true">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/ct_miaoshu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/pic_defaults" />
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="描述"
+                    android:textColor="@color/colorTextG3"
+                    android:textSize="15sp"
+                    app:layout_constraintLeft_toRightOf="@+id/img"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:text="地址"
+                    android:textColor="@color/colorTextG6"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/img"
+                    app:layout_constraintLeft_toRightOf="@+id/img" />
+
+                <TextView
+                    android:id="@+id/tv_nums"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="0人浏览"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_address"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/bg_2"
+                    android:text="TextView"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img" />
+
+                <LinearLayout
+                    android:id="@+id/ll_1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="服务类型"
+                        android:textColor="@color/colorTextG6"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="保洁"
+                        android:textColor="@color/colorTextG3"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/bg_2"
+                    android:text="TextView"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_1" />
+
+                <LinearLayout
+                    android:id="@+id/ll_2"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view2">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="服务区域"
+                        android:textColor="@color/colorTextG6"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_quyu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="闵行"
+                        android:textColor="@color/colorTextG3"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/bg_2"
+                    android:text="TextView"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_2" />
+
+
+                <LinearLayout
+                    android:id="@+id/ll_3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view3">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="联系人"
+                        android:textColor="@color/colorTextG6"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_Contacts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="闵行"
+                        android:textColor="@color/colorTextG3"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/bg_2"
+                    android:text="TextView"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_3" />
+
+                <LinearLayout
+                    android:id="@+id/ll_4"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view4">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="联系电话"
+                        android:textColor="@color/colorTextG6"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text=""
+                        android:textColor="@color/colorTextG3"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:background="@color/home_bg"
+                    android:text="TextView"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ll_4" />
+
+                <TextView
+                    android:id="@+id/textView82"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dp"
+                    android:text="服务说明"
+                    android:textColor="@color/colorTextG3"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+
+
+                    android:text="ssssss"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView82" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/ct_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ct_miaoshu">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/easyRecyclerView_img"
+                    android:layout_width="344dp"
+                    android:layout_height="wrap_content"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="0dp"></android.support.v7.widget.RecyclerView>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/ct_pinglun"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ct_image">
+
+                <TextView
+                    android:id="@+id/tv_appraise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="评论(888888)"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:layout_editor_absoluteY="0dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="更多 》"
+                    android:textSize="12sp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_appraise" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_appraise"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_appraise"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="0dp" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/ct_likelist"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ct_pinglun">
+
+
+                <TextView
+                    android:id="@+id/tv_like"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="--------------- 猜你喜欢 ---------------" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycle_like"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_like">
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="收藏"
+    android:background="@color/pure_white"
+    android:drawableTop="@drawable/star_kong"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="35dp"
+    android:paddingRight="35dp"
+    />
+<LinearLayout
+    android:id="@+id/ll_call"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:background="@color/top_bar_bg">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="电话"
+        android:textSize="14sp"
+        android:drawableLeft="@mipmap/icon_phone"
+        android:textColor="@color/white"/>
+</LinearLayout>
+    </LinearLayout>
+
+  <RadioGroup
+      android:id="@id/radioGroup"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:background="@color/pure_white"
+      android:checkedButton="@+id/btn_shu"
+      android:orientation="horizontal"
+      android:layout_below="@+id/include2">
+      <RadioButton
+          android:id="@+id/btn_shu"
+          android:layout_width="0dp"
+          android:button="@null"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:background="@drawable/radiobutton_bg"
+          android:textColor="@color/tab_text_color"
+          android:layout_marginBottom="5dp"
+          android:text="综述"/>
+      <RadioButton
+          android:id="@+id/btn_pu"
+          android:layout_width="0dp"
+          android:button="@null"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:gravity="center"
+          android:textColor="@color/tab_text_color"
+          android:background="@drawable/radiobutton_bg"
+          android:layout_marginBottom="5dp"
+          android:text="店铺"/>
+      <RadioButton
+          android:id="@+id/btn_ping"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:button="@null"
+          android:gravity="center"
+          android:textColor="@color/tab_text_color"
+          android:background="@drawable/radiobutton_bg"
+          android:layout_marginBottom="5dp"
+          android:text="点评"/>
+      <RadioButton
+          android:id="@+id/btn_jian"
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:button="@null"
+          android:layout_marginBottom="5dp"
+          android:gravity="center"
+          android:textColor="@color/tab_text_color"
+          android:background="@drawable/radiobutton_bg"
+          android:text="推荐"/>
+
+  </RadioGroup>
+
+
+
+</RelativeLayout>

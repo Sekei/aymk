@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/home_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/top_back_title_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/include12" />
+
+    <TextView
+        android:id="@+id/one"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="综合辨析"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:drawableRight="@drawable/me_right"
+        android:paddingRight="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/pure_white"
+        app:layout_constraintTop_toBottomOf="@+id/include12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/two"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="体质成因"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:drawableRight="@drawable/me_right"
+        android:paddingRight="15dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        app:layout_constraintTop_toBottomOf="@+id/one"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/three"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="体质问题"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:drawableRight="@drawable/me_right"
+        android:paddingRight="15dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        app:layout_constraintTop_toBottomOf="@+id/two"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/four"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="调理方案"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:drawableRight="@drawable/me_right"
+        android:paddingRight="15dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        app:layout_constraintTop_toBottomOf="@+id/three"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/next"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="下一步"
+        android:textColor="@color/pure_white"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

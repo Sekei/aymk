@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/pure_white"
+    android:orientation="vertical">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="海绵宝宝"
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:paddingRight="@dimen/x100"
+        app:layout_constraintLeft_toRightOf="@+id/ivAvatar"
+        app:layout_constraintTop_toTopOf="@+id/ivAvatar" />
+    <TextView
+        android:id="@+id/my_tittle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="5dp"
+        android:text="我自己转发的"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+    <TextView
+        android:id="@+id/tittle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="5dp"
+        android:lines="1"
+        android:ellipsize="end"
+        android:text="我会一百零八种炖鸡汤的姿势这里是标题"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+
+        app:layout_constraintLeft_toLeftOf="@+id/name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_tittle" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="5dp"
+        android:text="我会一百零八种炖鸡汤的姿势这里是内容"
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/tittle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tittle" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/content"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2017-09-10 10:10"
+        android:textColor="@color/colorTextG9"
+        android:textSize="10sp"
+      app:layout_constraintLeft_toLeftOf="@+id/tittle"
+        app:layout_constraintTop_toBottomOf="@+id/tittle"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="18dp"
+        android:background="@color/home_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time" />
+
+    <TextView
+        android:id="@+id/share_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/comm_icon_share"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="0"
+        android:visibility="gone"
+        android:textColor="@color/colorTextG9"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toBottomOf="@+id/time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/time" />
+
+    <TextView
+        android:id="@+id/commond_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/comm_icon_critic"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="0"
+        android:visibility="gone"
+        android:textColor="@color/colorTextG9"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toBottomOf="@+id/time"
+        app:layout_constraintRight_toLeftOf="@+id/share_num"
+        app:layout_constraintTop_toTopOf="@+id/time" />
+
+    <TextView
+        android:id="@+id/zan_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6dp"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/comm_icon_zan"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:text="0"
+        android:visibility="gone"
+        android:textColor="@color/colorTextG9"
+        android:textSize="9sp"
+        app:layout_constraintBottom_toBottomOf="@+id/time"
+        app:layout_constraintRight_toLeftOf="@+id/commond_num"
+        app:layout_constraintTop_toTopOf="@+id/time"
+        app:layout_constraintVertical_bias="0.526" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="12-12\n22:12"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tv_line2"
+        android:layout_width="2dp"
+        android:layout_height="30dp"
+        android:background="@color/gray_8f"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_point"
+        app:layout_constraintRight_toRightOf="@+id/iv_point"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="2dp"
+        android:layout_height="50dp"
+        android:background="@color/gray_8f"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_point"
+        app:layout_constraintRight_toRightOf="@+id/iv_point"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/iv_point"/>
+
+    <ImageView
+        android:id="@+id/iv_point"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@mipmap/black_point"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_time"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="正在发货"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/iv_point"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/home_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/top_back_title_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/include9"
+       />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/pay_succeed"
+        android:layout_marginTop="70dp"
+        app:layout_constraintTop_toBottomOf="@+id/include9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="支付成功"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/img"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:id="@+id/advisory"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="我的咨询"
+        android:textSize="15sp"
+        android:textColor="@color/pure_white"
+        android:gravity="center"
+        android:background="@color/colorPrimary"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/backHome"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+    <TextView
+        android:id="@+id/backHome"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="返回首页"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        android:gravity="center"
+        android:background="@drawable/setbar_seach"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>

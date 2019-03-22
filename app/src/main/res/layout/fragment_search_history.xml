@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100"
+        android:background="@color/colorAccent">
+
+        <ImageView
+            android:id="@+id/ivLeft"
+            android:layout_width="@dimen/x100"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/x30"
+            android:src="@drawable/bili_player_back_button" />
+
+        <EditText
+            android:id="@+id/edit_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/setbar_fh"
+            android:drawablePadding="6dp"
+            android:hint="请输入商品名称"
+            android:imeOptions="actionSearch"
+            android:padding="6dp"
+            android:singleLine="true"
+            android:textSize="@dimen/list_live_name_size" />
+
+        <TextView
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/y20"
+            android:paddingLeft="@dimen/y10"
+            android:paddingRight="@dimen/y10"
+            android:scaleType="center"
+            android:text="搜索"
+            android:textColor="@color/pure_white"
+
+            />
+
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pure_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/pure_white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="搜索历史"
+                    android:textColor="@color/colorTextG3"
+                    android:textSize="14sp" />
+
+                <com.google.android.flexbox.FlexboxLayout
+                    android:id="@+id/mFlexboxLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_name"
+                    android:layout_marginTop="12dp"
+                    android:paddingLeft="@dimen/x40"
+                    android:paddingRight="@dimen/x40"
+                    app:flexWrap="wrap" />
+                <TextView
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="40dp"
+                    android:id="@+id/search_clear"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_live_bg_green"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:text="清空历史"
+                    android:textColor="@color/pure_white"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

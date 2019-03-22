@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fragmentContent"
+    >
+
+    <com.pili.pldroid.player.widget.PLVideoView
+        android:id="@+id/VideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:visibility="gone"
+        android:scaleType="fitXY"
+        android:id="@+id/CoverView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:src="@drawable/pic_defaults" />
+
+    <!--加载面板-->
+    <RelativeLayout
+        android:background="#99000000"
+        android:id="@+id/loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--加载面板-->
+        <ImageView
+            android:id="@+id/cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:layout_gravity="center"
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateDrawable="@drawable/progress_sy"
+                />
+
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/loading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="正在加载..."
+                android:textColor="#fff" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

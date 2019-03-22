@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/top_back_title_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/typeTittle"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="服务类型"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/typeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="82dp"
+        android:layout_marginStart="82dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:text="都教授"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/typeTittle"
+        app:layout_constraintLeft_toLeftOf="@+id/typeTittle"
+        app:layout_constraintTop_toTopOf="@+id/typeTittle" />
+
+    <TextView
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="10dp"
+        android:id="@+id/type_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        tools:text="99元／次"
+        android:textColor="@color/pure_white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/typeTittle"
+        app:layout_constraintRight_toRightOf="@+id/typeTittle"
+        app:layout_constraintTop_toTopOf="@+id/typeTittle" />
+
+
+    <TextView
+        android:id="@+id/reserveTime"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="@string/end_time"
+        android:textColor="@color/colorTextG3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typeTittle" />
+
+
+    <TextView
+        android:id="@+id/changeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        tools:text="2018-01-10"
+        android:padding="10dp"
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/reserveTime"
+        app:layout_constraintRight_toRightOf="@+id/reserveTime"
+        app:layout_constraintTop_toTopOf="@+id/reserveTime" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="99元"
+        android:visibility="gone"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/reserveTime"
+        app:layout_constraintLeft_toLeftOf="@+id/reserveTime"
+        app:layout_constraintTop_toTopOf="@+id/reserveTime" />
+
+
+    <TextView
+        android:id="@+id/priceTittle"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="共需支付"
+        android:textColor="@color/colorTextG3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reserveTime" />
+
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        tools:text="99元"
+        android:textColor="@color/tx_2"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/priceTittle"
+        app:layout_constraintRight_toRightOf="@+id/priceTittle"
+        app:layout_constraintTop_toTopOf="@+id/priceTittle" />
+
+
+    <TextView
+        android:id="@+id/choseType"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="支付方式"
+        android:textColor="@color/colorTextG3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceTittle" />
+
+
+    <RadioGroup
+        android:id="@+id/mRadioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        android:showDividers="middle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choseType">
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/tv_submit"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:drawableLeft="@drawable/consult_pay_alipay"
+            android:drawablePadding="@dimen/x30"
+            android:drawableRight="@drawable/selector_pay_way"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x30"
+            android:paddingRight="@dimen/x30"
+            android:text="支付宝" />
+
+        <RadioButton
+            android:id="@+id/wechat"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+            android:drawableLeft="@drawable/consult_pay_wechat"
+            android:drawablePadding="@dimen/x30"
+            android:drawableRight="@drawable/selector_pay_way"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x30"
+            android:paddingRight="@dimen/x30"
+            android:text="微信" />
+
+        <RadioButton
+            android:id="@+id/wallet"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:button="@null"
+
+            android:drawableLeft="@drawable/consult_pay_money"
+            android:drawablePadding="@dimen/x30"
+            android:drawableRight="@drawable/selector_pay_way"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/x30"
+            android:paddingRight="@dimen/x30"
+            android:text="账户余额" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/attentionTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:text="注意事项"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mRadioGroup" />
+
+    <TextView
+        android:id="@+id/attentionContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="15dp"
+        android:text="3.提交咨询后24小时内若无回应则原路退款至支付账户"
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attentionTittle" />
+
+
+    <TextView
+        android:id="@+id/ok"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="确认支付"
+        android:textColor="@color/pure_white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

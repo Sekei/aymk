@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include4"
+        layout="@layout/top_back_title_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/testOneImg"
+        android:layout_width="0dp"
+        android:layout_height="151dp"
+        android:layout_margin="15dp"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include4"
+        app:srcCompat="@drawable/test_norm_pic_bg" />
+
+
+    <ImageView
+        android:id="@+id/testTwoImg"
+        android:layout_width="0dp"
+        android:layout_height="151dp"
+        android:layout_margin="15dp"
+        android:scaleType="fitXY"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/testOneImg"
+        app:srcCompat="@drawable/test_profess_pic_bg" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/testOneTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="普通测试"
+        android:textSize="18sp"
+        android:textColor="@color/pure_white"
+        app:layout_constraintTop_toTopOf="@+id/testOneImg"
+        android:layout_marginTop="25dp"
+        app:layout_constraintRight_toRightOf="@+id/testOneImg"
+        app:layout_constraintLeft_toLeftOf="@+id/testOneImg"
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/testOneContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="10dp"
+        android:text="关于普通测试的简介，文本右间距"
+        android:textSize="12sp"
+        android:textColor="@color/pure_white"
+        app:layout_constraintLeft_toLeftOf="@+id/testOneTittle"
+        app:layout_constraintRight_toRightOf="@+id/testOneImg"
+        app:layout_constraintTop_toBottomOf="@+id/testOneTittle" />
+
+    <TextView
+        android:id="@+id/testTwoTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="专业测试"
+        android:textSize="18sp"
+        android:textColor="@color/pure_white"
+        app:layout_constraintTop_toTopOf="@+id/testTwoImg"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="@+id/testTwoImg" />
+
+    <TextView
+        android:id="@+id/testTwoContent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="160dp"
+        android:layout_marginTop="10dp"
+        android:text="关于专测试的简介，文本左右间距15pt"
+        android:textSize="12sp"
+        android:visibility="invisible"
+        android:textColor="@color/pure_white"
+        app:layout_constraintLeft_toLeftOf="@+id/testTwoTittle"
+        app:layout_constraintRight_toRightOf="@+id/testTwoImg"
+        app:layout_constraintTop_toBottomOf="@+id/testTwoTittle" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/home_bg"
+    >
+    <include
+        android:id="@+id/include2"
+        layout="@layout/top_back_title_bar"
+     />
+
+
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/mSwipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        >
+
+        <android.support.v7.widget.RecyclerView
+
+            android:layout_marginTop="1dp"
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

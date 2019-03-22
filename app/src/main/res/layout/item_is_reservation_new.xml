@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:orientation="horizontal"
+    android:background="@color/pure_white"
+   >
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:text="08:00"
+        android:textSize="12sp"
+        android:textColor="@color/colorTextG6"
+        android:gravity="center"
+       />
+
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/can"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:text="可预约"
+        android:textSize="12sp"
+        android:textColor="@color/colorPrimary"
+        android:background="@color/bg_1"
+        android:gravity="center"
+        />
+</LinearLayout>

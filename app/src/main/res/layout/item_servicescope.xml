@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/home_bg">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:textColor="@color/colorTextG3"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="姓名" />
+
+    <TextView
+        android:id="@+id/tv_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:drawableLeft="@mipmap/edit_icon"
+        android:drawablePadding="5dp"
+        android:text="编辑"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_name"
+
+        />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="25dp"
+        android:background="@color/pure_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="服务价格:"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="25dp"
+        android:text="100元"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv1"
+        app:layout_constraintLeft_toRightOf="@+id/tv1"
+        app:layout_constraintRight_toRightOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/tv1" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="服务简介:"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="15dp"
+        android:text="简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介"
+        android:textSize="14sp"
+        android:lines="9"
+        android:ellipsize="end"
+        app:layout_constraintLeft_toRightOf="@+id/tv2"
+        app:layout_constraintRight_toRightOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/tv2" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:layout_constraintLeft_toLeftOf="@+id/view"
+        app:layout_constraintRight_toRightOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content"
+        app:layout_constraintBottom_toBottomOf="@+id/view"/>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pure_white">
+
+    <include
+        android:id="@+id/include16"
+        layout="@layout/top_back_title_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:background="@color/pure_white"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:id="@+id/tv_service"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/shop_goods_details_chat"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:text="联系客服"
+            android:textColor="@color/colorTextG6"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/tv_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/doctor_consult_follow"
+            android:gravity="center"
+            android:paddingTop="2dp"
+            android:text="收藏"
+            android:textColor="@color/colorTextG6"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/tv_add_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@color/bg_add_cart"
+            android:gravity="center"
+            android:text="加入购物车"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/tv_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="立即购买"
+            android:textColor="@color/pure_white"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/scrollView"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include16"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.bigkoo.convenientbanner.ConvenientBanner
+                android:id="@+id/convenietnBanner"
+                android:layout_width="0dp"
+                android:layout_height="280dp"
+                android:background="@color/colorAccent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_good_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:textColor="@color/colorTextG3"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/convenietnBanner"
+                tools:text="商品标题" />
+
+
+            <TextView
+                android:id="@+id/tv_good_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:textColor="@color/tx_2"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_good_name"
+                tools:text="¥0" />
+
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/home_bg"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_good_price" />
+
+
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="好评率"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/textView57"
+                app:layout_constraintTop_toTopOf="@+id/view1" />
+
+            <TextView
+                android:id="@+id/textView57"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="月销量"
+                app:layout_constraintLeft_toRightOf="@+id/textView56"
+                app:layout_constraintRight_toLeftOf="@+id/textView59"
+                app:layout_constraintTop_toTopOf="@+id/view1" />
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:text="库存"
+                app:layout_constraintLeft_toRightOf="@+id/textView57"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view1" />
+
+
+            <TextView
+                android:id="@+id/tv_haoping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="@+id/view1"
+                app:layout_constraintLeft_toLeftOf="@+id/textView56"
+                app:layout_constraintRight_toRightOf="@+id/textView56"
+                app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+            <TextView
+                android:id="@+id/tv_yuexiao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="@+id/view1"
+                app:layout_constraintLeft_toLeftOf="@+id/textView57"
+                app:layout_constraintRight_toRightOf="@+id/textView57"
+                app:layout_constraintTop_toBottomOf="@+id/textView57"
+                app:layout_constraintVertical_bias="0.461" />
+
+            <TextView
+                android:id="@+id/tv_kucun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="8dp"
+                android:text="0"
+                app:layout_constraintBottom_toBottomOf="@+id/view1"
+                app:layout_constraintLeft_toLeftOf="@+id/textView59"
+                app:layout_constraintRight_toRightOf="@+id/textView59"
+                app:layout_constraintTop_toBottomOf="@+id/textView59" />
+
+
+            <TextView
+                android:id="@+id/tv_nums"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:drawableRight="@drawable/me_right"
+                android:gravity="center_vertical"
+                android:paddingBottom="4dp"
+                android:paddingRight="8dp"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:text="请选择规格"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+            <View
+                android:id="@+id/bg1"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:background="@color/home_bg"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_nums" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:background="@color/pure_white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bg1" />
+
+            <ImageView
+                android:id="@+id/img_merchants"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/pic_defaults"
+                app:layout_constraintBottom_toBottomOf="@+id/view2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view2" />
+
+            <TextView
+                android:id="@+id/tv_merchants_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toRightOf="@+id/img_merchants"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view2"
+                tools:text="商家名称" />
+
+            <TextView
+                android:id="@+id/tv_merchants_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:drawableRight="@drawable/me_right"
+                android:textColor="@color/colorTextG6"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@+id/img_merchants"
+                app:layout_constraintRight_toRightOf="@+id/view2"
+                app:layout_constraintTop_toBottomOf="@+id/tv_merchants_name"
+                tools:text="商家地址" />
+
+            <TextView
+                android:id="@+id/tv_merchants_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG6"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@+id/img_merchants"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_merchants_address"
+                tools:text="商家描述" />
+
+            <View
+                android:id="@+id/bg2"
+                android:layout_width="0dp"
+                android:layout_height="10dp"
+                android:background="@color/home_bg"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@color/pure_white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bg2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:text="评价(0)"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/view3"
+                app:layout_constraintLeft_toLeftOf="@+id/view3"
+                app:layout_constraintTop_toBottomOf="@+id/bg2" />
+
+            <TextView
+                android:id="@+id/more_assessment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/me_right"
+                android:text="更多"
+                android:textColor="@color/colorTextG6"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/view3"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bg2" />
+
+
+            <View
+                android:id="@+id/bg3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/home_bg"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-1dp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bg3" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@color/home_bg"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="详情"
+                android:textColor="@color/colorTextG6"
+                app:layout_constraintBottom_toBottomOf="@+id/view4"
+                app:layout_constraintLeft_toLeftOf="@+id/view4"
+                app:layout_constraintRight_toRightOf="@+id/view4"
+                app:layout_constraintTop_toTopOf="@+id/view4"
+                android:id="@+id/textView64" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="1dp"
+                android:background="@color/bg_2"
+                app:layout_constraintTop_toTopOf="@+id/textView64"
+                android:layout_marginTop="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView64"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintRight_toLeftOf="@+id/textView64"
+                android:layout_marginRight="8dp" />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="1dp"
+                android:background="@color/bg_2"
+                app:layout_constraintTop_toTopOf="@+id/textView64"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView64"
+                app:layout_constraintLeft_toRightOf="@+id/textView64"
+                android:layout_marginLeft="8dp" />
+
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <!--android:fitsSystemWindows="true"-->
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        t/>-->
+
+
+
+    <View
+        android:id="@+id/textView79"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_live_bg2_back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_doctor"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView79"
+        app:layout_constraintLeft_toLeftOf="@+id/textView79"
+        app:layout_constraintRight_toLeftOf="@+id/textView79"
+        app:layout_constraintTop_toTopOf="@+id/textView79"
+        app:srcCompat="@drawable/home_doctor_ava" />
+
+    <TextView
+        android:id="@+id/tv_doctor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="医生姓名 科室"
+        android:textColor="@color/pure_white"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toRightOf="@+id/img_doctor"
+        app:layout_constraintTop_toTopOf="@+id/textView79" />
+
+    <TextView
+        android:id="@+id/tv_hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:text="医院"
+        android:textColor="@color/pure_white"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toRightOf="@+id/img_doctor"
+        app:layout_constraintTop_toBottomOf="@+id/tv_doctor_name" />
+
+    <View
+        android:id="@+id/textView83"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_live_bg_back"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView79" />
+
+    <TextView
+        android:id="@+id/tv_nums"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:text="观看人数：0"
+        android:textColor="@color/pure_white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView83"
+        app:layout_constraintLeft_toLeftOf="@+id/textView83"
+        app:layout_constraintTop_toTopOf="@+id/textView83" />
+
+    <ImageView
+        android:id="@+id/img_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/live_icon_del3x" />
+
+    <ImageView
+        android:id="@+id/img_camera"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="12dp"
+        android:padding="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_close"
+        app:layout_constraintRight_toLeftOf="@+id/img_close"
+        app:layout_constraintTop_toTopOf="@+id/img_close"
+        app:srcCompat="@drawable/direct_roll3x" />
+
+
+
+
+    <LinearLayout
+        android:id="@+id/tool_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_margin="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:src="@mipmap/live_icon_chat"
+            android:id="@+id/bt_send_mess"
+            android:layout_width="@dimen/live_btn_size"
+            android:layout_height="@dimen/live_btn_size"
+             />
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/bt_gift"
+            android:layout_width="@dimen/live_btn_size"
+            android:layout_height="@dimen/live_btn_size"
+            android:src="@drawable/btn_gift_pressed"
+             />
+        <ImageView
+            android:layout_marginLeft="20dp"
+            android:id="@+id/bt_bef"
+            android:layout_width="@dimen/live_btn_size"
+            android:layout_height="@dimen/live_btn_size"
+            android:src="@drawable/icon_beauty_drawable"
+           />
+
+        <TextView
+            android:background="@drawable/bg_shang"
+            android:gravity="center"
+            android:text="赏"
+            android:textSize="18sp"
+            android:textColor="@color/red"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/tv_shang"
+            android:layout_width="@dimen/live_btn_size"
+            android:layout_height="@dimen/live_btn_size"
+            android:onClick="onClick" />
+
+    </LinearLayout>
+
+
+
+    <!--消息列表-->
+    <ListView
+
+        android:id="@+id/im_msg_listview"
+        android:layout_width="@dimen/x500"
+        android:layout_height="300dp"
+        android:maxHeight="500dp"
+        android:minHeight="300dp"
+        android:cacheColorHint="#000000"
+        android:divider="#3c421b1b"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="none"
+        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/tool_bar"
+        android:stackFromBottom="true"
+        android:transcriptMode="normal"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/tool_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
+
+
+
+
+
+
+    <!--礼物布局-->
+
+    <LinearLayout
+
+        android:id="@+id/llgiftcontent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:animateLayoutChanges="true"
+        android:gravity="top"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="58dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView83" />
+
+    <LinearLayout
+
+        android:id="@+id/ll_dashang"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:animateLayoutChanges="true"
+        android:gravity="top"
+        android:orientation="vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/llgiftcontent" />
+
+
+</android.support.constraint.ConstraintLayout>

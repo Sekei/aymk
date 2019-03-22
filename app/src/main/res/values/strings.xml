@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">爱医美康</string>
+    <string name="press_again_to_exit">再按一次退出</string>
+
+    <string name="scoll_aware_fab_behavior">.view.ScollAwareFABBehavior</string>
+    <string name="welcome_tips">欢迎使用爱医美康</string>
+    <string name="swipe_down_to_refresh">没有信息</string>
+    <string name="tab_home">首页</string>
+    <string name="tab_goods">健康商城</string>
+    <string name="tab_car">交流社区</string>
+    <string name="tab_mine">我的</string>
+
+    <string name="loading">加载中...</string>
+    <string name="message_left">社区</string>
+    <string name="message_right">群聊</string>
+    <string name="notification">通知</string>
+
+    <string name="dt">动态</string>
+    <string name="qy">圈友</string>
+
+    <string name="hot_search_keyword">热门搜索</string>
+    <string name="search_hostory">历史记录</string>
+
+    <string name="img_put">图片上传中...</string>
+
+
+    <!-- 测试 -->
+    <string name="test_description">测试说明</string>
+    <string name="insert_record">档案信息</string>
+
+    <!-- 搜索 -->
+    <string name="hint_search">请输入关键字进行搜索</string>
+    <string name="tips_search_keywords_cannot_be_empty">搜索关键字不能为空</string>
+
+    <!-- permission check-->
+    <string name="float_window_not_allow">悬浮窗权限未开启 请在应用-权限中打开悬浮窗权限</string>
+    <string name="network_unavailable">没有网络哦</string>
+    <string name="mine_order">我的订单</string>
+    <string name="mine_order_all">查看全部订单</string>
+    <string name="nopayment">待支付</string>
+    <string name="nouse">待使用</string>
+    <string name="all_order">全部订单</string>
+    <string name="no_jd">待接单</string>
+    <string name="yes_jd">已接单</string>
+    <string name="yes_use">已使用</string>
+    <string name="black_pay">退款</string>
+    <string name="noevaluate">待评价</string>
+    <string name="customer">售后</string>
+    <string name="test_descripe">• 体质测试，将九大体质测试的问题进行标记，然后打乱进行测试。\n• 不同体质测试的问题使用不同的标记，通过用户选择“是”题目的总数来判定用户是什么体质，当选择“是”的问题总数 >60% 时就判定该用户为此体质（主要问题），其他小于百分之60的为次要问题；\n• 总结：该用户是什么体质\n• 继续测试原因（通过体质来匹配问题）\n• 测试完成后得出结论，此体质是什么原因造成的，有一份专业的报告\n• 还会得出这种体质会有什么不好的后果\n• 将调理方式进行页面展示，不同的调理方式显示不同的页面，通过按钮跳转来进行查看。</string>
+    <string name="descripe">体验卡:\n健康知识资讯\n体检报告解读\n健康管理方案建立\n健康报告指导\n营养指导、运动指导（1次）</string>
+    <string name="attention">1.该文本框左右边距相同\n2.该文本内容后台须支持可配\n3.提交咨询后24小时内若无回应则原路退款至支付账户</string>
+    <string name="goods">商品</string>
+    <string name="shop">商家</string>
+    <string name="house">家政</string>
+
+    <!-- 新建档案界面 -->
+    <string name="save">保存</string>
+    <string name="avatar">头像</string>
+    <string name="relationship">与您的关系</string>
+    <string name="myself">亲人</string>
+    <string name="name">姓名</string>
+    <string name="sex">性别</string>
+    <string name="birthday">出生日期</string>
+    <string name="phone_num">手机号</string>
+    <string name="male">男</string>
+    <string name="female">女</string>
+    <string name="choose_relation">与您的关系</string>
+
+    <!-- 档案列表界面 -->
+    <string name="edit">编辑</string>
+    <string name="delete">删除</string>
+    <string name="delete_sure">确定删除</string>
+    <string name="add_file">新建档案</string>
+    <string name="certification">已认证</string>
+    <string name="not_certified">实名认证</string>
+    <string name="health_file">健康档案</string>
+    <string name="more_file">更多档案</string>
+
+    <!-- 普通测试 -->
+    <string name="common_test">普通测试</string>
+
+    <!-- 专业测试 -->
+    <string name="choose_test">选择测试人</string>
+    <string name="test_physique">体质诊断</string>
+    <string name="test_reason">原因诊断</string>
+    <string name="next_question">下一题</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="commit">点击提交</string>
+    <string name="result_ok">确认结论</string>
+    <string name="test_again">重新测试</string>
+    <string name="physique_conclusion">体质结论</string>
+    <string name="config_answer">请先确认答案</string>
+    <string name="auto_next">自动进入下一题</string>
+    <string name="qiut">退出流程</string>
+    <string name="health_test">健康测试</string>
+
+
+    <!-- 诊断报告 -->
+    <string name="test_report">诊断报告</string>
+    <string name="test_people">测试人：</string>
+    <string name="date">日期：</string>
+    <string name="profession_test_report">专业测试诊断报告</string>
+    <string name="comprehensive_analysis">综合辨析</string>
+    <string name="physical_causes">体质成因</string>
+    <string name="physical_problems">体质问题</string>
+    <string name="conditioning_program">调理方案</string>
+
+    <string name="environmental">一、环境调养</string>
+    <string name="sports">二、运动调养</string>
+    <string name="food">三、饮食调养</string>
+    <string name="gongfu">四、生活习惯调养</string>
+    <string name="entertainment">五、娱乐调养</string>
+    <string name="massage">六、按摩调养</string>
+    <string name="products">七、保健品调养</string>
+    <string name="drug">八、药物调养</string>
+    <string name="recommend">为您推荐</string>
+    <string name="buy_profession">专业调理方案（点击购买）</string>
+
+
+    <!-- 咨询医生 -->
+    <string name="choose_Consultants">修改咨询人</string>
+    <string name="assess">评价</string>
+
+
+    <!-- 送心意 -->
+    <string name="send_heart">送心意</string>
+    <string name="little_mind">一点心意</string>
+    <string name="white_angel">白衣天使</string>
+    <string name="medical_skills">医术精湛</string>
+    <string name="german_xin">德医双馨</string>
+    <string name="crafting_heart">妙手仁心</string>
+    <string name="heart_wall">心意墙</string>
+    <string name="choose_send_amount">请选择送心意的金额</string>
+    <string name="hearth_commit">提交</string>
+    <string name="say_thank">说几句感谢医生的话吧</string>
+    <string name="thank_doctor">感谢医生</string>
+
+
+    <string name="order_msg">订单消息</string>
+    <string name="system_msg">系统消息</string>
+
+    <!-- 咨询 -->
+
+    <string name="video">视频咨询</string>
+    <string name="phone">电话咨询</string>
+    <string name="pay_server">购买服务</string>
+    <string name="service_price">服务价格</string>
+    <string name="yuan_every">元/次</string>
+    <string name="yuan">元</string>
+    <string name="reserve_time">预约时间</string>
+    <string name="start_reserve">开启预约</string>
+    <string name="click_change">点击切换</string>
+    <string name="advisory">咨询列表</string>
+    <string name="advisory_history">历史咨询</string>
+    <string name="service_setting">服务设置</string>
+    <string name="time_setting">时段设置</string>
+    <string name="service_start">服务起始时段</string>
+    <string name="service_end">服务结束时段</string>
+    <string name="service_num">服务人数</string>
+
+
+    <!-- 合作加盟 -->
+    <string name="verified">实名认证</string>
+    <string name="shop_join">商家加盟</string>
+    <string name="doctor_join">医生入驻</string>
+    <string name="house_join">家政申请</string>
+    <string name="join">合作加盟</string>
+    <string name="dactor_name">医生姓名</string>
+    <string name="doctor_phone">联系电话</string>
+    <string name="email">邮箱地址</string>
+    <string name="doctor_job">医师职称</string>
+    <string name="hospital">工作医院</string>
+    <string name="depaterment">工作科室</string>
+    <string name="treatment_type">主治类型</string>
+    <string name="hint_one">请输入您的姓名</string>
+    <string name="hint_two">请输入您的联系电话</string>
+    <string name="hint_three">请输入您的邮箱地址</string>
+    <string name="hint_four">请选择您的医师职称</string>
+    <string name="hint_five">请输入您的所在医院</string>
+    <string name="hint_six">请选择您的所在科室</string>
+    <string name="hint_seven">请选择您的主治类型</string>
+    <string name="hint_shop_name">请输入合作商家名称</string>
+    <string name="hint_shop_address">请输入合作商家地址</string>
+    <string name="hint_address">请输入您的详细地址</string>
+
+
+    <string name="img_one">请上传医师证明</string>
+    <string name="img_zero">请上相关证明</string>
+    <string name="img_two">请上传行医资格证</string>
+    <string name="img_three">请上传医师执照</string>
+    <string name="img_id_card">请上传申请人证件照</string>
+    <string name="img_four">身份证正面</string>
+    <string name="img_five">身份证反面</string>
+    <string name="img_six">手持身份证</string>
+    <string name="img_sanzheng">请上传企业三证或者三证合一的营业执照</string>
+
+
+    <string name="txt_integral">健康豆：</string>
+    <string name="txt_name">联系人姓名</string>
+    <string name="txt_shop_name">商家名称</string>
+    <string name="txt_shop_address">商家地址</string>
+    <string name="input_service_num">请输入服务人数</string>
+    <string name="input_start_time">请选择服务起始时段</string>
+    <string name="input_end_time">请选择服务结束时段</string>
+    <string name="leixing_setting">类型设置</string>
+    <string name="health_user">健康用户</string>
+    <string name="doctor_file">医生档案</string>
+    <string name="base_info">基本信息</string>
+    <string name="img_consult">图文咨询</string>
+    <string name="phone_video">语音/视频</string>
+    <string name="chexiao">撤销申请</string>
+    <string name="end_time">到期时间</string>
+    <string name="txt_update_login_pwd">修改登录密码</string>
+    <string name="txt_update_pay_ped">修改支付密码</string>
+    <string name="txt_confirm_updata">确认修改</string>
+    <string name="txt_updata_pwd_desc">修改完成后可直接通过新的登录密码登录</string>
+    <string name="hint_please_enter_new_password">请输入新密码</string>
+    <string name="hint_enter_the_password_again">再次输入密码</string>
+    <string name="hint_enter_the_phone">请输入手机号</string>
+    <string name="hint_enter_code">请输入验证码</string>
+    <string name="txt_my_integral">我的积分</string>
+    <string name="txt_my_balance">我的余额</string>
+    <string name="txt_detailed">明细</string>
+    <string name="txt_integral_detail">积分明细</string>
+    <string name="txt_balance_detail">余额明细</string>
+    <string name="txt_service_order">服务订单</string>
+    <string name="txt_good_order">商品订单</string>
+    <string name="txt_thanks_doctor">感谢医生</string>
+    <string name="txt_give_heart">送心意</string>
+    <string name="txt_plan">调理方案</string>
+    <string name="txt_buy_plan">购买此方案</string>
+    <string name="txt_my_vip">我的会员</string>
+    <string name="txt_join_house">家政申请</string>
+    <string name="txt_next">下一步</string>
+
+    <string name="pay_result_tip">这个界面用于显示第三方app通过微信支付的结果</string>
+    <string name="fangan_shiduan">方案开始时段</string>
+    <string name="fangan_end_shiduan">方案结束时段</string>
+    <string name="fangbu_fangan">发布方案</string>
+
+
+    <string name="failed_to_start_streaming">无法成功开启直播 ！</string>
+    <string name="failed_to_start_conference">无法成功开启连麦，错误码：</string>
+
+    <string name="start_streaming">开始直播</string>
+    <string name="stop_streaming">停止直播</string>
+
+    <string name="start_conference">开始连麦</string>
+    <string name="stop_conference">结束连麦</string>
+
+    <string name="mirror_success">镜像成功</string>
+
+    <string name="streaming_stopping">正在停止...</string>
+    <string name="ready">就绪</string>>
+    <string name="streaming">直播中...</string>
+    <string name="preparing">准备中...</string>
+    <string name="disconnected">连接断开</string>
+    <string name="stream_state_not_ready">当前不在就绪状态，不能开启直播 ！</string>
+
+    <string name="prepare_title">准备直播</string>
+    <string name="prepare_tips">请稍等，直播准备中...</string>
+
+    <string name="failed_open_camera">无法打开摄像头 !</string>
+    <string name="failed_open_microphone">无法打开麦克风 !</string>
+    <string name="failed_to_publish_av_to_rtc">无法发布视频到房间, 错误码：</string>
+    <string name="mute_must_in_streaming_status">必须开始连麦或者推流后才能静音 !</string>
+
+    <string name="success_publish_video_to_rtc">成功发布视频到房间 !</string>
+    <string name="success_publish_audio_to_rtc">成功发布音频到房间 !</string>
+    <string name="io_error">网络连接错误 !</string>
+    <string name="network_disconnected">网络连接断开 !</string>
+    <string name="user_join_conference">其他用户加入连麦 !</string>
+    <string name="user_leave_conference">其他用户离开连麦 !</string>
+    <string name="engine_not_initialized">引擎未初始化 </string>
+    <string name="not_join_room">没有加入房间 ！</string>
+    <string name="join_room_failed">无法加入房间，错误码：</string>
+    <string name="reconnecting">网络断线，正在重连RTC服务器 ！</string>
+    <string name="reconnected">成功重连RTC服务器 ！</string>
+    <string name="reconnect_failed">无法连接RTC服务器 ！</string>
+    <string name="user_join_other_where">用户在其它地方登录 ！</string>
+    <string name="user_kickout_by_host">您被主持人踢出房间 ！</string>
+    <string name="pls_input_room_name">请输入房间名称 ！</string>
+    <string name="server_not_configure">请先开发服务器端，配置好相关地址</string>
+    <string name="button_capture">截  帧</string>
+    <string name="button_preview_mirror">镜像(预览)</string>
+    <string name="button_encoding_mirror">镜像(编码)</string>
+    <string name="button_log_stats">打印统计信息</string>
+    <string name="button_mute_speaker">静音(远端)</string>
+    <string name="button_unmute_speaker">取消静音(远端)</string>
+    <string name="button_subscribe">订阅视频</string>
+    <string name="button_unsubscribe">取消订阅</string>
+    <string name="button_adjust_bitrate">调整码率</string>
+    <string name="button_toggle_picture_streaming">图片推流</string>
+    <string name="button_change_picture_path">切换图片</string>
+    <string name="button_start_playback">开启返听</string>
+    <string name="addservice">添加服务</string>
+
+    <string name="others_muted">已静音其他人</string>
+    <string name="others_unmuted">已取消静音其他人</string>
+    <string name="others_fail">开始连麦后才能静音</string>
+    <string name="testcontent"></string>
+
+    <item name="tag_first" type="id"></item>
+    <item name="tag_second" type="id"></item>
+
+
+</resources>

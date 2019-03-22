@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    >
+
+
+
+    <TextView
+        android:textSize="14sp"
+        android:textColor="@color/colorTextG3"
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="图文咨询设置"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/tv_edit_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/doctor_icon_edito"
+        android:drawablePadding="4dp"
+        android:text="编辑"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:gravity="center_vertical"
+        android:background="@color/pure_white"
+        android:id="@+id/textView11"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+
+        android:textSize="12sp"
+        android:textColor="@color/colorTextG6"
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务价格"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView11"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView11"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintVertical_bias="0.2"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:textSize="12sp"
+        android:textColor="@color/tx_1"
+        android:id="@+id/tv_price_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintTop_toTopOf="@+id/textView12"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintLeft_toRightOf="@+id/textView12"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="元／次"
+        app:layout_constraintTop_toTopOf="@+id/tv_price_1"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_price_1"
+        app:layout_constraintLeft_toRightOf="@+id/tv_price_1" />
+
+
+
+    <TextView
+
+        android:textSize="14sp"
+        android:textColor="@color/colorTextG3"
+        android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="语音咨询设置"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:textSize="14sp"
+        android:drawablePadding="4dp"
+        android:drawableLeft="@drawable/doctor_icon_edito"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/tv_edit_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="编辑"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        android:layout_marginEnd="16dp" />
+
+    <View
+        android:background="@color/pure_white"
+        android:id="@+id/textView15"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t1"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+
+    <TextView
+
+        android:textSize="12sp"
+        android:textColor="@color/colorTextG6"
+        android:id="@+id/tex1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务价格"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView15"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:textSize="12sp"
+        android:textColor="@color/tx_1"
+        android:id="@+id/tv_price_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintTop_toTopOf="@+id/tex1"
+        app:layout_constraintBottom_toBottomOf="@+id/tex1"
+        app:layout_constraintLeft_toRightOf="@+id/tex1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        android:id="@+id/tex3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="元/15min"
+        app:layout_constraintTop_toTopOf="@+id/tv_price_2"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_price_2"
+        app:layout_constraintLeft_toRightOf="@+id/tv_price_2" />
+
+    <TextView
+
+        android:textSize="12sp"
+        android:textColor="@color/colorTextG6"
+        android:id="@+id/tex4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务时段"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tex1"
+        android:layout_marginStart="16dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView15"
+        app:layout_constraintRight_toRightOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/tex4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/tex4"/>
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="92dp"
+        android:layout_marginStart="8dp"
+        android:text="视频咨询设置"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/tv_edit_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/doctor_icon_edito"
+        android:drawablePadding="4dp"
+        android:text="编辑"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+
+    <View
+        android:background="@color/pure_white"
+        android:id="@+id/textView18"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+
+
+    <TextView
+
+        android:textSize="12sp"
+        android:textColor="@color/colorTextG6"
+        android:id="@+id/tex11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务价格"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView18"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:textSize="12sp"
+        android:textColor="@color/tx_1"
+        android:id="@+id/tv_price_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintTop_toTopOf="@+id/tex11"
+        app:layout_constraintBottom_toBottomOf="@+id/tex11"
+        app:layout_constraintLeft_toRightOf="@+id/tex11"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        android:id="@+id/tex33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="元/15min"
+        app:layout_constraintTop_toTopOf="@+id/tv_price_3"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_price_3"
+        app:layout_constraintLeft_toRightOf="@+id/tv_price_3" />
+
+    <TextView
+
+        android:textSize="12sp"
+        android:textColor="@color/colorTextG6"
+        android:id="@+id/tex44"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务时段"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tex11"
+        android:layout_marginStart="16dp" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView18"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/tex44"
+        app:layout_constraintRight_toRightOf="@+id/textView18"
+        app:layout_constraintTop_toBottomOf="@+id/tex44"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="92dp"
+        android:layout_marginStart="8dp"
+        android:text="健康管理设置"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/tv_edit_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="37dp"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/doctor_icon_edito"
+        android:drawablePadding="4dp"
+        android:text="编辑"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+
+
+
+
+    <View
+        android:background="@color/pure_white"
+        android:id="@+id/textView22"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_edit_4"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+
+    <TextView
+
+        android:textSize="12sp"
+        android:textColor="@color/colorTextG6"
+        android:id="@+id/tex12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="服务类型"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView22"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView22"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/tex12"
+        app:layout_constraintRight_toRightOf="@+id/textView22"
+        app:layout_constraintTop_toBottomOf="@+id/tex12"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,260 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:listDivider">@color/colorPrimaryDark</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:progressBarStyle">@style/progressBarStyle</item>
+        <item name="android:selectableItemBackground">@null</item>
+        <item name="android:selectableItemBackgroundBorderless">@null</item>
+    </style>
+
+    <style name="BaseAppTheme" parent="AppTheme">
+
+
+    </style>
+    <style name="AppNightTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/nightColorPrimary</item>
+        <item name="colorPrimaryDark">@color/nightColorPrimaryDark</item>
+        <item name="colorAccent">@color/nightColorPrimaryLight</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="TranslucentTheme" parent="@style/Theme.AppCompat.Light.NoActionBar"></style>
+
+    <style name="text_white">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!-- 透明activity -->
+    <style name="Transparent_a" parent="@style/AppTheme">
+        <item name="android:windowBackground">@color/input</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+
+    </style>
+
+    <style name="CollapsingToolbarTitleStyle.About" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/transparent</item>
+    </style>
+
+    <!-- Input dialog theme. -->
+    <style name="InputDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="android:textColorHint">@color/c9</item>
+        <item name="colorControlActivated">@color/colorAccent</item>
+    </style>
+
+    <style name="NormalDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+
+    </style>
+
+    <style name="NickNameDialog" parent="NormalDialog">
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+
+    <style name="progressBarStyle" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/progress_bar</item>
+    </style>
+
+
+    <style name="TabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="user_login_header_order_num">
+        <item name="android:textSize">8.0sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/x92</item>
+        <item name="android:layout_marginTop">@dimen/y4</item>
+    </style>
+
+
+    <style name="user_other_num">
+        <item name="android:textSize">@dimen/x24</item>
+        <item name="android:textColor">@color/tx_l</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/x92</item>
+        <item name="android:layout_marginTop">@dimen/y4</item>
+    </style>
+
+    <style name="user_login_header_order">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.6</item>
+    </style>
+
+    <style name="user_login_header_order2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_weight">1.6</item>
+    </style>
+
+    <style name="dialog_exit_live" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/dialog_exit_live_animation</item>
+    </style>
+
+    <style name="BottomDialog" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="dialog_exit_live_animation" parent="android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out</item>
+    </style>
+
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+    <!--ToolBar TextSize style-->
+    <style name="ToolBar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="mRatingBar">
+        <item name="android:progressDrawable">@drawable/five_rating_bar</item>
+        <item name="android:minHeight">44px</item>
+        <item name="android:maxHeight">66px</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+
+    <style name="mRatingBary">
+        <item name="android:progressDrawable">@drawable/five_rating_bar</item>
+        <item name="android:minHeight">@dimen/x40</item>
+        <item name="android:maxHeight">@dimen/x40</item>
+    </style>
+
+    <declare-styleable name="DragScrollDetailsLayout">
+        <!-- float value for indicate the moment of switch panel-->
+        <attr name="percent" format="float" />
+        <!-- how long the animation keep-->
+        <attr name="duration" format="integer" />
+        <!-- default panel to show after init-->
+        <attr name="default_panel" format="enum">
+            <enum name="front" value="0" />
+            <enum name="behind" value="1" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="MagicTextView">
+        <attr name="innerShadowColor" format="color" />
+        <attr name="innerShadowRadius" format="float" />
+        <attr name="innerShadowDx" format="float" />
+        <attr name="innerShadowDy" format="float" />
+        <attr name="outerShadowColor" format="color" />
+        <attr name="outerShadowRadius" format="float" />
+        <attr name="outerShadowDx" format="float" />
+        <attr name="outerShadowDy" format="float" />
+        <attr name="typeface" format="string" />
+        <attr name="foreground" format="reference|color" />
+        <attr name="strokeWidth" format="float" />
+        <attr name="strokeMiter" format="float" />
+        <attr name="strokeColor" format="color" />
+        <attr name="strokeJoinStyle">
+            <enum name="miter" value="0" />
+            <enum name="bevel" value="1" />
+            <enum name="round" value="2" />
+        </attr>
+    </declare-styleable>
+
+
+    <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:progressDrawable">@drawable/selector_checkbox</item>
+
+    </style>
+    <style name="s_true" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">#33da33</item>
+    </style>
+
+    <style name="s_false" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">#9b9b9b</item>
+    </style>
+
+    <style name="TranslucentThemes">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="NavPage">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- <item name="android:background">@drawable/nav_page</item> -->
+        <item name="android:background">@color/navpage</item>
+    </style>
+
+    <!--<style name="MyTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+        <!--&lt;!&ndash; 隐藏标题栏 &ndash;&gt;-->
+        <!--<item name="windowNoTitle">true</item>-->
+        <!--&lt;!&ndash; 隐藏状态栏 &ndash;&gt;-->
+        <!--<item name="android:windowFullscreen">true</item>-->
+        <!--<item name="android:windowBackground">@color/translucentsss</item>-->
+    <!--</style>-->
+
+    <style name="MyTheme" parent="@android:style/Theme.Translucent.NoTitleBar">
+        <item name="android:windowBackground">@color/translucentsss</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item> <!-- 无标题 -->
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="RadingStyle" parent="@android:style/Widget.RatingBar">
+        <!-- 定义星星图片 -->
+        <item name="android:progressDrawable">@drawable/layer_live_rating_bar</item>
+        <!-- 根据自定义星星图片的大小,设置相应的值,否则可能显示不全 -->
+        <item name="android:numColumns">5</item>
+    </style>
+</resources>

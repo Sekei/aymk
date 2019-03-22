@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include18"
+        layout="@layout/top_back_title_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@color/pure_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include18" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="6dp"
+        android:layout_height="30dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="@+id/bg"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/bg" />
+
+    <TextView
+        android:id="@+id/tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="饮食调理方案第三阶段"
+        android:textSize="14sp"
+        android:layout_marginLeft="9dp"
+        android:textColor="@color/colorTextG3"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintLeft_toRightOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="杨教授"
+        android:textSize="12sp"
+        android:textColor="@color/colorTextG9"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="@+id/bg" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="妇幼保健科"
+        android:textSize="10sp"
+        android:textColor="@color/colorTextG9"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintLeft_toRightOf="@+id/name"
+        />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/pure_white"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/name">
+            <TextView
+                android:id="@+id/content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:layout_margin="15dp"
+                tools:text="多食：滋补肾阴以及甘凉滋润的食物，以品种分类如下（烹饪方式用焖、蒸、煮、炖的方式，吃起来就不容易上火）蔬菜类：豆腐、藕、大白菜、冬瓜、苦瓜、黄瓜、紫菜荤菜类：瘦猪肉、猪蹄、鸭肉、鹅肉、黑鱼、鲫鱼、鳆鱼、甲鱼、海参、干贝、蛤蜊、蚌肉、乌贼鱼、鸡蛋
+水果类：荸荠、梨、苹果、甘蔗、西瓜、葡萄、莲子
+其他：银耳、百合、枸杞、黑芝麻、蜂蜜、乳品、大枣
+少食：以品种分类如下（烹饪方式用油炸煎炒的，就算食物本身的性质不是那么热气，经过这种加工方式以后，它一下就变了，它可以上火，可以伤阴，可以让人又干又热又伤阴的）
+蔬菜类：大蒜、韭菜、芥菜、炒花生、炒黄豆、
+荤菜类：狗肉、羊肉
+水果类：荔枝、龙眼肉、佛手柑、杨梅
+佐料：辣椒、胡椒、砂仁、荜拨、草豆蔻、花椒、肉桂、白豆蔻、大茴香、小茴香、丁香、薄荷
+其他：锅耙、巧克力、炒瓜子、爆米花
+忌：白酒、香烟                                                                           "
+                android:textColor="@color/colorTextG6"
+                android:textSize="13sp" />
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/pure_white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include5"
+        layout="@layout/top_back_title_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/home_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include5"
+       />
+    <TextView
+        android:id="@+id/tittle"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="服务对象"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line1"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="78dp"
+        android:layout_marginStart="78dp"
+        tools:text="鲍二狗"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tittle"
+        app:layout_constraintLeft_toLeftOf="@+id/tittle"
+        app:layout_constraintTop_toTopOf="@+id/tittle" />
+
+    <TextView
+        android:id="@+id/qh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/me_right_copy"
+        android:text="点击修改"
+        android:textColor="@color/colorTextG9"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tittle"
+        app:layout_constraintRight_toRightOf="@+id/tittle"
+        app:layout_constraintTop_toTopOf="@+id/tittle" />
+    <View
+        android:id="@+id/line2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/home_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tittle"
+        />
+    <TextView
+        android:id="@+id/typeTittle"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="健康管理"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+    <TextView
+        android:id="@+id/typeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="82dp"
+        android:layout_marginStart="82dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        tools:text="都教授"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/typeTittle"
+        app:layout_constraintLeft_toLeftOf="@+id/typeTittle"
+        app:layout_constraintTop_toTopOf="@+id/typeTittle" />
+
+    <TextView
+        android:id="@+id/type_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        tools:text="10000元／月起"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/typeTittle"
+        app:layout_constraintRight_toRightOf="@+id/typeTittle"
+        app:layout_constraintTop_toTopOf="@+id/typeTittle" />
+    <View
+        android:id="@+id/line3"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:background="@color/home_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typeTittle"
+        />
+    <TextView
+        android:id="@+id/servserTittle"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:background="@color/pure_white"
+        android:text="健康管理服务"
+        android:gravity="center"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@+id/line3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/easyRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/servserTittle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/descripe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:textSize="14sp"
+        android:textColor="@color/colorTextG6"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/easyRecyclerView" />
+
+    <TextView
+        android:id="@+id/ok"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="立即购买"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/pure_white"
+        android:background="@color/colorPrimary"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

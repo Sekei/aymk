@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<include
+    android:id="@+id/include"
+    layout="@layout/top_back_title_bar_two"/>
+    <FrameLayout
+        android:layout_below="@+id/include"
+        android:id="@+id/fc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/progressBarHorizontalStyle"
+            android:layout_width="match_parent"
+            android:layout_height="6dp" />
+
+        <LinearLayout
+            android:id="@+id/vError"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone" />
+    </FrameLayout>
+<TextView
+    android:id="@+id/tv_submit"
+    android:gravity="center"
+    android:text="购买"
+    android:textSize="18sp"
+    android:textColor="@color/pure_white"
+    android:background="@color/colorPrimary"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="46dp" />
+</RelativeLayout>

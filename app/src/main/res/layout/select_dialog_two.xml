@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:layout_marginStart="45dp"
+        android:background="@drawable/bg_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/ts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="13dp"
+        android:text="更多金额"
+        android:textColor="@color/colorTextG3"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="@+id/bg" />
+
+
+    <EditText
+        android:id="@+id/select_content"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/home_bg"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:hint="请输入金额（37～288元）"
+        android:paddingLeft="5dp"
+        android:textColor="@color/colorTextG6"
+        android:textSize="12dp"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/ts" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="17dp"
+        android:background="@color/home_bg"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/select_content" />
+
+
+    <TextView
+        android:id="@+id/select_cancel"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="取消"
+        android:textSize="18sp"
+        android:textColor="@color/colorTextG6"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintRight_toLeftOf="@+id/select_ok"
+        app:layout_constraintTop_toBottomOf="@+id/line"
+        app:layout_constraintLeft_toLeftOf="@+id/bg" />
+
+
+    <TextView
+        android:id="@+id/select_ok"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="确定"
+        app:layout_constraintHorizontal_weight="1"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toRightOf="@+id/select_cancel"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="@+id/select_cancel"
+       />
+
+    <View
+        app:layout_constraintBottom_toBottomOf="@+id/select_ok"
+        android:id="@+id/line2"
+        android:layout_width="1dp"
+        android:layout_height="49dp"
+        android:background="@color/home_bg"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+
+
+</android.support.constraint.ConstraintLayout>

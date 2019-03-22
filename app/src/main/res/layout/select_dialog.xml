@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:layout_width="280.0dip"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/setbar_dt"
+
+        android:orientation="vertical">
+        <!-- android:background="@color/default_bg_color"-->
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip">
+
+
+            <TextView
+                android:id="@+id/ts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="提示"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/x30" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10.0dip"
+
+                android:focusable="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0"
+            android:padding="10.0dip">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/select_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10.0dip"
+                    android:layout_marginLeft="5.0dip"
+                    android:layout_marginRight="5.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:textColor="@color/tx_l"
+                    android:textSize="@dimen/x28" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:background="@color/line_bg" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/y100">
+
+            <TextView
+                android:id="@+id/select_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="取消"
+                android:textSize="@dimen/x28" />
+
+            <LinearLayout
+                android:layout_width="@dimen/x1"
+                android:layout_height="match_parent"
+                android:background="@color/line_bg" />
+
+            <TextView
+                android:id="@+id/select_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/x28" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

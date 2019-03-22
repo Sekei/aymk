@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include7"
+        layout="@layout/top_back_title_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/bg_one"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include7" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatar"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ava_defaultx"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_one"
+        app:layout_constraintLeft_toLeftOf="@+id/bg_one"
+        app:layout_constraintTop_toTopOf="@+id/bg_one" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/avatar"
+        app:layout_constraintTop_toTopOf="@+id/avatar"
+        tools:text="鲍二二（本人）" />
+
+    <TextView
+        android:id="@+id/sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        tools:text="男" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:text="填写信息时请认真填写"
+        android:textColor="@color/holo_red_light"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sex" />
+
+    <TextView
+        android:id="@+id/verified"
+        android:layout_width="60dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/setbar_fh_gray"
+        android:gravity="center"
+        android:textColor="@color/pure_white"
+        android:textSize="11sp"
+        android:visibility="invisible"
+        app:layout_constraintLeft_toRightOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name"
+        tools:text="实名认证" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_one"
+        app:layout_constraintRight_toRightOf="@+id/bg_one"
+        app:layout_constraintTop_toTopOf="@+id/bg_one"
+        app:srcCompat="@drawable/me_right" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@+id/sex"
+        app:layout_constraintTop_toTopOf="@+id/sex"
+        tools:text="24岁" />
+
+    <View
+        android:id="@+id/bg_two"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/pure_white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_one" />
+
+    <TextView
+        android:id="@+id/one"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="基本信息"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_two"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="@+id/bg_two"
+        app:layout_constraintRight_toLeftOf="@+id/two"
+        app:layout_constraintTop_toTopOf="@+id/bg_two" />
+
+    <TextView
+        android:id="@+id/two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="10dp"
+        android:text="调理方案"
+        android:textColor="@color/colorTextG6"
+        app:layout_constraintBottom_toBottomOf="@+id/one"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/one"
+        app:layout_constraintRight_toRightOf="@+id/bg_two"
+        app:layout_constraintTop_toTopOf="@+id/one" />
+
+    <View
+        android:id="@+id/oneBottom"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_two"
+        app:layout_constraintLeft_toLeftOf="@+id/one"
+        app:layout_constraintRight_toRightOf="@+id/one" />
+
+    <View
+        android:id="@+id/twoBottom"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@color/pure_white"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_two"
+        app:layout_constraintLeft_toLeftOf="@+id/two"
+        app:layout_constraintRight_toRightOf="@+id/two" />
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/easyRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_two" />
+
+    <View
+        android:id="@+id/bg_three"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_two"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_three"
+        app:layout_constraintLeft_toLeftOf="@+id/bg_three"
+        app:layout_constraintRight_toRightOf="@+id/bg_three"
+        app:layout_constraintTop_toTopOf="@+id/bg_three"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="0.0">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/nameTittle"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="姓名"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/colorTextG6"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/nameTittle"
+                app:layout_constraintRight_toRightOf="@+id/nameTittle"
+                tools:text="张三 " />
+            <TextView
+                android:id="@+id/sexTittle"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="性别"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameTittle" />
+
+            <TextView
+                android:id="@+id/tv_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/colorTextG6"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/sexTittle"
+                app:layout_constraintRight_toRightOf="@+id/sexTittle"
+                tools:text="女" />
+
+            <TextView
+                android:id="@+id/birthdayTittle"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="出生年月"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sexTittle" />
+
+            <TextView
+                android:id="@+id/tv_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/colorTextG6"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/birthdayTittle"
+                app:layout_constraintRight_toRightOf="@+id/birthdayTittle"
+                tools:text="1970-1-1" />
+
+            <TextView
+                android:id="@+id/ageTittle"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="年龄"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/birthdayTittle" />
+
+            <TextView
+                android:id="@+id/tv_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/colorTextG6"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ageTittle"
+                app:layout_constraintRight_toRightOf="@+id/ageTittle"
+                tools:text="23" />
+
+            <TextView
+                android:id="@+id/bloodtypeTitle"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="血型"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ageTittle" />
+
+            <TextView
+                android:id="@+id/tv_bloodtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/colorTextG6"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/bloodtypeTitle"
+                app:layout_constraintRight_toRightOf="@+id/bloodtypeTitle"
+                tools:text="O 型" />
+
+
+            <TextView
+                android:id="@+id/heightTittle"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="身高"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bloodtypeTitle" />
+
+            <TextView
+                android:id="@+id/height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/colorTextG6"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/heightTittle"
+                app:layout_constraintRight_toRightOf="@+id/heightTittle"
+                tools:text="175cm" />
+
+
+            <TextView
+                android:id="@+id/weightTittle"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:text="体重"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/heightTittle" />
+
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG6"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/weightTittle"
+                app:layout_constraintRight_toRightOf="@+id/weightTittle"
+                app:layout_constraintTop_toTopOf="@+id/weightTittle"
+                tools:text="70kg" />
+
+
+            <TextView
+                android:id="@+id/isMarryTittle"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="婚姻"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weightTittle" />
+
+            <TextView
+                android:id="@+id/isMarry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG6"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/isMarryTittle"
+                app:layout_constraintRight_toRightOf="@+id/isMarryTittle"
+                app:layout_constraintTop_toTopOf="@+id/isMarryTittle"
+                tools:text="已婚" />
+
+
+            <TextView
+                android:id="@+id/professionTittle"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="职业"
+                android:layout_marginTop="1dp"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/isMarryTittle" />
+
+            <TextView
+                android:id="@+id/tv_profession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG6"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/professionTittle"
+                app:layout_constraintRight_toRightOf="@+id/professionTittle"
+                app:layout_constraintTop_toTopOf="@+id/professionTittle"
+                tools:text="IT" />
+
+            <TextView
+                android:id="@+id/isAllergyTittle"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/pure_white"
+                android:drawableRight="@drawable/me_right"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="是否有过敏史"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/professionTittle" />
+
+            <TextView
+                android:id="@+id/isAllergy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG9"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/isAllergyTittle"
+                app:layout_constraintRight_toRightOf="@+id/isAllergyTittle"
+                app:layout_constraintTop_toTopOf="@+id/isAllergyTittle"
+                tools:text="是" />
+            <TextView
+                android:id="@+id/allergyContentTittle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/pure_white"
+                android:gravity="start"
+                android:paddingLeft="15dp"
+                android:paddingTop="12dp"
+                android:lines="3"
+                android:ellipsize="end"
+                android:paddingBottom="10dp"
+                android:layout_marginBottom="12dp"
+                android:text="在这里编辑过敏内容"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/isAllergyTittle" />
+
+            <TextView
+                android:id="@+id/familiaydisease"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/pure_white"
+                android:drawableRight="@drawable/me_right"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="是否有家族遗传病"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/allergyContentTittle" />
+
+
+            <TextView
+                android:id="@+id/isfamiliaydisease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG9"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/familiaydisease"
+                app:layout_constraintRight_toRightOf="@+id/familiaydisease"
+                app:layout_constraintTop_toTopOf="@+id/familiaydisease"
+                tools:text="是" />
+            <TextView
+                android:id="@+id/familiaydiseasename"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="疾病名称"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/familiaydisease" />
+            <TextView
+                android:id="@+id/familiaydiseasecontent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG9"
+                android:textSize="14sp"
+                android:visibility="gone"
+                android:paddingLeft="100dp"
+                android:lines="1"
+                android:gravity="right"
+                android:paddingBottom="8dp"
+                android:ellipsize="end"
+                app:layout_constraintBottom_toBottomOf="@+id/familiaydiseasename"
+                app:layout_constraintRight_toRightOf="@+id/familiaydiseasename"
+                app:layout_constraintTop_toTopOf="@+id/familiaydiseasename"
+                app:layout_constraintLeft_toLeftOf="@+id/familiaydiseasename"
+                tools:text="神经病" />
+            <TextView
+                android:id="@+id/familiayperson"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="患病人"
+                android:visibility="gone"
+
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/familiaydiseasename" />
+            <TextView
+                android:id="@+id/familiaypersoncontent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG9"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/familiayperson"
+                app:layout_constraintRight_toRightOf="@+id/familiayperson"
+                app:layout_constraintTop_toTopOf="@+id/familiayperson"
+                tools:text="父/母" />
+            <TextView
+                android:id="@+id/familiaythrowback"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="是否隔代遗传"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/familiayperson"
+                android:layout_marginTop="-523dp"
+                app:layout_constraintHorizontal_bias="0.0" />
+            <TextView
+                android:id="@+id/isfamiliaythrowback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG9"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/familiaythrowback"
+                app:layout_constraintRight_toRightOf="@+id/familiaythrowback"
+                app:layout_constraintTop_toTopOf="@+id/familiaythrowback"
+                tools:text="否" />
+            <TextView
+                android:id="@+id/fapersondisease"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/pure_white"
+                android:drawableRight="@drawable/me_right"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="个人是否有重大疾病"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/familiaythrowback" />
+
+            <TextView
+                android:id="@+id/isfapersondisease"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG9"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/fapersondisease"
+                app:layout_constraintRight_toRightOf="@+id/fapersondisease"
+                app:layout_constraintTop_toTopOf="@+id/fapersondisease"
+                tools:text="否" />
+
+            <TextView
+                android:id="@+id/fapersonname"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="疾病名称"
+                android:visibility="gone"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fapersondisease" />
+
+            <TextView
+                android:id="@+id/fapersoncontent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG9"
+                android:textSize="14sp"
+                android:visibility="gone"
+                android:lines="1"
+                android:gravity="right"
+                android:ellipsize="end"
+                android:paddingBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/fapersonname"
+                app:layout_constraintRight_toRightOf="@+id/fapersonname"
+                app:layout_constraintTop_toTopOf="@+id/fapersonname"
+                app:layout_constraintLeft_toLeftOf="@+id/fapersonname"
+                android:paddingLeft="100dp"
+                tools:text="神经病" />
+
+            <TextView
+                android:id="@+id/personheredity"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="是否遗传"
+                android:visibility="gone"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fapersonname" />
+
+            <TextView
+                android:id="@+id/ispersonheredity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG9"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/personheredity"
+                app:layout_constraintRight_toRightOf="@+id/personheredity"
+                app:layout_constraintTop_toTopOf="@+id/personheredity"
+                tools:text="否" />
+            <TextView
+                android:id="@+id/persontime"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="确诊时间"
+                android:visibility="gone"
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/personheredity" />
+
+            <TextView
+                android:id="@+id/persontimeshow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG9"
+                android:textSize="14sp"
+                android:visibility="gone"
+
+                app:layout_constraintBottom_toBottomOf="@+id/persontime"
+                app:layout_constraintRight_toRightOf="@+id/persontime"
+                app:layout_constraintTop_toTopOf="@+id/persontime"
+                tools:text="选择" />
+
+            <TextView
+                android:id="@+id/pharmacyname"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:background="@color/pure_white"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="用药名称"
+                android:visibility="gone"
+
+                android:textColor="@color/colorTextG3"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/persontime" />
+
+            <TextView
+                android:id="@+id/pharmacynameshow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorTextG9"
+                android:textSize="14sp"
+                android:visibility="gone"
+                android:lines="1"
+                android:gravity="right"
+                android:ellipsize="end"
+                app:layout_constraintBottom_toBottomOf="@+id/pharmacyname"
+                app:layout_constraintRight_toRightOf="@+id/pharmacyname"
+                app:layout_constraintTop_toTopOf="@+id/pharmacyname"
+                app:layout_constraintLeft_toLeftOf="@+id/pharmacyname"
+                android:paddingLeft="80dp"
+                android:paddingBottom="8dp"
+                tools:text="好药" />
+        </android.support.constraint.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

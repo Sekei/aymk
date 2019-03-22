@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/top_back_title_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/include17" />
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="0dp"
+        android:layout_height="172dp"
+        android:background="@color/pure_white"
+        android:layout_marginTop="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/include17"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/home_doctor_ava"
+        app:layout_constraintTop_toTopOf="@+id/bg"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="都教授"
+        android:textSize="14sp"
+        android:textColor="@color/colorTextG3"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/img"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        android:layout_marginEnd="32dp" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="妇幼保健科"
+        android:textSize="12sp"
+        android:textColor="@color/colorTextG9"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintLeft_toRightOf="@+id/name"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        android:layout_marginStart="10dp" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/mark"
+        android:layout_width="78dp"
+        android:layout_height="27dp"
+        android:text="健康打卡"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:background="@drawable/setbar_mm"
+        android:textColor="@color/pure_white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/no_mark"
+        android:layout_width="78dp"
+        android:layout_height="27dp"
+        android:text="不可打开"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:background="@drawable/setbar_no"
+        android:textColor="@color/pure_white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/already_mark"
+        android:layout_width="78dp"
+        android:layout_height="27dp"
+        android:text="已打卡"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:background="@drawable/setbar_already"
+        android:textColor="@color/pure_white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg" />
+
+
+
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/easyRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg"/>
+
+
+</android.support.constraint.ConstraintLayout>

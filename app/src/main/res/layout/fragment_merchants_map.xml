@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/top_back_title_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <com.amap.api.maps2d.MapView
+    android:id="@+id/mapView"
+    android:layout_width="0dp"
+    android:layout_height="320dp"
+    android:layout_marginRight="0dp"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/include2"
+    android:layout_marginTop="0dp"
+    android:layout_marginLeft="0dp"
+    app:layout_constraintLeft_toLeftOf="parent"/>
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:padding="15dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapView"
+        android:text="百忍堂"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:background="@color/colorPrimary"/>
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        android:text="百忍堂"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:background="@color/colorPrimary"/>
+    <TextView
+        android:id="@+id/tv_lastaddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+      android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_address"
+        android:text="百忍堂"
+        android:drawableLeft="@mipmap/icon_address"
+        android:drawablePadding="5dp"
+        android:textColor="@color/black_transparent"
+        android:textSize="12sp"
+        android:background="@color/pure_white"/>
+
+    <TextView
+        android:id="@+id/tv_call"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:drawableLeft="@mipmap/icon_call"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_lastaddress"
+        android:text="百忍堂"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:textColor="@color/black_transparent"
+        android:textSize="12sp"
+        android:background="@color/pure_white"/>
+
+
+
+</android.support.constraint.ConstraintLayout>

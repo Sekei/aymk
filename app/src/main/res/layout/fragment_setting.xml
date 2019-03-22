@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/top_back_title_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/account"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/pure_white"
+        android:drawableRight="@drawable/me_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="账号与安全"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+    <TextView
+        android:id="@+id/meaasge"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/pure_white"
+        android:drawableRight="@drawable/me_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="消息提醒"
+        android:visibility="gone"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        android:drawableRight="@drawable/me_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="地址管理"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/meaasge" />
+
+    <TextView
+        android:id="@+id/help"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        android:drawableRight="@drawable/me_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="获取帮助"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
+
+    <TextView
+        android:id="@+id/suggest"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        android:drawableRight="@drawable/me_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="意见反馈"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/help" />
+
+
+    <TextView
+        android:id="@+id/about_us"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        android:drawableRight="@drawable/me_right"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="关于我们"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suggest" />
+
+    <TextView
+        android:id="@+id/clean"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="清除缓存"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/about_us" />
+
+    <TextView
+        android:id="@+id/cache_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:text="580M"
+        android:textColor="@color/colorTextG9"
+        app:layout_constraintBottom_toBottomOf="@+id/clean"
+        app:layout_constraintRight_toRightOf="@+id/clean"
+        app:layout_constraintTop_toTopOf="@+id/clean" />
+
+
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="退出登录"
+        android:textColor="@color/pure_white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

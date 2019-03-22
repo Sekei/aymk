@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pure_white"
+    android:orientation="vertical">
+
+    <com.live.tv.util.TranslucentScrollView
+        android:id="@+id/translucentScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="0dp"
+                android:layout_height="225dp"
+                android:scaleType="fitXY"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/mine_pic_banner" />
+
+            <TextView
+                android:id="@+id/imgTop"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/bg_3"
+                app:layout_constraintBottom_toBottomOf="@+id/img"
+                app:layout_constraintLeft_toLeftOf="@+id/img"
+                app:layout_constraintRight_toRightOf="@+id/img"
+                app:layout_constraintTop_toTopOf="@+id/img"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/focus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="32dp"
+                app:layout_constraintRight_toRightOf="@+id/img"
+                app:layout_constraintTop_toTopOf="@+id/img"
+                app:srcCompat="@drawable/mine_icon_follow" />
+
+            <ImageView
+                android:id="@+id/ivLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:padding="15dp"
+                app:layout_constraintLeft_toLeftOf="@+id/img"
+                app:layout_constraintTop_toTopOf="@+id/img"
+                app:srcCompat="@drawable/bili_player_back_button" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="香飘飘"
+                android:textColor="@color/pure_white"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="@+id/img"
+                app:layout_constraintRight_toRightOf="@+id/img"
+                app:layout_constraintTop_toTopOf="@+id/img" />
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="195dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imgTop"
+                app:srcCompat="@drawable/avatar" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:text="香飘飘"
+                android:textColor="@color/pure_white"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imgTop"
+                app:layout_constraintRight_toLeftOf="@+id/avatar" />
+
+
+            <com.jude.easyrecyclerview.EasyRecyclerView
+                android:id="@+id/easyRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgTop" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </com.live.tv.util.TranslucentScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

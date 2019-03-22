@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_new"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+    <EditText
+        android:id="@+id/et_new_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:hint="请输入标题"
+        android:textSize="18sp"
+        android:textColor="@color/gray"
+        android:padding="16dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp">
+
+        <TextView
+            android:id="@+id/tv_new_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/tv_new_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <com.live.tv.uditTextandImage.RichTextEditor
+        android:id="@+id/et_new_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rt_editor_image_height="500"
+        app:rt_editor_image_bottom="10"
+        app:rt_editor_text_init_hint="在这里输入内容"
+        app:rt_editor_text_size="16"
+        app:rt_editor_text_color="@color/gray"/>
+
+</LinearLayout>

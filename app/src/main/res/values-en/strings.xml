@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">iE-MK</string>
+
+    <string name="press_again_to_exit">press_again_to_exit</string>
+
+    <string name="scoll_aware_fab_behavior">.view.ScollAwareFABBehavior</string>
+    <string name="welcome_tips">welcome iE-MK</string>
+    <string name="swipe_down_to_refresh">No message</string>
+    <string name="tab_home">Home</string>
+    <string name="tab_goods">Shop</string>
+    <string name="tab_car">Commounicate</string>
+    <string name="tab_mine">Mine</string>
+
+
+    <string name="message_left">社区</string>
+    <string name="message_right">群聊</string>
+
+    <string name="dt">动态</string>
+    <string name="qy">圈友</string>
+
+    <string name="hot_search_keyword">热门搜索</string>
+    <string name="search_hostory">历史记录</string>
+
+
+    <!-- 测试 -->
+    <string name="test_description">测试说明</string>
+
+
+    <!-- 搜索 -->
+    <string name="hint_search">请输入关键字进行搜索</string>
+    <string name="tips_search_keywords_cannot_be_empty">搜索关键字不能为空</string>
+
+    <!-- permission check-->
+    <string name="float_window_not_allow">悬浮窗权限未开启 请在应用-权限中打开悬浮窗权限</string>
+    <string name="network_unavailable">没有网络哦</string>
+    <string name="mine_order">我的订单</string>
+    <string name="mine_order_all">查看全部订单</string>
+    <string name="nopayment">待支付</string>
+    <string name="nouse">待使用</string>
+    <string name="all_order">全部订单</string>
+    <string name="no_jd">待接单</string>
+    <string name="yes_jd">已接单</string>
+    <string name="yes_use">已使用</string>
+    <string name="black_pay">退款</string>
+    <string name="noevaluate">待评价</string>
+    <string name="customer">售后</string>
+    <string name="test_descripe">• 体质测试，将九大体质测试的问题进行标记，然后打乱进行测试。\n• 不同体质测试的问题使用不同的标记，通过用户选择“是”题目的总数来判定用户是什么体质，当选择“是”的问题总数 >60% 时就判定该用户为此体质（主要问题），其他小于百分之60的为次要问题；\n• 总结：该用户是什么体质\n• 继续测试原因（通过体质来匹配问题）\n• 测试完成后得出结论，此体质是什么原因造成的，有一份专业的报告\n• 还会得出这种体质会有什么不好的后果\n• 将调理方式进行页面展示，不同的调理方式显示不同的页面，通过按钮跳转来进行查看。</string>
+    <string name="descripe">体验卡:\n健康知识资讯\n体检报告解读\n健康管理方案建立\n健康报告指导\n营养指导、运动指导（1次）</string>
+    <string name="attention">1.该文本框左右边距相同\n2.该文本内容后台须支持可配\n3.提交咨询后24小时内若无回应则原路退款至支付账户</string>
+    <string name="goods">商品</string>
+    <string name="shop">商家</string>
+    <string name="house">家政</string>
+</resources>

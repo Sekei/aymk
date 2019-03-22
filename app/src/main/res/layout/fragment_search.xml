@@ -1,0 +1,198 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100"
+        android:background="@color/colorAccent">
+
+        <ImageView
+            android:id="@+id/ivLeft"
+            android:layout_width="@dimen/x100"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/x30"
+            android:src="@drawable/back" />
+
+        <EditText
+            android:id="@+id/edit_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/setbar_fh"
+            android:drawablePadding="6dp"
+            android:hint="请输入商品名称"
+            android:imeOptions="actionSearch"
+            android:padding="6dp"
+            android:singleLine="true"
+            android:textSize="@dimen/list_live_name_size" />
+
+        <TextView
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/y20"
+            android:paddingLeft="@dimen/y10"
+            android:paddingRight="@dimen/y10"
+            android:scaleType="center"
+            android:text="搜索"
+            android:textColor="@color/pure_white"
+
+            />
+
+    </LinearLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pure_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_doctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/home_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/pure_white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="医生"
+                    android:textColor="@color/colorTextG3"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/doctor_recycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp" />
+
+                <TextView
+                    android:id="@+id/more_doctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/pure_white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="更多医生 >"
+                    android:textColor="@color/colorTextG3"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_merchants"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/home_bg"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/home_bg" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/pure_white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="门店"
+                    android:textColor="@color/colorTextG3"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/merchants_recycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp" />
+
+                <TextView
+                    android:id="@+id/more_merchants"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/pure_white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="更多门店 >"
+                    android:textColor="@color/colorTextG3"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_good"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:background="@color/home_bg"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/home_bg" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/pure_white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="商品"
+                    android:textColor="@color/colorTextG3"
+                    android:textSize="14sp" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/good_recycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp" />
+
+                <TextView
+                    android:id="@+id/more_good"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@color/pure_white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="更多商品 >"
+                    android:textColor="@color/colorTextG3"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>

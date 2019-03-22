@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/home_tittle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    android:id="@+id/convenietnBanner"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"></com.bigkoo.convenientbanner.ConvenientBanner>
+
+                <com.jude.easyrecyclerview.EasyRecyclerView
+                    android:id="@+id/class_recycleView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/convenietnBanner"></com.jude.easyrecyclerview.EasyRecyclerView>
+
+
+                <TextView
+                    android:id="@+id/hot_tittle"
+                    android:layout_width="0dp"
+                    android:layout_height="42dp"
+                    android:text="热销商品"
+                    android:textSize="12sp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/colorTextG3"
+                    android:background="@color/pure_white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/class_recycleView"/>
+
+                <TextView
+                    android:id="@+id/more_hot_good"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="更多"
+                    android:layout_marginRight="15dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorTextG9"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/doctor_more_right"
+                    app:layout_constraintRight_toRightOf="@+id/hot_tittle"
+                    app:layout_constraintTop_toTopOf="@+id/hot_tittle"
+                    app:layout_constraintBottom_toBottomOf="@+id/hot_tittle"
+                    />
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/hot_recycleView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/pure_white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hot_tittle" />
+
+
+                <TextView
+                    android:id="@+id/recommend_tittle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="推荐商品"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textColor="@color/colorTextG3"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/hot_recycleView"
+                    />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorTextGC"
+                    android:layout_marginRight="30dp"
+                    app:layout_constraintRight_toLeftOf="@+id/recommend_tittle"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/recommend_tittle"
+                    app:layout_constraintBottom_toBottomOf="@+id/recommend_tittle"
+                    />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="@color/colorTextGC"
+                    app:layout_constraintLeft_toRightOf="@+id/recommend_tittle"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/recommend_tittle"
+                    app:layout_constraintBottom_toBottomOf="@+id/recommend_tittle"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recommend_recycleView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/pure_white"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recommend_tittle"></android.support.v7.widget.RecyclerView>
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</android.support.constraint.ConstraintLayout>

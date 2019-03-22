@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginRight="53dp"
+        android:background="@drawable/setbar_fh"
+        android:drawableLeft="@drawable/home_icon_search"
+        android:drawablePadding="10dp"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="30dp"
+        android:text="医生/门店/商品"
+        android:textColor="@color/colorTextG9"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/mLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:drawablePadding="5dp"
+        android:drawableRight="@drawable/home_loca_down"
+        android:padding="15dp"
+        android:text="上海"
+        android:visibility="gone"
+        android:maxLength="2"
+        android:ellipsize="end"
+        android:textColor="@color/pure_white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_search"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_search"
+        app:layout_constraintTop_toTopOf="@+id/tv_search" />
+
+    <ImageView
+        android:id="@+id/msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_search"
+        app:layout_constraintLeft_toRightOf="@+id/tv_search"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_search"
+        app:srcCompat="@drawable/home_icon_chat" />
+
+
+</android.support.constraint.ConstraintLayout>

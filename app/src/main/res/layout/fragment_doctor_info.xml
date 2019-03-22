@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/all_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/top_back_title_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_ivAvatar"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="头像"
+        android:textColor="@color/colorTextG6"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivAvatar"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:src="@drawable/avatar"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_ivAvatar"
+        app:layout_constraintRight_toRightOf="@+id/tv_ivAvatar"
+        app:layout_constraintTop_toTopOf="@+id/tv_ivAvatar" />
+
+    <TextView
+        android:id="@+id/nameTittle"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="姓名"
+        android:textColor="@color/colorTextG6"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ivAvatar" />
+
+    <EditText
+        android:background="@color/pure_white"
+        android:gravity="end|center_vertical"
+        android:id="@+id/name"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="24dp"
+        tools:text="海绵绵宝宝"
+        android:textColor="@color/colorTextG6"
+        app:layout_constraintBottom_toBottomOf="@+id/nameTittle"
+        app:layout_constraintRight_toRightOf="@+id/nameTittle"
+        app:layout_constraintTop_toTopOf="@+id/nameTittle" />
+
+    <TextView
+        android:id="@+id/sexTittle"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="性别"
+        android:textColor="@color/colorTextG6"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameTittle" />
+
+    <TextView
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/me_right"
+        android:id="@+id/sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="24dp"
+        tools:text="男"
+        android:textColor="@color/colorTextG6"
+        app:layout_constraintBottom_toBottomOf="@+id/sexTittle"
+        app:layout_constraintRight_toRightOf="@+id/sexTittle"
+        app:layout_constraintTop_toTopOf="@+id/sexTittle"
+        app:layout_constraintVertical_bias="0.515" />
+
+
+        <TextView
+        android:id="@+id/birthdayTittle"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="出生日期"
+        android:textColor="@color/colorTextG6"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sexTittle" />
+
+    <TextView
+        android:drawablePadding="8dp"
+        android:drawableRight="@drawable/me_right"
+        android:id="@+id/birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="24dp"
+        tools:text="1990-12-12"
+        android:textColor="@color/colorTextG6"
+        app:layout_constraintBottom_toBottomOf="@+id/birthdayTittle"
+        app:layout_constraintRight_toRightOf="@+id/birthdayTittle"
+        app:layout_constraintTop_toTopOf="@+id/birthdayTittle" />
+
+    <TextView
+        android:id="@+id/phoneTittle"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="手机号"
+        android:textColor="@color/colorTextG6"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birthdayTittle" />
+
+    <EditText
+        android:gravity="end|center_vertical"
+        android:background="@color/pure_white"
+        android:id="@+id/phone"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="24dp"
+        tools:text="13234533453"
+        android:textColor="@color/colorTextG6"
+        app:layout_constraintBottom_toBottomOf="@+id/phoneTittle"
+        app:layout_constraintRight_toRightOf="@+id/phoneTittle"
+        app:layout_constraintTop_toTopOf="@+id/phoneTittle" />
+
+
+
+
+
+
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/ok"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="保存修改"
+        android:textColor="@color/pure_white"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_parentview"
+    android:layout_width="@dimen/x140"
+
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:src="@drawable/mine_niubi"
+        android:id="@+id/img"
+        android:layout_width="@dimen/x100"
+        android:layout_height="@dimen/x100"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y10" />
+
+    <ImageView
+        android:id="@+id/is_running"
+        android:layout_width="@dimen/x45"
+        android:layout_height="@dimen/x45"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:src="@drawable/pop_gift_lian" />
+
+    <ImageView
+        android:id="@+id/xuanzhong"
+        android:layout_width="@dimen/x45"
+        android:layout_height="@dimen/x45"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/pop_gift_choose"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/liwu_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y5"
+        android:drawablePadding="@dimen/x10"
+        android:maxLength="5"
+        android:maxLines="1"
+        android:text="200"
+        android:textColor="@color/white"
+        android:textSize="@dimen/y22" />
+
+    <TextView
+        android:id="@+id/count_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/liwu_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/y5"
+        android:drawablePadding="@dimen/x10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/y28"
+        tools:text="1" />
+</RelativeLayout>

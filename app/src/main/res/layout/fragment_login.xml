@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pure_white"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include19"
+        layout="@layout/top_back_title_bar_two"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include19"
+        app:srcCompat="@drawable/test_result_logo" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/setbar_zb"
+        android:gravity="center_vertical"
+        android:hint="手机号"
+        android:inputType="number"
+        android:maxLength="11"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorTextG3"
+        android:textColorHint="@color/colorTextGC"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img" />
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/setbar_zb"
+        android:gravity="center_vertical"
+        android:hint="密码"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorTextG3"
+        android:textColorHint="@color/colorTextGC"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+    <TextView
+        android:id="@+id/ok"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/setbar_mm"
+        android:gravity="center"
+        android:text="登录"
+        android:textColor="@color/pure_white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwd" />
+
+    <TextView
+        android:id="@+id/forgotPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="忘记密码"
+        android:textColor="@color/colorTextG9"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="@+id/ok"
+        app:layout_constraintTop_toBottomOf="@+id/ok" />
+
+    <TextView
+        android:id="@+id/registed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="立即注册"
+        android:textColor="@color/colorPrimary"
+        android:textSize="13sp"
+        app:layout_constraintRight_toRightOf="@+id/ok"
+        app:layout_constraintTop_toBottomOf="@+id/ok" />
+
+
+
+    <ImageView
+        android:visibility="visible"
+        android:id="@+id/qq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/wechat"
+        app:srcCompat="@drawable/login_qq" />
+
+    <ImageView
+        android:visibility="visible"
+        android:id="@+id/wechat"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        app:layout_constraintLeft_toRightOf="@+id/qq"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/qq"
+        app:srcCompat="@drawable/login_weixin" />
+
+    <TextView
+        android:visibility="visible"
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OR"
+        android:textSize="15sp"
+        android:textColor="@color/tx_5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/qq" />
+
+    <View
+        android:visibility="visible"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/bg_9"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/or"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/or"
+        app:layout_constraintRight_toLeftOf="@+id/or"
+         />
+
+
+    <View
+        android:visibility="visible"
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/bg_9"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/or"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/or"
+        app:layout_constraintLeft_toRightOf="@+id/or"
+        />
+
+    <ImageView
+        android:id="@+id/seePwd"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:paddingRight="15dp"
+        android:paddingLeft="15dp"
+        app:srcCompat="@drawable/register_eye_closed"
+        app:layout_constraintRight_toRightOf="@+id/pwd"
+        app:layout_constraintBottom_toBottomOf="@+id/pwd"
+        app:layout_constraintTop_toTopOf="@+id/pwd"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

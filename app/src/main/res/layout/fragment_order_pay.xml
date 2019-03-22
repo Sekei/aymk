@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+
+    <View
+        android:id="@+id/bg"
+        android:layout_width="0dp"
+        android:layout_height="220dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:background="@drawable/setbar_dt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="请输入支付密码"
+        android:textColor="@color/colorTextG3"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/line"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="@+id/bg" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="45dp"
+        android:background="@color/e5"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="@+id/bg" />
+
+    <TextView
+        android:id="@+id/total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="0dp"
+        android:text="总计"
+        android:textColor="@color/tx_3"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toTopOf="@+id/line2"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+
+
+    <TextView
+        android:layout_marginRight="16dp"
+        android:id="@+id/total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¥0"
+        android:textColor="@color/tx_2"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/total"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toTopOf="@+id/total" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="45dp"
+        android:background="@color/e5"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <View
+        android:id="@+id/bg_pwd"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:background="@drawable/bg_grey_frame"
+        app:layout_constraintBottom_toTopOf="@+id/line3"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+    <com.live.tv.util.PassWordEditText
+        android:id="@+id/pwd_et"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:inputType="number"
+        android:maxLength="6"
+        app:layout_constraintBottom_toTopOf="@+id/line3"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+
+    <View
+        android:id="@+id/line3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="75dp"
+        android:background="@color/e5"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+
+    <TextView
+        android:id="@+id/close"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="取消"
+        android:textColor="@color/colorTextG9"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bg"
+        app:layout_constraintLeft_toLeftOf="@+id/bg"
+        app:layout_constraintRight_toRightOf="@+id/bg"
+        app:layout_constraintTop_toBottomOf="@+id/line3" />
+
+</android.support.constraint.ConstraintLayout>

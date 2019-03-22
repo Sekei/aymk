@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/home_bg"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/bg_one"
+        android:layout_width="0dp"
+        android:layout_height="101dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:text="都教授"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/img"
+        app:layout_constraintTop_toTopOf="@+id/img" />
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@+id/bg_one"
+        app:layout_constraintTop_toTopOf="@+id/bg_one"
+       android:src="@drawable/ava_defaultx" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:text="主任医师"
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/name"
+        app:layout_constraintLeft_toRightOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:text="精神康复科"
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@+id/img"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/hospital"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="同济大学第一附属医院"
+        android:textColor="@color/colorTextG6"
+        android:textSize="12sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/department"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/department"
+        android:layout_marginTop="0dp" />
+
+    <TextView
+        android:id="@+id/Indications"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="主治：心内科，心外科，玛丽苏康复科，健康膳食疗养科，心理治疗干预，PTSD诊疗"
+        android:textColor="@color/colorTextG9"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toRightOf="@+id/img"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/department"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+
+    <View
+        android:id="@+id/bg_two"
+        android:layout_width="0dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="1dp"
+        android:background="@color/pure_white"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_one" />
+
+    <View
+        android:id="@+id/line_one"
+        android:layout_width="1dp"
+        android:layout_height="22dp"
+        android:background="@color/e5"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_two"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/line_two"
+        app:layout_constraintTop_toTopOf="@+id/bg_two" />
+
+    <View
+        android:id="@+id/line_two"
+        android:layout_width="1dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/e5"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_two"
+        app:layout_constraintLeft_toRightOf="@+id/line_one"
+        app:layout_constraintRight_toRightOf="@+id/bg_two"
+        app:layout_constraintTop_toTopOf="@+id/bg_two" />
+
+    <TextView
+        android:id="@+id/askNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="99999"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintLeft_toLeftOf="@+id/bg_two"
+        app:layout_constraintRight_toLeftOf="@+id/line_one"
+        app:layout_constraintTop_toTopOf="@+id/bg_two" />
+
+    <TextView
+        android:id="@+id/ask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="咨询人次"
+        android:textColor="@color/colorTextG6"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toLeftOf="@+id/bg_two"
+        app:layout_constraintRight_toLeftOf="@+id/line_one"
+        app:layout_constraintTop_toBottomOf="@+id/askNum" />
+
+    <TextView
+        android:id="@+id/praiseNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="99999"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/line_one"
+        app:layout_constraintRight_toLeftOf="@+id/line_two"
+        app:layout_constraintTop_toTopOf="@+id/askNum" />
+
+    <TextView
+        android:id="@+id/praise"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="好评率"
+        android:textColor="@color/colorTextG6"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toRightOf="@+id/line_one"
+        app:layout_constraintRight_toLeftOf="@+id/line_two"
+        app:layout_constraintTop_toBottomOf="@+id/praiseNum" />
+
+    <TextView
+        android:id="@+id/focusNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="99999"
+        android:textColor="@color/colorPrimary"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/line_two"
+        app:layout_constraintRight_toRightOf="@+id/bg_two"
+        app:layout_constraintTop_toTopOf="@+id/praiseNum" />
+
+    <TextView
+        android:id="@+id/focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="关注人数"
+        android:textColor="@color/colorTextG6"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toRightOf="@+id/line_two"
+        app:layout_constraintRight_toRightOf="@+id/bg_two"
+        app:layout_constraintTop_toBottomOf="@+id/focusNum" />
+
+    <TextView
+        android:id="@+id/requestOneBg"
+        android:layout_width="0dp"
+        android:layout_height="126dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/bg_1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/requestTwoBg"
+        app:layout_constraintTop_toBottomOf="@+id/bg_two" />
+
+    <TextView
+        android:id="@+id/requestTwoBg"
+        android:layout_width="0dp"
+        android:layout_height="126dp"
+        android:layout_marginLeft="1dp"
+        android:background="@color/pure_white"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/requestOneBg"
+        app:layout_constraintRight_toLeftOf="@+id/requestThreeBg"
+        app:layout_constraintTop_toTopOf="@+id/requestOneBg" />
+
+    <TextView
+        android:id="@+id/requestThreeBg"
+        android:layout_width="0dp"
+        android:layout_height="126dp"
+        android:layout_marginLeft="1dp"
+        android:background="@color/pure_white"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/requestTwoBg"
+        app:layout_constraintRight_toLeftOf="@+id/requestFourBg"
+        app:layout_constraintTop_toTopOf="@+id/requestTwoBg" />
+
+    <TextView
+        android:id="@+id/requestFourBg"
+        android:layout_width="0dp"
+        android:layout_height="126dp"
+        android:layout_marginLeft="1dp"
+        android:background="@color/pure_white"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/requestThreeBg"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/requestThreeBg" />
+
+
+    <TextView
+        android:id="@+id/requestOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/doctor_consult_text"
+        android:text="图文咨询"
+        android:textColor="@color/colorTextG3"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/onePrice"
+        app:layout_constraintLeft_toLeftOf="@+id/requestOneBg"
+        app:layout_constraintRight_toLeftOf="@+id/requestTwoBg"
+        app:layout_constraintTop_toTopOf="@+id/requestOneBg" />
+
+    <TextView
+        android:id="@+id/requestTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/doctor_consult_phone"
+        android:text="电话咨询"
+        android:textColor="@color/colorTextG3"
+        app:layout_constraintBottom_toTopOf="@+id/twoPrice"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="@+id/requestTwoBg"
+        app:layout_constraintRight_toLeftOf="@+id/requestThreeBg"
+        app:layout_constraintTop_toTopOf="@+id/requestTwoBg" />
+
+    <TextView
+        android:id="@+id/requestThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/doctor_consult_video"
+        android:text="视频咨询"
+        android:textColor="@color/colorTextG3"
+        app:layout_constraintBottom_toTopOf="@+id/threePrice"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="@+id/requestThreeBg"
+        app:layout_constraintRight_toLeftOf="@+id/requestFourBg"
+        app:layout_constraintTop_toTopOf="@+id/requestThreeBg" />
+
+    <TextView
+        android:id="@+id/requestFour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="10dp"
+        android:drawableTop="@drawable/doctor_consult_health"
+        android:text="健康管理"
+        android:textColor="@color/colorTextG3"
+        app:layout_constraintBottom_toTopOf="@+id/fourPrice"
+        app:layout_constraintLeft_toLeftOf="@+id/requestFourBg"
+        app:layout_constraintRight_toRightOf="@+id/requestFourBg"
+        app:layout_constraintTop_toTopOf="@+id/requestFourBg" />
+
+    <TextView
+        android:id="@+id/onePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/requestOneBg"
+        app:layout_constraintLeft_toLeftOf="@+id/requestOne"
+        app:layout_constraintRight_toRightOf="@+id/requestOne"
+        app:layout_constraintTop_toBottomOf="@+id/requestOne" />
+
+    <TextView
+        android:id="@+id/twoPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/requestTwoBg"
+        app:layout_constraintLeft_toLeftOf="@+id/requestTwo"
+        app:layout_constraintRight_toRightOf="@+id/requestTwo"
+        app:layout_constraintTop_toBottomOf="@+id/requestTwo" />
+
+    <TextView
+        android:id="@+id/threePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/requestThreeBg"
+        app:layout_constraintLeft_toLeftOf="@+id/requestThree"
+        app:layout_constraintRight_toRightOf="@+id/requestThree"
+        app:layout_constraintTop_toBottomOf="@+id/requestThree" />
+
+    <TextView
+        android:id="@+id/fourPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/requestFourBg"
+        app:layout_constraintLeft_toLeftOf="@+id/requestFour"
+        app:layout_constraintRight_toRightOf="@+id/requestFour"
+        app:layout_constraintTop_toBottomOf="@+id/requestFour" />
+
+    <TextView
+        android:id="@+id/commentTittle"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/pure_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:text="评价（9999）"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/requestOneBg" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/doctor_more_right"
+        app:layout_constraintTop_toTopOf="@+id/bg_one"
+        app:layout_constraintBottom_toTopOf="@+id/bg_two"
+        android:layout_marginRight="15dp"
+        app:layout_constraintRight_toRightOf="@+id/bg_one" />
+
+
+</android.support.constraint.ConstraintLayout>

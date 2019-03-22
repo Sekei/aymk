@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/bg_8"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+   <TextView
+       android:background="@color/pure_white"
+       android:id="@+id/tv_1"
+       android:gravity="center"
+       android:text="从高到底"
+       android:textColor="@color/colorTextG3"
+       android:textSize="14sp"
+       android:layout_width="match_parent"
+       android:layout_height="40dp" />
+    <View
+        android:background="@color/home_bg"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+    <TextView
+        android:background="@color/pure_white"
+        android:id="@+id/tv_2"
+        android:gravity="center"
+        android:text="从低到高"
+        android:textColor="@color/colorTextG3"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+</LinearLayout>

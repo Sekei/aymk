@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:background="@color/pure_white">
+
+
+    <ImageView
+        android:src="@drawable/pic_defaults"
+        android:scaleType="centerCrop"
+        android:padding="5dp"
+        android:id="@+id/img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorTextG3"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@+id/img"
+        app:layout_constraintRight_toLeftOf="@+id/tv_consult"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="张医生" />
+
+    <TextView
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:id="@+id/tv_department"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/colorTextG6"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toRightOf="@+id/img"
+        app:layout_constraintRight_toLeftOf="@+id/tv_consult"
+        tools:text="科室"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="@+id/img"
+        android:layout_marginBottom="8dp" />
+
+
+
+    <TextView
+        android:id="@+id/tv_consult"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_green"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="取消收藏"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

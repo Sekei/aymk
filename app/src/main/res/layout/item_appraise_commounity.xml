@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/pure_white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="张***"
+        android:paddingLeft="10dp"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2018-12-12"
+        android:paddingRight="10dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_name" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/RadingStyle"
+        android:maxHeight="32dp"
+        android:minHeight="32dp"
+        android:stepSize="0.5"
+        android:isIndicator="true" />
+     <TextView
+         android:id="@+id/tv_content"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         app:layout_constraintLeft_toLeftOf="parent"
+         android:paddingLeft="10dp"
+         android:paddingRight="10dp"
+         android:lines="2"
+         android:ellipsize="end"
+         app:layout_constraintRight_toRightOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/tv_name"
+         android:text="测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据测试数据"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="1dp"
+    android:layout_marginTop="10dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/recycler_view"
+    android:background="@color/home_bg"/>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/include3"
+        layout="@layout/top_back_title_bar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.jude.easyrecyclerview.EasyRecyclerView
+        android:id="@+id/easyRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/ok">
+
+
+    </com.jude.easyrecyclerview.EasyRecyclerView>
+
+
+    <TextView
+        android:id="@+id/pay"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="送心意"
+        android:textSize="10sp"
+        android:textColor="@color/colorTextG6"
+        android:background="@color/pure_white"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:drawableTop="@drawable/doctor_consult_money"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/focus" />
+
+    <TextView
+        android:id="@+id/focus"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="关注"
+        android:textSize="10sp"
+        android:paddingTop="5dp"
+        android:textColor="@color/colorTextG6"
+        android:background="@color/pure_white"
+        android:gravity="center"
+        android:drawableTop="@drawable/doctor_consult_follow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/pay"
+        app:layout_constraintRight_toLeftOf="@+id/ok" />
+
+    <TextView
+        android:id="@+id/ok"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:text="图文咨询（9.9元／次）"
+        android:textSize="16sp"
+        android:textColor="@color/pure_white"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="4"
+        app:layout_constraintLeft_toRightOf="@+id/focus"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
