@@ -47,7 +47,6 @@ import io.reactivex.schedulers.Schedulers;
 
 public class VoiceVIdeoCallFragment extends BaseFragment<IVoiceVideoView, VoiceVideoPresenter> implements IVoiceVideoView {
 
-
     @BindView(R.id.img_bg)
     ImageView imgBg;
     @BindView(R.id.img_face)
@@ -71,7 +70,8 @@ public class VoiceVIdeoCallFragment extends BaseFragment<IVoiceVideoView, VoiceV
     private ConsultBean consultBean;
     private String consult_type;
     private String role;
-   private Map<String,String> pushmap=new HashMap<>();
+    private Map<String, String> pushmap = new HashMap<>();
+
     public static VoiceVIdeoCallFragment newInstance(ConsultBean consultBean, String role) {
 
         Bundle args = new Bundle();
@@ -92,6 +92,13 @@ public class VoiceVIdeoCallFragment extends BaseFragment<IVoiceVideoView, VoiceV
             tintManager.setStatusBarTintResource(R.color.bg_3);//状态栏所需颜色
             // tintManager.setTintColor(R.color.pure_white);//文字颜色
         }
+        App.getInstance().mCallback = true;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        tvCall.setVisibility(App.getInstance().mCallback ? View.VISIBLE : View.INVISIBLE);
     }
 
     @Override
@@ -152,7 +159,6 @@ public class VoiceVIdeoCallFragment extends BaseFragment<IVoiceVideoView, VoiceV
                     .diskCacheStrategy(DiskCacheStrategy.ALL).into(imgFace);
             tvName.setText(consultBean.getDoctor_name());
             textView45.setText(consultBean.getDoctor_sex() + "  " + consultBean.getDoctor_age());
-
         }
         tvTime.setText(consultBean.getConsult_start_time());
         tv_end_time.setText(consultBean.getConsult_end_time());
@@ -160,10 +166,10 @@ public class VoiceVIdeoCallFragment extends BaseFragment<IVoiceVideoView, VoiceV
         start_date = TimeUtils.StringToDate(consultBean.getConsult_start_time());
         end_date = TimeUtils.StringToDate(consultBean.getConsult_end_time());
 
-        if (userBean!=null&&userBean.getDoctor_type()!=null){
+        if (userBean != null && userBean.getDoctor_type() != null) {
             if ("1".equals(userBean.getDoctor_type())) {
                 tvCall.setText("立即拨号");
-            }else {
+            } else {
                 tvCall.setText("等待回复");
             }
         }
@@ -210,12 +216,12 @@ public class VoiceVIdeoCallFragment extends BaseFragment<IVoiceVideoView, VoiceV
                         } else {
                             ext_content1 = "0";
                         }
-                       try {
-                           pushmap.put("hx_account",consultBean.getHx_account());
-                           Umengpush(pushmap);
-                       }catch (Exception e){
-                           e.printStackTrace();
-                       }
+                        try {
+                            pushmap.put("hx_account", consultBean.getHx_account());
+                            Umengpush(pushmap);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
 
 
                         if ("phone".equals(consult_type)) {
@@ -224,7 +230,7 @@ public class VoiceVIdeoCallFragment extends BaseFragment<IVoiceVideoView, VoiceV
                             intent.putExtra("doctor_name", consultBean.getMember_nick_name());
                             intent.putExtra("doctor_img", consultBean.getMember_head_image());
                             intent.putExtra("ext_content", ext_content1 + "," + consultBean.getDoctor_name());
-                             intent.putExtra("consult_record_id",consultBean.getConsult_record_id());
+                            intent.putExtra("consult_record_id", consultBean.getConsult_record_id());
                             intent.putExtra("isComingCall", false);
                             startActivity(intent);
                         } else if ("video".equals(consult_type)) {
@@ -233,7 +239,7 @@ public class VoiceVIdeoCallFragment extends BaseFragment<IVoiceVideoView, VoiceV
                                     .putExtra("doctor_name", consultBean.getDoctor_name())
                                     .putExtra("doctor_name", consultBean.getMember_nick_name())
                                     .putExtra("doctor_img", consultBean.getMember_head_image())
-                                    .putExtra("consult_record_id",consultBean.getConsult_record_id())
+                                    .putExtra("consult_record_id", consultBean.getConsult_record_id())
                                     .putExtra("ext_content", ext_content1 + "," + consultBean.getDoctor_name())
                                     .putExtra("isComingCall", false));
 
@@ -295,7 +301,7 @@ public class VoiceVIdeoCallFragment extends BaseFragment<IVoiceVideoView, VoiceV
 
     private void Umengpush(Map<String, String> parmer) {
 
-        ((App)getActivity().getApplication()).getAppCommponent().getAPIService()
+        ((App) getActivity().getApplication()).getAppCommponent().getAPIService()
                 .DeviceTokensHuanXin(parmer)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

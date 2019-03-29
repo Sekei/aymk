@@ -76,10 +76,10 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
 
 
     @Override
-    protected void onCreate( Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(savedInstanceState != null){
+        if (savedInstanceState != null) {
             finish();
             return;
         }
@@ -116,7 +116,7 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
         doctor_name = getIntent().getStringExtra("doctor_name");
         doctor_img = getIntent().getStringExtra("doctor_img");
         ext_content = getIntent().getStringExtra("ext_content");
-        consultrecordid=getIntent().getStringExtra("consult_record_id");
+        consultrecordid = getIntent().getStringExtra("consult_record_id");
         isInComingCall = getIntent().getBooleanExtra("isComingCall", false);
         nickTextView.setText(doctor_name);
         Glide.with(this).load(Constants.BASE_URL + doctor_img)
@@ -151,7 +151,6 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
         handler.postDelayed(timeoutHangup, MAKE_CALL_TIMEOUT);
 
     }
-
 
 
     /**
@@ -198,7 +197,7 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
                                         soundPool.stop(streamID);
                                 } catch (Exception e) {
                                 }
-                                if(!isHandsfreeState)
+                                if (!isHandsfreeState)
                                     closeSpeakerOn();
                                 //show relay or direct call, for testing purpose
 //                                ((TextView)findViewById(R.id.tv_is_p2p)).setText(EMClient.getInstance().callManager().isDirectCall()
@@ -208,7 +207,7 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
                                 // duration start
                                 chronometer.start();
                                 String str4 = getResources().getString(R.string.In_the_call);
-                                isgoning=true;
+                                isgoning = true;
                                 callStateTextView.setText(str4);
                                 callingState = CallingState.NORMAL;
                                 startMonitor();
@@ -219,9 +218,9 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
                         runOnUiThread(new Runnable() {
                             public void run() {
                                 netwrokStatusVeiw.setVisibility(View.VISIBLE);
-                                if(error == CallError.ERROR_NO_DATA){
+                                if (error == CallError.ERROR_NO_DATA) {
                                     netwrokStatusVeiw.setText("没有通话数据");
-                                }else{
+                                } else {
                                     netwrokStatusVeiw.setText("网络不稳定");
                                 }
                             }
@@ -306,15 +305,14 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
                                 } else if (fError == CallError.ERROR_NORESPONSE) {
                                     callingState = CallingState.NO_RESPONSE;
                                     callStateTextView.setText(st6);
-                                } else if (fError == CallError.ERROR_LOCAL_SDK_VERSION_OUTDATED || fError == CallError.ERROR_REMOTE_SDK_VERSION_OUTDATED){
+                                } else if (fError == CallError.ERROR_LOCAL_SDK_VERSION_OUTDATED || fError == CallError.ERROR_REMOTE_SDK_VERSION_OUTDATED) {
                                     callingState = CallingState.VERSION_NOT_SAME;
                                     callStateTextView.setText("通话协议版本不一致");
                                 } else {
                                     if (isRefused) {
                                         callingState = CallingState.REFUSED;
                                         callStateTextView.setText(st1);
-                                    }
-                                    else if (isAnswered) {
+                                    } else if (isAnswered) {
                                         callingState = CallingState.NORMAL;
                                         if (endCallTriggerByMe) {
 //                                        callStateTextView.setText(st7);
@@ -329,7 +327,7 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
                                             if (callingState != CallingState.NORMAL) {
                                                 callingState = CallingState.CANCELLED;
                                                 callStateTextView.setText(st10);
-                                            }else {
+                                            } else {
                                                 callStateTextView.setText(st11);
                                             }
                                         }
@@ -379,6 +377,7 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
                 builder.setMessage("是否确认挂断？");
                 builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        App.getInstance().mCallback = false;
                         hangupBtn.setEnabled(false);
                         chronometer.stop();
                         endCallTriggerByMe = true;
@@ -433,7 +432,7 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
 
     @Override
     protected void onDestroy() {
-      //  DemoHelper.getInstance().isVoiceCalling = false;
+        //  DemoHelper.getInstance().isVoiceCalling = false;
         stopMonitor();
         super.onDestroy();
     }
@@ -446,7 +445,7 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
     /**
      * for debug & testing, you can remove this when release
      */
-    void startMonitor(){
+    void startMonitor() {
         monitor = true;
         new Thread(new Runnable() {
             public void run() {
@@ -456,7 +455,7 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
 //                                ? R.string.direct_call : R.string.relay_call);
                     }
                 });
-                while(monitor){
+                while (monitor) {
                     try {
                         Thread.sleep(1500);
                     } catch (InterruptedException e) {
@@ -469,9 +468,10 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
     void stopMonitor() {
 
     }
+
     private void Networkequest(Map<String, String> parmer, final String str) {
 
-        ((App)VoiceCallActivity.this.getApplication()).getAppCommponent().getAPIService()
+        ((App) VoiceCallActivity.this.getApplication()).getAppCommponent().getAPIService()
                 .updateConsultState(parmer)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -497,6 +497,7 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
                         LogUtils.e("Response:" + userBeanHttpResult);
                         if (userBeanHttpResult != null) {
                             if (!TextUtils.isEmpty(str) && str.equals("1")) {
+                                App.getInstance().mCallback = false;
                                 ToastUtils.showToast(VoiceCallActivity.this, "结束咨询");
                                 EventBus.getDefault().post(new FirstEvent("close_advisory"));
                                 //结束咨询 删除聊天记录
@@ -514,7 +515,8 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
 
     private void changeData() {
         UserBean userBean1 = SpSingleInstance.getSpSingleInstance().getUserBean();
-        if ("1".equals(userBean1.getDoctor_type())&&isgoning){
+        if ("1".equals(userBean1.getDoctor_type()) && isgoning) {
+            App.getInstance().mCallback = false;
             Map<String, String> mMap = new HashMap<>();
             mMap.put("member_id", userBean1.getMember_id());
             mMap.put("member_token", userBean1.getMember_token());
@@ -523,8 +525,6 @@ public class VoiceCallActivity extends CallActivity implements View.OnClickListe
             mMap.put("is_done", "1");
             Networkequest(mMap, "1");
         }
-
-
 
     }
 

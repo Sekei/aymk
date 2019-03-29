@@ -57,9 +57,7 @@ public class AddHealthManageFragment extends BaseFragment<IAddHealthManageView, 
     Unbinder unbinder;
 
     public static AddHealthManageFragment newInstance(HealthManagerBeans healthId) {
-
         AddHealthManageFragment fragment = new AddHealthManageFragment();
-
         fragment.beans = healthId;
         return fragment;
     }
@@ -74,23 +72,20 @@ public class AddHealthManageFragment extends BaseFragment<IAddHealthManageView, 
         languages = getResources().getStringArray(R.array.spinner_content);
 
         if (beans != null) {
-            mtype=beans.getService_title();
+            mtype = beans.getService_title();
+            etPrice.setText(beans.getService_price());
+            editText.setText(beans.getService_desc());
             for (int i = 0; i < languages.length; i++) {
-
                 if (beans.getService_title().equals(languages[i])) {
                     spinner.setSelection(i, true);
                     return;
                 }
-
-                etPrice.setText(beans.getService_price());
-                editText.setText(beans.getService_desc());
             }
 
         }
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 mtype = languages[position];
             }
 
@@ -155,13 +150,10 @@ public class AddHealthManageFragment extends BaseFragment<IAddHealthManageView, 
                 }
                 if (TextUtils.isEmpty(etPrice.getText().toString())) {
                     ToastUtils.showToast(getActivity(), "请输入价格");
-
                     return;
                 }
                 if (TextUtils.isEmpty(editText.getText().toString())) {
                     ToastUtils.showToast(getActivity(), "请输入服务内容");
-
-
                     return;
                 }
 
@@ -171,7 +163,7 @@ public class AddHealthManageFragment extends BaseFragment<IAddHealthManageView, 
                     map.put("member_id", userBean.getMember_id());
                     map.put("member_token", userBean.getMember_token());
                     map.put("service_price", etPrice.getText().toString());
-                    map.put("service_title", mtype);
+                    map.put("service_title", spinner.getSelectedItem().toString());
                     map.put("service_desc", editText.getText().toString());
                     map.put("doctor_id", userBean.getDoctorBean().getDoctor_id());
                     if (beans != null) {

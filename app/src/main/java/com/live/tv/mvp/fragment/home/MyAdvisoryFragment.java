@@ -124,6 +124,7 @@ public class MyAdvisoryFragment extends BaseFragment<IMyAdvisoryView,MyAdvisoryP
                             .putExtra("consult_record_id",consultBean.getConsult_record_id())
                             .putExtra("to_head_image",consultBean.getMember_head_image())
                             .putExtra("to_username",consultBean.getMember_nick_name())
+                            .putExtra("consultation_type","1")
                     );
 
                 }else {

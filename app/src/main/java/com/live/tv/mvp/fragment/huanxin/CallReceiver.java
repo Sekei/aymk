@@ -24,24 +24,24 @@ public class CallReceiver extends BroadcastReceiver {
 
         String callExt = EMClient.getInstance().callManager().getCurrentCallSession().getExt();
 
-        String[] ext=null;
+        String[] ext = null;
         Log.i("dfc", "onReceive: " + callExt);
         try {
-             ext = callExt.split(",");
-            if (ext.length<2){
-                ext=new String[] {"",""};
+            ext = callExt.split(",");
+            if (ext.length < 2) {
+                ext = new String[]{"", ""};
 
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            ext=new String[] {"",""};
+            ext = new String[]{"", ""};
         }
 
         String username = intent.getStringExtra("username");
         String doctor_name = intent.getStringExtra("doctor_name");
-        String  consult_record_id=intent.getStringExtra("consult_record_id");
-
+        String consult_record_id = intent.getStringExtra("consult_record_id");
+        System.out.println("================" + callExt);
         EMLog.i("dfc", "接到视频=====" + username);
         String from = intent.getStringExtra("from");
         //call type
@@ -52,7 +52,7 @@ public class CallReceiver extends BroadcastReceiver {
                     .putExtra("doctor_name", ext[1])
                     .putExtra("doctor_img", ext[0])
                     .putExtra("isComingCall", true)
-                    .putExtra("consult_record_id","")
+                    .putExtra("consult_record_id", "")
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         } else { //voice call
             context.startActivity(new Intent(context, VoiceCallActivity.class)
@@ -60,7 +60,7 @@ public class CallReceiver extends BroadcastReceiver {
                     .putExtra("doctor_img", ext[0])
                     .putExtra("username", from)
                     .putExtra("isComingCall", true)
-                    .putExtra("consult_record_id","")
+                    .putExtra("consult_record_id", "")
                     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
         }
         EMLog.d("CallReceiver", "app received a incoming call");

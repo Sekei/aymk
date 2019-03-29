@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
+import com.king.base.util.ToastUtils;
 import com.live.tv.mvp.fragment.huanxin.ChatActivity;
 import com.ysjk.health.iemk.R;
 import com.live.tv.bean.ConsultBean;
@@ -80,17 +81,18 @@ public class HistoryAdvisoryFragment extends BaseFragment<IMyAdvisoryView,MyAdvi
             public void onItemClick(int position) {
                 ConsultBean consultBean =  adapter.getItem(position);
                 if ("text".equals(consultBean.getConsult_type())){
-                    startActivity(new Intent(getActivity(), ChatActivity.class)
-                            .putExtra("userId",consultBean.getHx_account())
-                            .putExtra("APP_user_name",consultBean.getDoctor_name())
-                            .putExtra("health_record_id",consultBean.getHealth_record_id())
-                            .putExtra("doctor_id",consultBean.getDoctor_id())
-                            .putExtra("consult_record_id",consultBean.getConsult_record_id())
-                            .putExtra("to_head_image",consultBean.getMember_head_image())
-                            .putExtra("to_username",consultBean.getMember_nick_name())
-                    );
+//                    startActivity(new Intent(getActivity(), ChatActivity.class)
+//                            .putExtra("userId",consultBean.getHx_account())
+//                            .putExtra("APP_user_name",consultBean.getDoctor_name())
+//                            .putExtra("health_record_id",consultBean.getHealth_record_id())
+//                            .putExtra("doctor_id",consultBean.getDoctor_id())
+//                            .putExtra("consult_record_id",consultBean.getConsult_record_id())
+//                            .putExtra("to_head_image",consultBean.getMember_head_image())
+//                            .putExtra("to_username",consultBean.getMember_nick_name())
+//                            .putExtra("consultation_type","0")
+//                    );
                 }else {
-                    startVoiceVideoCallFragment(consultBean,"user");
+                    //startVoiceVideoCallFragment(consultBean,"user");
                 }
 //                ConsultBean consultBean=   adapter.getAllData().get(position);
 //                startDoctorDetailFragment(consultBean.getDoctor_id());

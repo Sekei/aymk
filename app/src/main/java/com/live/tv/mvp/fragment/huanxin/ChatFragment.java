@@ -494,21 +494,21 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
         message.setAttribute("from_user_id", userBean.getMember_id());
         message.setAttribute("from_head_image", EaseConstant.BASE_URL + userBean.getMember_head_image());
         message.setAttribute("from_username", userBean.getMember_nick_name());
-      if ("1".equals(userBean.getDoctor_type())) {
-          if (!TextUtils.isEmpty(mstatus) && mstatus.equals("未回复")) {
-              //执行结束咨询的网络请求
-              UserBean userBean1 = SpSingleInstance.getSpSingleInstance().getUserBean();
-              Map<String, String> mMap = new HashMap<>();
-              mMap.put("member_id", userBean1.getMember_id());
-              mMap.put("member_token", userBean1.getMember_token());
-              mMap.put("consult_record_id", consult_record_id);
-              Log.e("ceshi",">>>>"+consult_record_id);
-              mMap.put("state_show", "已回复");
-              mMap.put("is_done", "0");
-              Networkequest(mMap, "");
+        if ("1".equals(userBean.getDoctor_type())) {
+            if (!TextUtils.isEmpty(mstatus) && mstatus.equals("未回复")) {
+                //执行结束咨询的网络请求
+                UserBean userBean1 = SpSingleInstance.getSpSingleInstance().getUserBean();
+                Map<String, String> mMap = new HashMap<>();
+                mMap.put("member_id", userBean1.getMember_id());
+                mMap.put("member_token", userBean1.getMember_token());
+                mMap.put("consult_record_id", consult_record_id);
+                Log.e("ceshi", ">>>>" + consult_record_id);
+                mMap.put("state_show", "已回复");
+                mMap.put("is_done", "0");
+                Networkequest(mMap, "");
 
-          }
-      }
+            }
+        }
 
     }
 
@@ -626,10 +626,15 @@ public class ChatFragment extends EaseChatFragment implements EaseChatFragment.E
                 break;
 
             case ITEM_MEDICAL_RECORD://电子病历
-                Intent intent2 = new Intent(getActivity(), ContentActivity.class);
-                intent2.putExtra(Constants.KEY_FRAGMENT, Constants.MEDICAL_RECORD);
-                intent2.putExtra("click_type", "1");
-                startActivityForResult(intent2, Constants.INTENT_MEDICAL_RECORD);
+                //判断是否是历史咨询记录
+                if ("0".equals(consultation_type)) {
+                    Toast.makeText(getActivity(), "请到医生主页进行二次预约", Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intent2 = new Intent(getActivity(), ContentActivity.class);
+                    intent2.putExtra(Constants.KEY_FRAGMENT, Constants.MEDICAL_RECORD);
+                    intent2.putExtra("click_type", "1");
+                    startActivityForResult(intent2, Constants.INTENT_MEDICAL_RECORD);
+                }
                 break;
 
             case ITEM_HEALTH_FILE://健康档案

@@ -1,11 +1,13 @@
 package com.live.tv.mvp.fragment.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.live.tv.mvp.fragment.huanxin.ChatActivity;
 import com.ysjk.health.iemk.R;
 import com.live.tv.bean.HealthPlanBean;
 import com.live.tv.mvp.base.BaseFragment;
@@ -79,7 +81,16 @@ public class HealthStepDetailFragment extends BaseFragment<IHealthStepDetailView
                 finish();
                 break;
             case R.id.tvRight:
+//                startActivity(new Intent(getActivity(), ChatActivity.class)
+//                                .putExtra("userId",consultBean.getHx_account())
+//                                .putExtra("APP_user_name",consultBean.getDoctor_name())
+//                                .putExtra("health_record_id",consultBean.getHealth_record_id())
+//                                .putExtra("doctor_id",consultBean.getDoctor_id())
+//                                .putExtra("consult_record_id",consultBean.getConsult_record_id())
+//                                .putExtra("to_head_image",consultBean.getMember_head_image())
+//                                .putExtra("to_username",consultBean.getMember_nick_name())
                 startDoctorDetailFragment("1");
+
                 break;
         }
     }

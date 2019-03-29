@@ -127,7 +127,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
     protected MyItemClickListener extendMenuItemClickListener;
     protected boolean isRoaming = false;
     private ExecutorService fetchQueue;
-    private String type;
+    protected String type, consultation_type = "1";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -156,7 +156,7 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
         doctor_id = fragmentArgs.getString("doctor_id");//获取咨询id
         type = fragmentArgs.getString("androidtype");
         mstatus = fragmentArgs.getString("status");
-
+        consultation_type = fragmentArgs.getString("consultation_type");
 
         super.onActivityCreated(savedInstanceState);
     }
@@ -187,7 +187,11 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
 
             @Override
             public void onSendMessage(String content) {
-                //TODO 发文字
+                //发送文字
+                if ("0".equals(consultation_type)) {
+                    Toast.makeText(getActivity(), "请到医生主页进行二次预约", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 sendTextMessage(content);
             }
 
@@ -197,6 +201,11 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
 
                     @Override
                     public void onVoiceRecordComplete(String voiceFilePath, int voiceTimeLength) {
+                        //发送语音消息
+                        if ("0".equals(consultation_type)) {
+                            Toast.makeText(getActivity(), "请到医生主页进行二次预约", Toast.LENGTH_LONG).show();
+                            return;
+                        }
                         sendVoiceMessage(voiceFilePath, voiceTimeLength);
                     }
                 });
@@ -204,6 +213,11 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
 
             @Override
             public void onBigExpressionClicked(EaseEmojicon emojicon) {
+                //发送大表情(动态表情)
+                if ("0".equals(consultation_type)) {
+                    Toast.makeText(getActivity(), "请到医生主页进行二次预约", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 sendBigExpressionMessage(emojicon.getName(), emojicon.getIdentityCode());
             }
         });
@@ -686,10 +700,18 @@ public class EaseChatFragment extends EaseBaseFragment implements EMMessageListe
             }
             switch (itemId) {
                 case ITEM_TAKE_PICTURE:
-                    selectPicFromCamera();
+                    if ("0".equals(consultation_type)) {
+                        Toast.makeText(getActivity(), "请到医生主页进行二次预约", Toast.LENGTH_LONG).show();
+                    } else {
+                        selectPicFromCamera();
+                    }
                     break;
                 case ITEM_PICTURE:
-                    selectPicFromLocal();
+                    if ("0".equals(consultation_type)) {
+                        Toast.makeText(getActivity(), "请到医生主页进行二次预约", Toast.LENGTH_LONG).show();
+                    } else {
+                        selectPicFromLocal();
+                    }
                     break;
 //            case ITEM_LOCATION:
 //                startActivityForResult(new Intent(getActivity(), EaseBaiduMapActivity.class), REQUEST_CODE_MAP);

@@ -208,12 +208,10 @@ public class HealthManageFragment extends BaseFragment<IHealthManageView, Health
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode==REQUESTCODE){
-           health_record_id=data.getStringExtra(Constants.HEALTH_RECORD_ID);
-           record_name=data.getStringExtra(Constants.RECORD_NAME);
-           relation=data.getStringExtra(Constants.RELATION);
-
+        if (requestCode == REQUESTCODE && null != data) {
+            health_record_id = data.getStringExtra(Constants.HEALTH_RECORD_ID);
+            record_name = data.getStringExtra(Constants.RECORD_NAME);
+            relation = data.getStringExtra(Constants.RELATION);
             name.setText(record_name + "(" + relation + ")");
         }
 

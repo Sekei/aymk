@@ -185,7 +185,9 @@ public class ServiceGoodDetailFragment extends BaseFragment<IGoodDetailView, Goo
                                     .putExtra("doctor_id","")
                                     .putExtra("consult_record_id","")
                                     .putExtra("to_head_image",userBean.getLegal_hand_img())
+                                    .putExtra("consultation_type","1")
                                     .putExtra("to_username","客服"));
+
                         }catch (Exception e){
                             e.printStackTrace();
                         }
