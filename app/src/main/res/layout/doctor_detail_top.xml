@@ -36,9 +36,9 @@
         android:layout_height="35dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
+        android:src="@drawable/ava_defaultx"
         app:layout_constraintLeft_toLeftOf="@+id/bg_one"
-        app:layout_constraintTop_toTopOf="@+id/bg_one"
-       android:src="@drawable/ava_defaultx" />
+        app:layout_constraintTop_toTopOf="@+id/bg_one" />
 
     <TextView
         android:id="@+id/type"
@@ -73,6 +73,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="24dp"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="0dp"
         android:ellipsize="end"
         android:maxLines="1"
         android:text="同济大学第一附属医院"
@@ -81,8 +82,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/department"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/department"
-        android:layout_marginTop="0dp" />
+        app:layout_constraintTop_toTopOf="@+id/department" />
 
     <TextView
         android:id="@+id/Indications"
@@ -98,10 +98,10 @@
         android:text="主治：心内科，心外科，玛丽苏康复科，健康膳食疗养科，心理治疗干预，PTSD诊疗"
         android:textColor="@color/colorTextG9"
         android:textSize="12sp"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/img"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/department"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/department" />
 
 
     <View
@@ -260,8 +260,8 @@
         android:drawableTop="@drawable/doctor_consult_text"
         android:text="图文咨询"
         android:textColor="@color/colorTextG3"
-        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintBottom_toTopOf="@+id/onePrice"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintLeft_toLeftOf="@+id/requestOneBg"
         app:layout_constraintRight_toLeftOf="@+id/requestTwoBg"
         app:layout_constraintTop_toTopOf="@+id/requestOneBg" />
@@ -343,8 +343,8 @@
         android:id="@+id/fourPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:textSize="12sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/requestFourBg"
         app:layout_constraintLeft_toLeftOf="@+id/requestFour"
         app:layout_constraintRight_toRightOf="@+id/requestFour"
@@ -370,11 +370,11 @@
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/doctor_more_right"
-        app:layout_constraintTop_toTopOf="@+id/bg_one"
-        app:layout_constraintBottom_toTopOf="@+id/bg_two"
         android:layout_marginRight="15dp"
-        app:layout_constraintRight_toRightOf="@+id/bg_one" />
+        app:layout_constraintBottom_toTopOf="@+id/bg_two"
+        app:layout_constraintRight_toRightOf="@+id/bg_one"
+        app:layout_constraintTop_toTopOf="@+id/bg_one"
+        app:srcCompat="@drawable/doctor_more_right" />
 
 
 </android.support.constraint.ConstraintLayout>

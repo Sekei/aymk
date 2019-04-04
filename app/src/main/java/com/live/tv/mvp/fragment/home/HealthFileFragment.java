@@ -989,7 +989,7 @@ public class HealthFileFragment extends BaseFragment<IHealthFileView, HealthFile
     @Override
     public void onError(Throwable e) {
         LoadingUtil.hideLoading();
-        ToastUtils.showToast(context.getApplicationContext(), e.getMessage());
+        //ToastUtils.showToast(context.getApplicationContext(), e.getMessage());
     }
 
     @Subscribe

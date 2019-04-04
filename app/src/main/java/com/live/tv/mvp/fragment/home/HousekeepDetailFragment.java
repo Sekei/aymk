@@ -176,7 +176,7 @@ public class HousekeepDetailFragment extends BaseFragment<IHousekeepDetailView, 
     private CommunityAppraiseAdapter appraiseAdapter;//评论的
     private CommunityLikeAdapter likeAdapter;//猜你喜欢
     private List<ServiceCommentBean> list = new ArrayList<>();
-    private List<HousekeepBean> likelist=new ArrayList<>();
+    private List<HousekeepBean> likelist = new ArrayList<>();
     Unbinder unbinder;
     private String housekeep_id;
     private boolean isclick;
@@ -185,6 +185,7 @@ public class HousekeepDetailFragment extends BaseFragment<IHousekeepDetailView, 
     private DialogHouseKeepFragment dialogHouseKeepFragment;
     private List<ServiceCopeBean> serviceCopeBeenList;//点击服务传值
     private HousekeepBean bean;
+
     //private List<>
     public static HousekeepDetailFragment newInstance(String housekeep_id) {
         Bundle args = new Bundle();
@@ -206,7 +207,7 @@ public class HousekeepDetailFragment extends BaseFragment<IHousekeepDetailView, 
 
     @Override
     public void onError(Throwable e) {
-ToastUtils.showToast(getActivity(),e.getMessage());
+        ToastUtils.showToast(getActivity(), e.getMessage());
     }
 
     @Override
@@ -225,15 +226,15 @@ ToastUtils.showToast(getActivity(),e.getMessage());
         recyclerAppraise.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerAppraise.setAdapter(appraiseAdapter);
         likeAdapter = new CommunityLikeAdapter(getActivity());
-       // likeAdapter.addAll(list);
+        // likeAdapter.addAll(list);
         recycleLike.setLayoutManager(new LinearLayoutManager(getActivity()));
         recycleLike.setAdapter(likeAdapter);
         tvWarning.setText(Html.fromHtml("<font size=\"5\" color=\"black\">今办理服务前请勿付</font><font size=\"5\" color=\"red\">定金`押金</font><font size=\"5\" color=\"black\">等费用!</font>"));
         dialogHouseKeepFragment = new DialogHouseKeepFragment();
         dialogHouseKeepFragment.setOnSelectListener(new DialogHouseKeepFragment.SelectListener() {
             @Override
-            public void OnSelectListener(String id,String prace) {
-              //  startBuyGoodFragment(id, prace,"1");
+            public void OnSelectListener(String id, String prace) {
+                //  startBuyGoodFragment(id, prace,"1");
                 sq();
                /* if (dialogHouseKeepFragment.getShowsDialog()) {
                     dialogHouseKeepFragment.dismiss();
@@ -249,9 +250,9 @@ ToastUtils.showToast(getActivity(),e.getMessage());
 
     @Override
     public void initData() {
-        if (housekeep_id.equals(userBean.getHouse_service_id())){
+        if (housekeep_id.equals(userBean.getHouse_service_id())) {
             tvMoreAddress.setVisibility(View.VISIBLE);
-        }else {
+        } else {
             tvMoreAddress.setVisibility(View.INVISIBLE);
         }
     }
@@ -263,7 +264,7 @@ ToastUtils.showToast(getActivity(),e.getMessage());
         map.put("member_id", userBean.getMember_id());
         map.put("member_token", userBean.getMember_token());
         getPresenter().getHousekeepDetail(map);//服务详情
-         getPresenter().getserviceCope(map);//服务范围
+        getPresenter().getserviceCope(map);//服务范围
         getPresenter().getAssessmentList(map);//评论
 
     }
@@ -278,10 +279,10 @@ ToastUtils.showToast(getActivity(),e.getMessage());
         /**
          * 详情返回的值
          */
-        bean=data;
+        bean = data;
 
 
-        if (data.getIs_collection()!=null&&data.getIs_collection().equals("1")) {
+        if (data.getIs_collection() != null && data.getIs_collection().equals("1")) {
             Drawable drawable = getActivity().getResources().getDrawable(R.drawable.doctor_consult_followed);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             tvCollect.setCompoundDrawables(null, drawable, null, null);
@@ -298,6 +299,7 @@ ToastUtils.showToast(getActivity(),e.getMessage());
                 .into(img);
         tvDesc.setText(data.getHouse_service_name());
         tvTime.setText("发布时间: " + data.getCreate_time());
+        tvNums.setText(data.getCount() + "人浏览");
         tvType.setText(data.getService_type());
         tvQuyu.setText(data.getHouse_address());
         tvContacts.setText(data.getContact_name());
@@ -305,31 +307,33 @@ ToastUtils.showToast(getActivity(),e.getMessage());
         tvContent.post(new Runnable() {
             @Override
             public void run() {
-           if (tvContent.getLineCount()>=2){
-               tvClick.setVisibility(View.VISIBLE);
-           }else {
-               tvClick.setVisibility(View.GONE);
-           }
+                if (tvContent.getLineCount() >= 2) {
+                    tvClick.setVisibility(View.VISIBLE);
+                } else {
+                    tvClick.setVisibility(View.GONE);
+                }
 
             }
         });
 
-
-
-        tvPhone.setText(data.getContact_phone());
+        String mobile = data.getContact_phone();
+        if (null != mobile && !"".equals(mobile)) {
+            mobile = mobile.substring(0, 3) + "****" + mobile.substring(7, mobile.length());
+        }
+        tvPhone.setText(mobile);
         addressAdapter.clear();
         addressAdapter.addAll(data.getHouseAddressBeans());
         addressAdapter.notifyDataSetChanged();
 
-        String[] tag=null;
-                try {
-                 tag =data.getService_range().split(",");
+        String[] tag = null;
+        try {
+            tag = data.getService_range().split(",");
 
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-        if (tag!=null&&tag.length>0){
-      mFlexboxLayout.removeAllViews();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (tag != null && tag.length > 0) {
+            mFlexboxLayout.removeAllViews();
             for (int i = 0; i < tag.length; i++) {
 
                 final TextView word = new TextView(getContext());
@@ -349,24 +353,25 @@ ToastUtils.showToast(getActivity(),e.getMessage());
 
     }
 
-    private void setdatalikelist(){
+    private void setdatalikelist() {
         /*map.put("house_province",bean.getHouse_province());
         map.put("house_city",bean.getHouse_city());
         map.put("house_country",bean.getHouse_country());*/
-        map.put("service_type_id",bean.getService_type());
-        map.put("is_hot","1");
+        map.put("service_type_id", bean.getService_type());
+        map.put("is_hot", "1");
         getPresenter().getHouseKeeps(map);
     }
+
     @Override
     public void onHouseKeeps(List<HousekeepBean> list) {
-      if (list!=null&&list.size()>0){
-       tvLike.setVisibility(View.VISIBLE);
-      } else {
-       tvLike.setVisibility(View.GONE);
+        if (list != null && list.size() > 0) {
+            tvLike.setVisibility(View.VISIBLE);
+        } else {
+            tvLike.setVisibility(View.GONE);
 
-      }
+        }
         //热门推荐的接口
-         likeAdapter.clear();
+        likeAdapter.clear();
         likeAdapter.addAll(list);
         likeAdapter.notifyDataSetChanged();
 
@@ -374,7 +379,7 @@ ToastUtils.showToast(getActivity(),e.getMessage());
 
     @Override
     public void OnServiceCope(List<ServiceCopeBean> data) {
-        serviceCopeBeenList=data;
+        serviceCopeBeenList = data;
     }
 
     @Override
@@ -382,7 +387,7 @@ ToastUtils.showToast(getActivity(),e.getMessage());
         /***
          * 评论列表
          */
-        tvAppraise.setText("评论("+data.size()+")");
+        tvAppraise.setText("评论(" + data.size() + ")");
         appraiseAdapter.clear();
         appraiseAdapter.addAll(data);
         appraiseAdapter.notifyDataSetChanged();
@@ -390,8 +395,8 @@ ToastUtils.showToast(getActivity(),e.getMessage());
 
     @Override
     public void onCollectiohouse(String data) {
-        ToastUtils.showToast(getActivity(),data);
-        ToastUtils.showToast(context.getApplicationContext(),"收藏成功");
+        ToastUtils.showToast(getActivity(), data);
+        ToastUtils.showToast(context.getApplicationContext(), "收藏成功");
         Drawable drawable = getActivity().getResources().getDrawable(R.drawable.doctor_consult_followed);
         drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
         tvCollect.setCompoundDrawables(null, drawable, null, null);
@@ -412,8 +417,8 @@ ToastUtils.showToast(getActivity(),e.getMessage());
     }
 
 
-    @OnClick({R.id.ivLeft, R.id.tv_click, R.id.iv_call, R.id.tv_service, R.id.tv_jing, R.id.tv_moreaddress,R.id.address_more,
-           R.id.tv_collect,R.id.tv_call,R.id.tv_zixun})
+    @OnClick({R.id.ivLeft, R.id.tv_click, R.id.iv_call, R.id.tv_service, R.id.tv_jing, R.id.tv_moreaddress, R.id.address_more,
+            R.id.tv_collect, R.id.tv_call, R.id.tv_zixun})
     public void Onclicksenter(View view) {
         switch (view.getId()) {
             case R.id.ivLeft:
@@ -449,12 +454,12 @@ ToastUtils.showToast(getActivity(),e.getMessage());
                 sq();
                 break;
             case R.id.tv_service:
-               if (serviceCopeBeenList!=null&&serviceCopeBeenList.size()>0){
-                   showhousekeepDialog(serviceCopeBeenList);
+                if (serviceCopeBeenList != null && serviceCopeBeenList.size() > 0) {
+                    showhousekeepDialog(serviceCopeBeenList);
 
-               }else {
-                   ToastUtils.showToast(getActivity(),"此商家暂无服务稍后再试");
-               }
+                } else {
+                    ToastUtils.showToast(getActivity(), "此商家暂无服务稍后再试");
+                }
                 break;
 
             case R.id.tv_jing:
@@ -467,15 +472,15 @@ ToastUtils.showToast(getActivity(),e.getMessage());
                 break;
             case R.id.address_more:
 
-                startServiceMoreFragment(bean.getHouse_service_id()+"");
+                startServiceMoreFragment(bean.getHouse_service_id() + "");
                 break;
             case R.id.tv_collect:
                 map.clear();
-                map.put("member_id",userBean.getMember_id());
-                map.put("member_token",userBean.getMember_token());
-                map.put("collection_type","house");
-                map.put("house_service_id",bean.getHouse_service_id()+"");
-             getPresenter().getinsertCollection(map);
+                map.put("member_id", userBean.getMember_id());
+                map.put("member_token", userBean.getMember_token());
+                map.put("collection_type", "house");
+                map.put("house_service_id", bean.getHouse_service_id() + "");
+                getPresenter().getinsertCollection(map);
 
                 break;
             case R.id.tv_call:
@@ -489,31 +494,31 @@ ToastUtils.showToast(getActivity(),e.getMessage());
                 /***
                  * 联系客服
                  */
-                if(EMClient.getInstance().isLoggedInBefore()){
+                if (EMClient.getInstance().isLoggedInBefore()) {
                     //如果登陆过，判断是否连接
-                    if (EMClient.getInstance().isConnected()){
+                    if (EMClient.getInstance().isConnected()) {
                         //链接
-                        if (bean!=null&&bean.getHx_account()!=null){
+                        if (bean != null && bean.getHx_account() != null) {
                             startActivity(new Intent(getActivity(), ChatActivity.class)
-                                    .putExtra("userId",bean.getHx_account())
-                                    .putExtra("APP_user_name",userBean.getHx_nick_name())
-                                    .putExtra("health_record_id","")
-                                    .putExtra("doctor_id","")
-                                    .putExtra("consult_record_id","")
-                                    .putExtra("to_head_image",userBean.getLegal_hand_img())
-                                    .putExtra("androidtype","1")
-                                    .putExtra("to_username","客服"));
-                        }else {
-                            ToastUtils.showToast(getActivity(),"暂时不能咨询");
+                                    .putExtra("userId", bean.getHx_account())
+                                    .putExtra("APP_user_name", userBean.getHx_nick_name())
+                                    .putExtra("health_record_id", "")
+                                    .putExtra("doctor_id", "")
+                                    .putExtra("consult_record_id", "")
+                                    .putExtra("to_head_image", userBean.getLegal_hand_img())
+                                    .putExtra("androidtype", "1")
+                                    .putExtra("to_username", "客服"));
+                        } else {
+                            ToastUtils.showToast(getActivity(), "暂时不能咨询");
                         }
 
 
-                    }else {
+                    } else {
                         Log.d("dfc", "登录过，已短开！");
                         EMClient.getInstance().logout(true);
                         loginHx();
                     }
-                }else{
+                } else {
                     //开始登陆
                     loginHx();
                 }
@@ -527,6 +532,7 @@ ToastUtils.showToast(getActivity(),e.getMessage());
         }
 
     }
+
     //登陆环信
     private void loginHx() {
 
@@ -535,19 +541,19 @@ ToastUtils.showToast(getActivity(),e.getMessage());
             public void onSuccess() {
                 EMClient.getInstance().groupManager().loadAllGroups();
                 EMClient.getInstance().chatManager().loadAllConversations();
-               if (bean!=null&&bean.getHx_account()!=null){
+                if (bean != null && bean.getHx_account() != null) {
 
-                   startActivity(new Intent(getActivity(), ChatActivity.class)
-                           .putExtra("userId",bean.getHx_account())
-                           .putExtra("APP_user_name",userBean.getHx_nick_name())
-                           .putExtra("health_record_id","")
-                           .putExtra("doctor_id","")
-                           .putExtra("consult_record_id","")
-                           .putExtra("to_head_image",userBean.getLegal_hand_img())
-                           .putExtra("to_username","客服"));
-               }else {
-                 ToastUtils.showToast(getActivity(),"暂时不能咨询");
-               }
+                    startActivity(new Intent(getActivity(), ChatActivity.class)
+                            .putExtra("userId", bean.getHx_account())
+                            .putExtra("APP_user_name", userBean.getHx_nick_name())
+                            .putExtra("health_record_id", "")
+                            .putExtra("doctor_id", "")
+                            .putExtra("consult_record_id", "")
+                            .putExtra("to_head_image", userBean.getLegal_hand_img())
+                            .putExtra("to_username", "客服"));
+                } else {
+                    ToastUtils.showToast(getActivity(), "暂时不能咨询");
+                }
 
 
             }
@@ -558,7 +564,7 @@ ToastUtils.showToast(getActivity(),e.getMessage());
 
             @Override
             public void onError(int code, String message) {
-                Log.d("dfc", "登录聊天服务器失败！"+code+message);
+                Log.d("dfc", "登录聊天服务器失败！" + code + message);
             }
         });
     }
@@ -566,9 +572,9 @@ ToastUtils.showToast(getActivity(),e.getMessage());
     private void showhousekeepDialog(List<ServiceCopeBean> data) {
         Bundle args = new Bundle();
         args.putParcelableArrayList("ServiceCopeBean", (ArrayList<? extends Parcelable>) data);
-        if (bean!=null){
-            args.putString("ShowImage",bean.getHouse_service_image());
-            args.putString("phone",bean.getContact_phone());
+        if (bean != null) {
+            args.putString("ShowImage", bean.getHouse_service_image());
+            args.putString("phone", bean.getContact_phone());
         }
         dialogHouseKeepFragment.setArguments(args);
         if (dialogHouseKeepFragment.isAdded()) {
@@ -603,11 +609,11 @@ ToastUtils.showToast(getActivity(),e.getMessage());
             }
         } else {
             // 已经获得授权， 可以打电话
-            if (bean!=null&&bean.getContact_phone()!=null&&!bean.getContact_phone().equals("")){
+            if (bean != null && bean.getContact_phone() != null && !bean.getContact_phone().equals("")) {
                 CallPhone(bean.getContact_phone());
 
-            }else {
-            ToastUtils.showToast(getActivity(),"暂未获取到此商家号码");
+            } else {
+                ToastUtils.showToast(getActivity(), "暂未获取到此商家号码");
             }
         }
     }

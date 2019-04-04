@@ -73,9 +73,9 @@ public class HealthUserDetailBaseInfoFragment extends SimpleFragment {
 
         if (data!=null){
 
-            tvHospital.setText(data.getHeight()+"cm");
-            tvTitle.setText(data.getWeight()+"kg");//体重
-            tvEdit2.setText(data.getIs_marriage()+"cm");//婚姻
+            tvHospital.setText(data.getHeight());
+            tvTitle.setText(data.getWeight());//体重
+            tvEdit2.setText(data.getIs_marriage());//婚姻
             tvType.setText(data.getAllergy()+"");//是否过敏
             tvPersonInfo.setText(data.getAllergy_desc()+"");//过敏项
 

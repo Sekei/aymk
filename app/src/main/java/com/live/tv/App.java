@@ -196,7 +196,7 @@ public class App extends Application {
                                     .subscribe(new Observer<HttpResult<String>>() {
                                         @Override
                                         public void onError(Throwable e) {
-                                            ToastUtils.showToast(getApplicationContext(), e.getMessage());
+                                            //ToastUtils.showToast(getApplicationContext(), e.getMessage());
 
                                         }
 

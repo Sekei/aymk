@@ -252,7 +252,7 @@ public class ContentActivity extends AppCompatActivity {
         }
     }
 
-      public void swichFragment(Intent intent) {
+    public void swichFragment(Intent intent) {
 
         int fragmentKey = intent.getIntExtra(Constants.KEY_FRAGMENT, 0);
         String state;
@@ -273,14 +273,15 @@ public class ContentActivity extends AppCompatActivity {
                 replaceFragment(DoctorListFragment.newInstance());
                 break;
             case Constants.LOGIN_FRAGMENT:
+                //登录
                 replaceFragment(LoginFragment.newInstance());
                 break;
             case Constants.REGISTER:
                 //注册
-                String mtype=getIntent().getStringExtra(Constants.TYPE);
-                String mtag=getIntent().getStringExtra(Constants.TAG);
-                String mcode=getIntent().getStringExtra(Constants.OPENID);
-                replaceFragment(RegisteredFragment.newInstance(mtype,mtag,mcode));
+                String mtype = getIntent().getStringExtra(Constants.TYPE);
+                String mtag = getIntent().getStringExtra(Constants.TAG);
+                String mcode = getIntent().getStringExtra(Constants.OPENID);
+                replaceFragment(RegisteredFragment.newInstance(mtype, mtag, mcode));
                 break;
             case Constants.DOCTOR_DETAIL:
                 doctor_id = intent.getStringExtra(Constants.DOCTOR_ID);
@@ -314,7 +315,7 @@ public class ContentActivity extends AppCompatActivity {
                 String member_head_image = intent.getStringExtra("member_head_image");
                 replaceFragment(SendHeartFragment.newInstance(doctor_id3, sendDoctorName, member_head_image));
                 break;
-            case Constants.HEALTH_FILE:
+            case Constants.HEALTH_FILE://健康档案
                 replaceFragment(HealthFileFragment.newInstance());
                 break;
             case Constants.MORE_FILE:
@@ -460,9 +461,9 @@ public class ContentActivity extends AppCompatActivity {
                 break;
 
             case Constants.COMMUNTITY_LIST:
-                String plateid=getIntent().getStringExtra(Constants.PLATE_ID);
-                String name=getIntent().getStringExtra("name");
-                replaceFragment(CommunityListFragment.newInstance(plateid,name));
+                String plateid = getIntent().getStringExtra(Constants.PLATE_ID);
+                String name = getIntent().getStringExtra("name");
+                replaceFragment(CommunityListFragment.newInstance(plateid, name));
                 break;
             case Constants.TEST_PHYSIQUE:
                 health_record_id = getIntent().getStringExtra(HEALTH_RECORD_ID);
@@ -496,20 +497,21 @@ public class ContentActivity extends AppCompatActivity {
                 replaceFragment(VerifiedSuccessFragment.newInstance());
                 break;
             case Constants.JOIN:
+                //合作加盟
                 replaceFragment(JoinFragment.newInstance());
                 break;
             case Constants.JOIN_DOCTOR:
-                String doctorhtmlurl=intent.getStringExtra(Constants.TYPE);
+                String doctorhtmlurl = intent.getStringExtra(Constants.TYPE);
                 replaceFragment(JoinDoctorFragment.newInstance(doctorhtmlurl));
                 break;
 
             case Constants.JOIN_HOUSE:
-                String househtmlurl=intent.getStringExtra(Constants.TYPE);
+                String househtmlurl = intent.getStringExtra(Constants.TYPE);
                 replaceFragment(JoinHouseFragment.newInstance(househtmlurl));
                 break;
 
             case Constants.JOIN_SHOP:
-                String shophtmlurl=intent.getStringExtra(Constants.TYPE);
+                String shophtmlurl = intent.getStringExtra(Constants.TYPE);
                 replaceFragment(JoinShopFragment.newInstance(shophtmlurl));
                 break;
             case Constants.DOCTORFILE_FRAGMENT: //医生档案
@@ -596,10 +598,10 @@ public class ContentActivity extends AppCompatActivity {
                 String orderid = intent.getStringExtra("order_id");
                 String img_doctorName = intent.getStringExtra("doctorName");
                 String Hx_account_buy = intent.getStringExtra("Hx_account");
-                List<String> files = (List<String>)intent.getSerializableExtra("list");
-                String img_Price=intent.getStringExtra("price");
-                String desc=intent.getStringExtra("desc");
-                replaceFragment(BuyConsultImgageFragment.newInstance(orderid, img_doctorName, Hx_account_buy,img_Price,files,desc));
+                List<String> files = (List<String>) intent.getSerializableExtra("list");
+                String img_Price = intent.getStringExtra("price");
+                String desc = intent.getStringExtra("desc");
+                replaceFragment(BuyConsultImgageFragment.newInstance(orderid, img_doctorName, Hx_account_buy, img_Price, files, desc));
                 break;
             case Constants.BUYCONSULTHEALTH_FRAGMENT://购买健康管理
                 health_record_id = intent.getStringExtra(Constants.HEALTH_RECORD_ID);
@@ -779,8 +781,8 @@ public class ContentActivity extends AppCompatActivity {
 
 
             case Constants.CONFIRM_SERVICEGOODORDER_FRAGMENT://提交服务商品订单
-                String goodbeanstr=getIntent().getStringExtra("goodsBean");
-                GoodsBean goodsBean = new Gson().fromJson(goodbeanstr,GoodsBean.class);
+                String goodbeanstr = getIntent().getStringExtra("goodsBean");
+                GoodsBean goodsBean = new Gson().fromJson(goodbeanstr, GoodsBean.class);
                 replaceFragment(ConfirmServiceGoodOrderFragment.newInstance(goodsBean));
                 break;
 
@@ -826,14 +828,14 @@ public class ContentActivity extends AppCompatActivity {
             case Constants.BUY_GOOD_FRAGMENT://支付订单 购买商品
                 String order_price = getIntent().getStringExtra("order_price");
                 String order_ids = getIntent().getStringExtra("order_ids");
-                String order_type="";
+                String order_type = "";
 
                 try {
-                    order_type=getIntent().getStringExtra(Constants.TYPE);
-                }catch (Exception e){
+                    order_type = getIntent().getStringExtra(Constants.TYPE);
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
-                replaceFragment(BuyGoodFragment.newInstance(order_ids, order_price,order_type));
+                replaceFragment(BuyGoodFragment.newInstance(order_ids, order_price, order_type));
                 break;
             case Constants.MY_LIVELIST_FRAGMENT://我的直播列表
                 replaceFragment(MyLiveListFragment.newInstance());
@@ -875,10 +877,10 @@ public class ContentActivity extends AppCompatActivity {
                 break;
             case Constants.MORE_NEARBY_SHOPLIST_FRAGMENT://更多附近门店
 
-                String nearcity =getIntent().getStringExtra(Constants.LOCALITY);
-                double nearLat =getIntent().getDoubleExtra(Constants.LATITUDE,0);
-                double nearLag=getIntent().getDoubleExtra(Constants.LONGITUDE,0);
-                replaceFragment(MoreNearbyShopListFragment.newInstance(nearcity,nearLat,nearLag));
+                String nearcity = getIntent().getStringExtra(Constants.LOCALITY);
+                double nearLat = getIntent().getDoubleExtra(Constants.LATITUDE, 0);
+                double nearLag = getIntent().getDoubleExtra(Constants.LONGITUDE, 0);
+                replaceFragment(MoreNearbyShopListFragment.newInstance(nearcity, nearLat, nearLag));
                 break;
             case Constants.HOT_GOODSLIST_FRAGMENT://更多热卖商品
                 replaceFragment(hotGoodsListFragment.newInstance(""));
@@ -888,9 +890,9 @@ public class ContentActivity extends AppCompatActivity {
                 break;
 
             case Constants.MERCHANTS_MAP_FRAGMENT://门店详情
-                Bundle bundle=getIntent().getExtras();
+                Bundle bundle = getIntent().getExtras();
 
-                replaceFragment(MerchantsMapFragment.newInstance((PoiItem)bundle.get(Constants.POIITEM)));
+                replaceFragment(MerchantsMapFragment.newInstance((PoiItem) bundle.get(Constants.POIITEM)));
                 break;
 
             case Constants.SEARCH_HISTORY_FRAGMENT://搜索历史
@@ -919,7 +921,7 @@ public class ContentActivity extends AppCompatActivity {
                 break;
 
             case Constants.HOUSEKEEPING_DETAIL_FRAGMENT://家政服务详情
-                String housekeep_id=getIntent().getStringExtra("housekeep_id");
+                String housekeep_id = getIntent().getStringExtra("housekeep_id");
                 replaceFragment(HousekeepDetailFragment.newInstance(housekeep_id));
                 break;
 
@@ -928,25 +930,25 @@ public class ContentActivity extends AppCompatActivity {
                 int positions = getIntent().getIntExtra("position", 0);
                 replaceFragment(MedicalRecordsDetailHxFragment.newInstance(medical_id, positions));
                 break;
-           case Constants.RELEASE_HOUSEKEEP_FRAGMENT://发布家政信息
+            case Constants.RELEASE_HOUSEKEEP_FRAGMENT://发布家政信息
                 replaceFragment(ReleaseHouseKeepFragment.newInstance());
                 break;
             case Constants.COMMUNITYDETAILS:
 
-                String plate=getIntent().getStringExtra(Constants.PLATE_ID);
+                String plate = getIntent().getStringExtra(Constants.PLATE_ID);
 
                 replaceFragment(CommunityDetailsFragment.newInstance(plate));
                 break;
             case Constants.POSTEDFRGAMENT:
-              int flag=getIntent().getIntExtra("flag",0);
-                if (flag==1){
+                int flag = getIntent().getIntExtra("flag", 0);
+                if (flag == 1) {
 
                     Bundle bundle1 = intent.getBundleExtra("data");
-                    Note   note = (Note) bundle1.getSerializable("note");
-                    replaceFragment(PostedFragment.newInstance(note,flag));
-                }else {
+                    Note note = (Note) bundle1.getSerializable("note");
+                    replaceFragment(PostedFragment.newInstance(note, flag));
+                } else {
 
-                    replaceFragment(PostedFragment.newInstance(flag,getIntent().getStringExtra(Constants.PLATE_ID)));
+                    replaceFragment(PostedFragment.newInstance(flag, getIntent().getStringExtra(Constants.PLATE_ID)));
 
                 }
 
@@ -959,12 +961,12 @@ public class ContentActivity extends AppCompatActivity {
             case Constants.POSTEDETAILS:
 /***
  * 健康详情
- */            String postId=intent.getStringExtra(Constants.PLATELISTBEAN);
+ */String postId = intent.getStringExtra(Constants.PLATELISTBEAN);
                 replaceFragment(FragmentPostDetails.newInstance(postId));
 
                 break;
             case Constants.MERCHANTFORMFRAGMENT:
-              String mtyp=intent.getStringExtra(Constants.TYPE);
+                String mtyp = intent.getStringExtra(Constants.TYPE);
                 replaceFragment(MerchantFormFragment.newInstance(mtyp));
                 break;
             case Constants.SERVICEDETILS:
@@ -974,7 +976,7 @@ public class ContentActivity extends AppCompatActivity {
 
                 break;
             case Constants.COMPLAINTFRAGMENT:
-                 String housid=intent.getStringExtra(Constants.TYPE);
+                String housid = intent.getStringExtra(Constants.TYPE);
                 replaceFragment(ComplaintFragment.newInstance(housid));
 
                 break;
@@ -994,16 +996,16 @@ public class ContentActivity extends AppCompatActivity {
             case Constants.EDITSERVICE:
                 String serviceCopeBean = null;
                 try {
-                    serviceCopeBean=getIntent().getStringExtra(Constants.TAG);
+                    serviceCopeBean = getIntent().getStringExtra(Constants.TAG);
 
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
 
                 }
-                if (serviceCopeBean!=null){
+                if (serviceCopeBean != null) {
                     replaceFragment(EditServiceFragment.newInstance(serviceCopeBean));
 
-                }else {
+                } else {
                     replaceFragment(EditServiceFragment.newInstance());
 
                 }
@@ -1011,39 +1013,39 @@ public class ContentActivity extends AppCompatActivity {
                 break;
             case Constants.MERCHANTMOREADDRESS:
                 //商家更多地址
-                String serviceId=getIntent().getStringExtra("house_service_id");
+                String serviceId = getIntent().getStringExtra("house_service_id");
                 replaceFragment(MerchantMoreAddressFragment.newInstence(serviceId));
                 break;
             case Constants.ADDADDRESS:
-                String addserviceId=getIntent().getStringExtra("house_service_id");
+                String addserviceId = getIntent().getStringExtra("house_service_id");
                 replaceFragment(ServiceAddAddressFragment.newInstence(addserviceId));
                 break;
             case Constants.SERVICEMOREASSESSMENT:
-                String typeservice=getIntent().getStringExtra(Constants.TYPE);
+                String typeservice = getIntent().getStringExtra(Constants.TYPE);
                 replaceFragment(ServiceMoreAssessmentListFragment.newInstance(typeservice));
                 break;
             case Constants.SHOPFRAGMENT:
-            //打开商城界面
+                //打开商城界面
                 replaceFragment(ShopFragment.newInstance());
                 break;
             case Constants.ADDHEALTHMANAGE:
                 //添加健康管理
-               // String typeid=intent.getStringExtra(Constants.TYPE);
+                // String typeid=intent.getStringExtra(Constants.TYPE);
 
-                HealthManagerBeans beans=null;
+                HealthManagerBeans beans = null;
 
 
-               try {
-               beans =intent.getParcelableExtra(Constants.HEALTH_RECORD_ID);
-               }catch (Exception e){
-                   e.printStackTrace();
-               }
+                try {
+                    beans = intent.getParcelableExtra(Constants.HEALTH_RECORD_ID);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 replaceFragment(AddHealthManageFragment.newInstance(beans));
 
                 break;
             case Constants.COMMUNICATEFRAGMENT:
 
-                String str =intent.getStringExtra(Constants.TYPE);
+                String str = intent.getStringExtra(Constants.TYPE);
                 replaceFragment(CommunicateFragment.newInstance(str));
                 break;
 
@@ -1071,10 +1073,11 @@ public class ContentActivity extends AppCompatActivity {
         intent.putExtra(Constants.KEY_FRAGMENT, KEY);
         activity.startActivity(intent);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
-       // Log.e(TAG, "onActivityResult: " + requestCode + "\n" + resultCode + "\n" + data);
+        // Log.e(TAG, "onActivityResult: " + requestCode + "\n" + resultCode + "\n" + data);
     }
 }

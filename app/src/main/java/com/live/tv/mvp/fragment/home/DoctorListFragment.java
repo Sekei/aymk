@@ -263,7 +263,7 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
     @Override
     public void onError(Throwable e) {
         LoadingUtil.hideLoading();
-        ToastUtils.showToast(context.getApplicationContext(),e.getMessage());
+        //ToastUtils.showToast(context.getApplicationContext(),e.getMessage());
     }
 
     //位置

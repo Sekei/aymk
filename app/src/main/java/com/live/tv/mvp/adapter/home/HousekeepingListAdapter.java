@@ -41,8 +41,9 @@ public class HousekeepingListAdapter extends RecyclerArrayAdapter<HousekeepBean>
         @Override
         public void setData(HousekeepBean data) {
             super.setData(data);
-            Glide.with(getContext()).load(Constants.BASE_URL + data.getHouse_service_image()).placeholder(R.drawable.pic_defaults)
-                    .error(R.drawable.pic_defaults)
+            Glide.with(getContext()).load(Constants.BASE_URL + data.getHouse_service_image())
+                    .placeholder(R.mipmap.ic_launcher)
+                    .error(R.mipmap.ic_launcher)
                     .into(img);
             tv_address.setText(data.getHouse_address());
             tv_desc.setText(data.getHouse_service_name());

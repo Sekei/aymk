@@ -54,7 +54,7 @@ public class HealthUserAdapter extends RecyclerArrayAdapter<HealthRecordDetailBe
             Glide.with(getContext()).load(Constants.BASE_URL + data.getHead_image())
                     .error(R.drawable.home_doctor_ava)
                     .into(avatar);
-            name.setText(data.getReal_name());
+            name.setText(data.getRecord_name());
             sex.setText(data.getSex());
             verified.setText(data.getService_type_show());
             tv_person_info.setText(data.getPlan_state());

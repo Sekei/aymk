@@ -108,7 +108,7 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
     private String mTitle = ""; //标题
 
     private DoctorDetailBean doctorDetailBean;
-    private String  collection_id;
+    private String collection_id;
 
 
     public static DoctorDetailFragment newInstance(String doctor_id) {
@@ -169,13 +169,13 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
                 final TextView requestTwoBg = (TextView) view.findViewById(R.id.requestTwoBg);
                 final TextView requestThreeBg = (TextView) view.findViewById(R.id.requestThreeBg);
                 final TextView requestFourBg = (TextView) view.findViewById(R.id.requestFourBg);
-                  View  bg_one = view.findViewById(R.id.bg_one);
+                View bg_one = view.findViewById(R.id.bg_one);
 
                 bg_one.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
-                        if (doctorDetailBean!=null){
+                        if (doctorDetailBean != null) {
                             startDoctorPersonalInfoFragment(doctorDetailBean);
                         }
 
@@ -272,7 +272,6 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
                 });
 
 
-
                 return view;
             }
 
@@ -298,51 +297,51 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
 
     @Override
     public void onGetDoctorDetail(DoctorDetailBean data) {
-       if (data!=null) {
+        if (data != null) {
 
 
-           doctorDetailBean = data;
+            doctorDetailBean = data;
 
-           sendDoctorName = data.getDoctor_name();
-           doctorName.setText(data.getDoctor_name());
-           doctorName.setText(data.getDoctor_name());
-           type.setText(data.getDoctor_title());
-           askNum.setText(data.getConsulting_count());
-           focusNum.setText(data.getAttention_count());
-           praiseNum.setText(data.getRate());
-           department.setText(data.getDepartment_level2());
-           hospital.setText(data.getDoctor_hospital());
-           Indications.setText("主治：" + data.getDoctor_attendingtype());
+            sendDoctorName = data.getDoctor_name();
+            doctorName.setText(data.getDoctor_name());
+            doctorName.setText(data.getDoctor_name());
+            type.setText(data.getDoctor_title());
+            askNum.setText(data.getConsulting_count());
+            focusNum.setText(data.getAttention_count());
+            praiseNum.setText(data.getRate());
+            department.setText(data.getDepartment_level2());
+            hospital.setText(data.getDoctor_hospital());
+            Indications.setText("主治：" + data.getDoctor_attendingtype());
 
-           Glide.with(getActivity()).load(Constants.BASE_URL + data.getDoctor_head_image())
-                   .transform(new GlideCircleTransform(getContext()))
-                   .placeholder(R.drawable.ava_defaultx)
-                   .error(R.drawable.ava_defaultx)
-                   .diskCacheStrategy(DiskCacheStrategy.ALL).into(img);
-           img_price = data.getGraphic_price() != null ? data.getGraphic_price() : "0";
-           phone_price = data.getPhone_price() != null ? data.getPhone_price() : "0";
-           video_price = data.getVideo_price() != null ? data.getVideo_price() : "0";
-           health_price = data.getHealth_management_price() != null ? data.getHealth_management_price() : "0";
-           MyTextViewUitl.setText(onePrice, new String[]{img_price, "元/次"}, new String[]{"#6EB92B", "#6EB92B"});
-           MyTextViewUitl.setText(twoPrice, new String[]{phone_price, "元/次"}, new String[]{"#E5192C", "#999999"});
-           MyTextViewUitl.setText(threePrice, new String[]{video_price, "元/次"}, new String[]{"#E5192C", "#999999"});
-           MyTextViewUitl.setText(fourPrice, new String[]{health_price, "元/月"}, new String[]{"#E5192C", "#999999"});
-           ok.setText("图文咨询" + img_price + "元/次");
-           collection_id = data.getCollection_id();
-           if (data != null && data.getIs_collection() != null) {
-               if (data.getIs_collection().equals("1")) {
-                   focus.setText("取消关注");
-                   Drawable drawable = getContext().getResources().getDrawable(R.drawable.doctor_consult_followed);
-                   drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
-                   focus.setCompoundDrawables(null, drawable, null, null);
-               } else {
-                   focus.setText("关注");
-                   Drawable drawable = getContext().getResources().getDrawable(R.drawable.doctor_consult_follow);
-                   drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
-                   focus.setCompoundDrawables(null, drawable, null, null);
-               }
-           }
-       }
+            Glide.with(getActivity()).load(Constants.BASE_URL + data.getDoctor_head_image())
+                    .transform(new GlideCircleTransform(getContext()))
+                    .placeholder(R.drawable.ava_defaultx)
+                    .error(R.drawable.ava_defaultx)
+                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img);
+            img_price = data.getGraphic_price() != null ? data.getGraphic_price() : "0";
+            phone_price = data.getPhone_price() != null ? data.getPhone_price() : "0";
+            video_price = data.getVideo_price() != null ? data.getVideo_price() : "0";
+            health_price = data.getHealth_management_price() != null ? data.getHealth_management_price() : "0";
+            MyTextViewUitl.setText(onePrice, new String[]{img_price, "元/次"}, new String[]{"#6EB92B", "#6EB92B"});
+            MyTextViewUitl.setText(twoPrice, new String[]{phone_price, "元/次"}, new String[]{"#E5192C", "#999999"});
+            MyTextViewUitl.setText(threePrice, new String[]{video_price, "元/次"}, new String[]{"#E5192C", "#999999"});
+            MyTextViewUitl.setText(fourPrice, new String[]{health_price, "元/月"}, new String[]{"#E5192C", "#999999"});
+            ok.setText("图文咨询" + img_price + "元/次");
+            collection_id = data.getCollection_id();
+            if (data != null && data.getIs_collection() != null) {
+                if (data.getIs_collection().equals("1")) {
+                    focus.setText("取消关注");
+                    Drawable drawable = getContext().getResources().getDrawable(R.drawable.doctor_consult_followed);
+                    drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
+                    focus.setCompoundDrawables(null, drawable, null, null);
+                } else {
+                    focus.setText("关注");
+                    Drawable drawable = getContext().getResources().getDrawable(R.drawable.doctor_consult_follow);
+                    drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
+                    focus.setCompoundDrawables(null, drawable, null, null);
+                }
+            }
+        }
     }
 
     @Override
@@ -357,7 +356,7 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
     @Override
     public void onCollectionDoctor(String data) {
 
-        ToastUtils.showToast(context.getApplicationContext(),"关注成功");
+        ToastUtils.showToast(context.getApplicationContext(), "关注成功");
         focus.setText("取消关注");
         Drawable drawable = getContext().getResources().getDrawable(R.drawable.doctor_consult_followed);
         drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
@@ -372,7 +371,7 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
 
     @Override
     public void onCancelCollection(String data) {
-        ToastUtils.showToast(context.getApplicationContext(),"取消关注");
+        ToastUtils.showToast(context.getApplicationContext(), "取消关注");
         focus.setText("关注");
         Drawable drawable = getContext().getResources().getDrawable(R.drawable.doctor_consult_follow);
         drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
@@ -405,7 +404,7 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
         errorHandle(e);
     }
 
-    @OnClick({R.id.ivLeft, R.id.ok, R.id.pay, R.id.focus,R.id.ivRight})
+    @OnClick({R.id.ivLeft, R.id.ok, R.id.pay, R.id.focus, R.id.ivRight})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ivLeft:
@@ -414,27 +413,26 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
             case R.id.ok:
                 switch (requestType) {
                     case 1://图文咨询
-                        startRequestOneFragment(doctor_id,doctorName.getText().toString(),img_price,doctorDetailBean.getHx_account());
+                        startRequestOneFragment(doctor_id, doctorName.getText().toString(), img_price, doctorDetailBean.getHx_account());
                         break;
                     case 2://电话咨询
-                        startChooseTimeFragment(doctor_id, "phone",phone_price);
+                        startChooseTimeFragment(doctor_id, "phone", phone_price);
                         break;
                     case 3://视频咨询
-                        startChooseTimeFragment(doctor_id, "video",video_price);
+                        startChooseTimeFragment(doctor_id, "video", video_price);
                         break;
                     case 4://健康管理
-                        startHealthManageFragment(doctor_id,doctorName.getText().toString());
+                        startHealthManageFragment(doctor_id, doctorName.getText().toString());
 
                         break;
                 }
                 break;
             case R.id.pay://送心意
-                startSendHeartFragment(doctor_id, sendDoctorName,doctorDetailBean.getDoctor_head_image());
+                startSendHeartFragment(doctor_id, sendDoctorName, doctorDetailBean.getDoctor_head_image());
                 break;
             case R.id.focus://关注
 
-                if (userBean!=null){
-
+                if (userBean != null) {
 
 
                     if (doctorDetailBean.getIs_collection().equals("1")) {
@@ -444,10 +442,10 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
                         focus.setCompoundDrawables(null, drawable, null, null);
 
 
-                        Map<String ,String> mMap = new HashMap<>();
-                        mMap.put("member_id",userBean.getMember_id());
-                        mMap.put("member_token",userBean.getMember_token());
-                        mMap.put("collection_id",collection_id);
+                        Map<String, String> mMap = new HashMap<>();
+                        mMap.put("member_id", userBean.getMember_id());
+                        mMap.put("member_token", userBean.getMember_token());
+                        mMap.put("collection_id", collection_id);
                         getPresenter().getCancelCollection(mMap);
                     } else {
                         focus.setText("取消关注");
@@ -455,28 +453,22 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
                         drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight()); //设置边界
                         focus.setCompoundDrawables(null, drawable, null, null);
                         map.clear();
-                        map.put("member_id",userBean.getMember_id());
-                        map.put("member_token",userBean.getMember_token());
-                        map.put("collection_type","doctor");
-                        map.put("doctor_id",doctor_id);
+                        map.put("member_id", userBean.getMember_id());
+                        map.put("member_token", userBean.getMember_token());
+                        map.put("collection_type", "doctor");
+                        map.put("doctor_id", doctor_id);
                         getPresenter().getinsertCollection(map);
-
 
 
                     }
 
 
-
-                }else {
+                } else {
                     startLogin();
                 }
 
 
-
-
-
                 break;
-
 
 
             case R.id.ivRight://分享

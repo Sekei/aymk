@@ -71,7 +71,7 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
     private String name = "";
     private String iconurl = "";
     private String union_id = "";
-    private boolean IS_SEE_PWD=false;
+    private boolean IS_SEE_PWD = false;
 
     public static LoginFragment newInstance() {
         Bundle args = new Bundle();
@@ -93,7 +93,6 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
     }
 
 
-
     @Override
     public int getRootViewId() {
         return R.layout.fragment_login;
@@ -107,8 +106,8 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
 
     @Override
     public void initData() {
-        String phone_str= SPUtils.getString(context,"phone");
-        if (phone_str!=null&&!"".equals(phone_str)){
+        String phone_str = SPUtils.getString(context, "phone");
+        if (phone_str != null && !"".equals(phone_str)) {
             phone.setText(phone_str);
         }
 
@@ -117,20 +116,20 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
     @Override
     public void onLoginMember(UserBean data) {
 
-        if(EMClient.getInstance().isLoggedInBefore()){
+        if (EMClient.getInstance().isLoggedInBefore()) {
             //如果登陆过，判断是否连接
-            if (EMClient.getInstance().isConnected()){
+            if (EMClient.getInstance().isConnected()) {
                 Log.d("dfc", "登录过，并且已连接！");
                 saveUser(data);
                 setdata(data);
                 startActivity(MainActivity.class);
                 finish();
-            }else {
+            } else {
                 Log.d("dfc", "登录过，已短开！");
                 EMClient.getInstance().logout(true);
                 loginHx(data);
             }
-        }else{
+        } else {
             //开始登陆
             loginHx(data);
         }
@@ -139,36 +138,34 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
         LoadingUtil.hideLoading();
 
 
-
-
     }
 
     @Override
-    public void onThridLogin(UserBean data,String str,String code ) {
-        if (data!=null&&data.getMember_id()!=null){
+    public void onThridLogin(UserBean data, String str, String code) {
+        if (data != null && data.getMember_id() != null) {
 
-            if(EMClient.getInstance().isLoggedInBefore()){
+            if (EMClient.getInstance().isLoggedInBefore()) {
                 //如果登陆过，判断是否连接
-                if (EMClient.getInstance().isConnected()){
+                if (EMClient.getInstance().isConnected()) {
                     Log.d("dfc", "登录过，并且已连接！");
                     saveUser(data);
                     setdata(data);
 
                     startActivity(MainActivity.class);
                     finish();
-                }else {
+                } else {
                     Log.d("dfc", "登录过，已短开！");
                     EMClient.getInstance().logout(true);
                     loginHx(data);
                 }
-            }else{
+            } else {
                 //开始登陆
                 loginHx(data);
             }
 
 
-        }else {
-            statrRegistered("2",str,code);
+        } else {
+            statrRegistered("2", str, code);
             LoadingUtil.hideLoading();
 
         }
@@ -176,7 +173,7 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
 
     @Override
     public void ondeviceToken(String devicetoken) {
-  //   ToastUtils.showToast(getActivity(),devicetoken);
+        //   ToastUtils.showToast(getActivity(),devicetoken);
     }
 
     //登陆环信
@@ -200,24 +197,24 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
 
             @Override
             public void onError(int code, String message) {
-                Log.d("dfc", "登录聊天服务器失败！"+code+message);
+                Log.d("dfc", "登录聊天服务器失败！" + code + message);
             }
         });
     }
 
     private void setdata(final UserBean data) {
         SharedPreferences sharedPre = context.getSharedPreferences("config", Context.MODE_PRIVATE);
-        final   String deviceToken= sharedPre.getString("deviceToken","");
-        Log.e("deviceTokens1", "7777777: "+deviceToken);
+        final String deviceToken = sharedPre.getString("deviceToken", "");
+        Log.e("deviceTokens1", "7777777: " + deviceToken);
 
         new Thread() {
             @Override
             public void run() {
 
-                if (!deviceToken.equals("")){
-                    Map<String,String>  params= new HashMap<>();
-                    params.put("member_id",data.getMember_id());
-                    params.put("device_token",deviceToken);
+                if (!deviceToken.equals("")) {
+                    Map<String, String> params = new HashMap<>();
+                    params.put("member_id", data.getMember_id());
+                    params.put("device_token", deviceToken);
                     getPresenter().deviceToken(params);
                 }
 
@@ -246,16 +243,14 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
     }
 
 
-
-
-    @OnClick({R.id.ivLeft, R.id.registed, R.id.ok,R.id.qq,R.id.wechat,R.id.forgotPwd,R.id.seePwd})
+    @OnClick({R.id.ivLeft, R.id.registed, R.id.ok, R.id.qq, R.id.wechat, R.id.forgotPwd, R.id.seePwd})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ivLeft:
                 finish();
                 break;
             case R.id.registed:
-                statrRegistered("1","","");
+                statrRegistered("1", "", "");
                 break;
             case R.id.ok:
                 if (TextUtils.isEmpty(phone.getText().toString())) {
@@ -270,7 +265,7 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
                 map.put("member_account", phone.getText().toString());
                 map.put("member_password", pwd.getText().toString());
                 getPresenter().loginMember(map);
-                LoadingUtil.showLoadingNew(context,"登陆中...");
+                LoadingUtil.showLoadingNew(context, "登陆中...");
                 break;
             case R.id.qq:
                 platform = SHARE_MEDIA.QQ;
@@ -294,11 +289,11 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
 
                 if (!IS_SEE_PWD) {
                     pwd.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
-                    IS_SEE_PWD=true;
+                    IS_SEE_PWD = true;
 
                 } else {
                     pwd.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-                    IS_SEE_PWD=false;
+                    IS_SEE_PWD = false;
                 }
 
                 break;
@@ -330,20 +325,20 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
          */
         @Override
         public void onStart(SHARE_MEDIA platform) {
-            if (getActivity()!=null){
-              getActivity().runOnUiThread(new Runnable() {
-                  @Override
-                  public void run() {
-                      try {
-                          LoadingUtil.showLoading(getActivity(), "第三方登录中...");
+            if (getActivity() != null) {
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            LoadingUtil.showLoading(getActivity(), "第三方登录中...");
 
-                      }catch (Exception e){
-                          e.printStackTrace();
+                        } catch (Exception e) {
+                            e.printStackTrace();
 
-                      }
+                        }
 
-                  }
-              });
+                    }
+                });
 
             }
 
@@ -359,13 +354,15 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
          */
         @Override
         public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
-          String mopenId=data.get("openid");
+            String mopenId = data.get("openid");
             if (platform == SHARE_MEDIA.QQ) {
-                map.put("qq_openid",mopenId);
-                getPresenter().getThridLogin(map,"qq", mopenId);
+                map.put("qq_openid", mopenId);
+                map.put("member_head_img", data.get("iconurl"));
+                getPresenter().getThridLogin(map, "qq", mopenId);
             } else if (platform == SHARE_MEDIA.WEIXIN) {
-                map.put("wx_openid",mopenId);
-                getPresenter().getThridLogin(map,"wx", mopenId);
+                map.put("wx_openid", mopenId);
+                map.put("member_head_img", data.get("iconurl"));
+                getPresenter().getThridLogin(map, "wx", mopenId);
             }
 
         }
@@ -382,7 +379,7 @@ public class LoginFragment extends BaseFragment<ILoginView, LoginPresenter> impl
 
             ToastUtils.showToast(context.getApplicationContext(), "失败：" + t.getMessage());
             LoadingUtil.hideLoading();
-            Log.i("dfc", "onError: "+t.getMessage());
+            Log.i("dfc", "onError: " + t.getMessage());
         }
 
         /**

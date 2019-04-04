@@ -125,12 +125,11 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
             if (mess.equals("token failed")) {
                 ToastUtils.showToast(context.getApplicationContext(), "账号过期，请重新登录");
                 startLogin();
-            } else {
+            }else {
                 ToastUtils.showToast(context.getApplicationContext(), mess);
             }
         }catch (Exception ee){
             ToastUtils.showToast(context.getApplicationContext(), mess);
-
         }
 
 

@@ -73,6 +73,7 @@ public class HousekeepBean {
     private String house_service_name;
     private String house_service_desc;
     private String service_range;
+    private String count;
 
     public String getHx_account() {
         return hx_account;
@@ -331,6 +332,14 @@ public class HousekeepBean {
 
     public void setHouseAddressBeans(List<HouseAddressBeansBean> houseAddressBeans) {
         this.houseAddressBeans = houseAddressBeans;
+    }
+
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
     }
 
     public static class HouseAddressBeansBean {

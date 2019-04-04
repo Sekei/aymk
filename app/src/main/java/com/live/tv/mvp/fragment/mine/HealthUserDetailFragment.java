@@ -191,7 +191,7 @@ public class HealthUserDetailFragment extends BaseFragment<IHealthUserDetailView
 
         age.setText(data.getAge() + "岁");
         sex.setText(data.getSex());
-        name.setText(data.getReal_name());
+        name.setText(data.getRecord_name());
 
         baseinfo.SetDoctorInfo(data);
         serviceSetting.SetDoctorInfo(data);

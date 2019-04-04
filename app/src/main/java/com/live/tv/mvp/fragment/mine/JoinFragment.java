@@ -29,6 +29,7 @@ import static com.live.tv.mvp.fragment.mine.JoinDoctorFragment.READ_CONTACTS_REQ
 /**
  * @author Created by stone
  * @since 2018/2/1
+ * 合作加盟
  */
 
 public class JoinFragment extends BaseFragment<IJoinView,JoinPresenter> implements IJoinView {
