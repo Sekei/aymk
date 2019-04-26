@@ -1,5 +1,6 @@
 package com.live.tv.mvp.presenter.communicate;
 
+import com.king.base.util.LogUtils;
 import com.live.tv.App;
 import com.live.tv.http.HttpResult;
 import com.live.tv.mvp.base.BasePresenter;
@@ -102,4 +103,45 @@ public void getpost(Map<String,String> body) {
                 }
             });
 }
+
+
+    //上传单张图片
+    public void uploadImg(RequestBody requestBody) {
+        if (isViewAttached()) {
+            getView().showProgress();
+        }
+        getAppComponent().getAPIService()
+                .uploadImg(requestBody)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<HttpResult<String>>() {
+
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (isViewAttached())
+                            getView().onError(e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(HttpResult<String> userBeanHttpResult) {
+                        LogUtils.d("Response:" + userBeanHttpResult);
+                        if (userBeanHttpResult != null) {
+                            if (isViewAttached()) {
+                                getView().uploadImg(userBeanHttpResult.getData());
+                            }
+                        }
+                    }
+                });
+    }
 }

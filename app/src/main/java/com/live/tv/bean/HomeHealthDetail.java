@@ -170,6 +170,15 @@ public class HomeHealthDetail {
         private PostBeanBeanX postBean;
         private List<PostImageBeansBeanX> postImageBeans;
         private List<CommentPostBeansBeanX> commentPostBeans;
+        private String post_image;
+
+        public String getPost_image() {
+            return post_image;
+        }
+
+        public void setPost_image(String post_image) {
+            this.post_image = post_image;
+        }
 
         public int getPost_id() {
             return post_id;

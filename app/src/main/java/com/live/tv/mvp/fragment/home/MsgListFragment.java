@@ -43,7 +43,7 @@ public class MsgListFragment extends BaseFragment<IMsgListView, MsgListPresenter
     public static MsgListFragment newInstance(String state) {
         Bundle args = new Bundle();
         MsgListFragment fragment = new MsgListFragment();
-        fragment.state=state;
+        fragment.state = state;
         fragment.setArguments(args);
         return fragment;
     }
@@ -103,6 +103,11 @@ public class MsgListFragment extends BaseFragment<IMsgListView, MsgListPresenter
     }
 
     @Override
+    public void onSendMsg(String data) {
+
+    }
+
+    @Override
     public void showProgress() {
 
     }
@@ -116,7 +121,6 @@ public class MsgListFragment extends BaseFragment<IMsgListView, MsgListPresenter
     public void onError(Throwable e) {
 
     }
-
 
 
     @Override

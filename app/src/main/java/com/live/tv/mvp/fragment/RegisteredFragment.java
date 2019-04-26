@@ -57,6 +57,8 @@ public class RegisteredFragment extends BaseFragment<IRegisteredView, Registered
     EditText pwd;
     @BindView(R.id.pwdTwo)
     EditText pwdTwo;
+    @BindView(R.id.fill_invitation_code)
+    EditText fillInvitationCode;
     @BindView(R.id.ok)
     TextView ok;
     @BindView(R.id.seePwd)
@@ -70,12 +72,12 @@ public class RegisteredFragment extends BaseFragment<IRegisteredView, Registered
     private String wxorqq;
     private String openid;
 
-    public static RegisteredFragment newInstance(String type,String tag,String code) {
+    public static RegisteredFragment newInstance(String type, String tag, String code) {
         Bundle args = new Bundle();
         RegisteredFragment fragment = new RegisteredFragment();
         fragment.mType = type;
-        fragment.wxorqq=tag;
-        fragment.openid=code;
+        fragment.wxorqq = tag;
+        fragment.openid = code;
         fragment.setArguments(args);
         return fragment;
     }
@@ -155,19 +157,19 @@ public class RegisteredFragment extends BaseFragment<IRegisteredView, Registered
     public void onbuildnumber(UserBean data) {
 
         ToastUtils.showToast(context.getApplicationContext(), "绑定成功");
-        if(EMClient.getInstance().isLoggedInBefore()){
+        if (EMClient.getInstance().isLoggedInBefore()) {
             //如果登陆过，判断是否连接
-            if (EMClient.getInstance().isConnected()){
+            if (EMClient.getInstance().isConnected()) {
                 Log.d("dfc", "登录过，并且已连接！");
                 saveUser(data);
                 startActivity(MainActivity.class);
                 finish();
-            }else {
+            } else {
                 Log.d("dfc", "登录过，已短开！");
                 EMClient.getInstance().logout(true);
                 loginHx(data);
             }
-        }else{
+        } else {
             //开始登陆
             loginHx(data);
         }
@@ -197,7 +199,7 @@ public class RegisteredFragment extends BaseFragment<IRegisteredView, Registered
 
             @Override
             public void onError(int code, String message) {
-                Log.d("dfc", "登录聊天服务器失败！"+code+message);
+                Log.d("dfc", "登录聊天服务器失败！" + code + message);
             }
         });
     }
@@ -268,10 +270,10 @@ public class RegisteredFragment extends BaseFragment<IRegisteredView, Registered
                 Map<String, String> registerMap = new HashMap<>();
                 registerMap.put("member_account", phone.getText().toString());
                 registerMap.put("code", yzm.getText().toString());
-                if (wxorqq.equals("qq")){
-                    registerMap.put("qq_openid",openid);
-                } else if (wxorqq.equals("wx")){
-                    registerMap.put("wx_openid",openid);
+                if (wxorqq.equals("qq")) {
+                    registerMap.put("qq_openid", openid);
+                } else if (wxorqq.equals("wx")) {
+                    registerMap.put("wx_openid", openid);
                 }
                 getPresenter().getbuildnumber(registerMap);
             }
@@ -284,6 +286,7 @@ public class RegisteredFragment extends BaseFragment<IRegisteredView, Registered
                 registerMap.put("member_account", phone.getText().toString());
                 registerMap.put("member_password", pwd.getText().toString());
                 registerMap.put("code", yzm.getText().toString());
+                registerMap.put("fill_invitation_code", fillInvitationCode.getText().toString());
                 getPresenter().registerMember(registerMap);
             }
         }

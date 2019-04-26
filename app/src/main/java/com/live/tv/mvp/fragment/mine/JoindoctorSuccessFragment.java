@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.king.base.util.ToastUtils;
@@ -38,9 +39,12 @@ public class JoindoctorSuccessFragment extends BaseFragment<IJoinSuccessView, Jo
     TextView tvState;
     @BindView(R.id.tv_submit)
     TextView tvSubmit;
+    @BindView(R.id.image_logo)
+    ImageView imageLogo;
     Unbinder unbinder;
     private String type;
     private String htmlurl;
+
     public static JoindoctorSuccessFragment newInstance(String type) {
         Bundle args = new Bundle();
         JoindoctorSuccessFragment fragment = new JoindoctorSuccessFragment();
@@ -59,12 +63,15 @@ public class JoindoctorSuccessFragment extends BaseFragment<IJoinSuccessView, Jo
         switch (type) {
             case "1":
                 tvTitle.setText(R.string.shop_join);
+                imageLogo.setBackgroundResource(R.drawable.join_icon_shop);
                 break;
             case "2":
                 tvTitle.setText(R.string.doctor_join);
+                imageLogo.setBackgroundResource(R.drawable.join_icon_doctor);
                 break;
             case "3":
                 tvTitle.setText(R.string.house_join);
+                imageLogo.setBackgroundResource(R.drawable.join_icon_service);
                 break;
         }
 
@@ -116,10 +123,9 @@ public class JoindoctorSuccessFragment extends BaseFragment<IJoinSuccessView, Jo
 
 
                         } else if ("2".equals(state)) {
-                           startJoinShopFragment(htmlurl);
+                            startJoinShopFragment(htmlurl);
                             finish();
                         }
-
 
 
                         break;
@@ -144,7 +150,6 @@ public class JoindoctorSuccessFragment extends BaseFragment<IJoinSuccessView, Jo
                         if ("0".equals(state)) {
 
 
-
 //                            Map<String,String> mMap = new HashMap<>();
 //                            mMap.put("member_id",userBean.getMember_id());
 //                            mMap.put("member_token",userBean.getMember_token());
@@ -166,15 +171,16 @@ public class JoindoctorSuccessFragment extends BaseFragment<IJoinSuccessView, Jo
                 break;
         }
     }
-    private void exit(final String  type) {
+
+    private void exit(final String type) {
         final CustomDialog.Builder builder = new CustomDialog.Builder(context);
         builder.setMessage("是否撤销申请？");
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                Map<String,String> mMap = new HashMap<>();
-                mMap.put("member_id",userBean.getMember_id());
-                mMap.put("member_token",userBean.getMember_token());
-                mMap.put("cancel_type",type);
+                Map<String, String> mMap = new HashMap<>();
+                mMap.put("member_id", userBean.getMember_id());
+                mMap.put("member_token", userBean.getMember_token());
+                mMap.put("cancel_type", type);
                 getPresenter().CancelApplyMearchants(mMap);
                 dialog.dismiss();
             }
@@ -229,7 +235,7 @@ public class JoindoctorSuccessFragment extends BaseFragment<IJoinSuccessView, Jo
     @Override
     public void onCancelApplyMearchants(String data) {
 
-        ToastUtils.showToast(context.getApplicationContext(),data);
+        ToastUtils.showToast(context.getApplicationContext(), data);
         finish();
     }
 

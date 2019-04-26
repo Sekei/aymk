@@ -83,6 +83,7 @@ public class UserBean {
     private String merchants_type;//商家
     private String houseService_type;//家政用户
     private String house_service_id;
+    private String health_record_id;
 
     public String getMerchants_type() {
         return merchants_type;
@@ -685,6 +686,14 @@ public class UserBean {
 
     public void setIs_authentication(String is_authentication) {
         this.is_authentication = is_authentication;
+    }
+
+    public String getHealth_record_id() {
+        return health_record_id;
+    }
+
+    public void setHealth_record_id(String health_record_id) {
+        this.health_record_id = health_record_id;
     }
 
     public String getMember_level() {

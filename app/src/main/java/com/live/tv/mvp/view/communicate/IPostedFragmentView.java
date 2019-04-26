@@ -12,4 +12,5 @@ public interface IPostedFragmentView extends BaseView {
     void onUploadImgs(String[] data);
     void onpostsuccess(String data);
 
+    void uploadImg(String data);
 }

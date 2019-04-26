@@ -48,7 +48,7 @@ public class HealthAdapter extends RecyclerArrayAdapter<HomeHealthDetail.PostBea
                 mindications.setText(data.getPostBean().getPost_desc());
                 mtime.setText(data.getPostBean().getMember_nick_name()+data.getPostBean().getPosting_date());
                 Glide.with(getContext())
-                        .load(Constants.BASE_URL + data.getPostBean().getMember_head_image())
+                        .load(Constants.BASE_URL + data.getPost_image())
                         .placeholder(R.mipmap.ic_launcher)
                         .error(R.mipmap.ic_launcher)
                         .thumbnail(0.1f)
@@ -59,7 +59,7 @@ public class HealthAdapter extends RecyclerArrayAdapter<HomeHealthDetail.PostBea
                 mindications.setText(data.getPost_desc());
                 mtime.setText(data.getMember_nick_name()+data.getPosting_date());
                 Glide.with(getContext())
-                        .load(Constants.BASE_URL + data.getMember_head_image())
+                        .load(Constants.BASE_URL + data.getPost_image())
                         .placeholder(R.mipmap.ic_launcher)
                         .error(R.mipmap.ic_launcher)
                         .thumbnail(0.1f)

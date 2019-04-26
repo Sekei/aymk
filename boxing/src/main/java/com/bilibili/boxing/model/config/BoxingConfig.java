@@ -98,49 +98,61 @@ public class BoxingConfig implements Parcelable {
 
     /**
      * get the image drawable resource by {@link BoxingConfig#withMediaPlaceHolderRes(int)}.
+     *
      * @return >0, set a valid drawable resource; otherwise without a placeholder.
      */
-    public @DrawableRes int getMediaPlaceHolderRes() {
+    public @DrawableRes
+    int getMediaPlaceHolderRes() {
         return mMediaPlaceHolderRes;
     }
 
     /**
      * get the media checked drawable resource by {@link BoxingConfig#withMediaCheckedRes(int)}.
+     *
      * @return >0, set a valid drawable resource; otherwise without a placeholder.
      */
-    public @DrawableRes  int getMediaCheckedRes() {
+    public @DrawableRes
+    int getMediaCheckedRes() {
         return mMediaCheckedRes;
     }
 
     /**
      * get the media unchecked drawable resource by {@link BoxingConfig#withMediaUncheckedRes(int)} (int)}.
+     *
      * @return >0, set a valid drawable resource; otherwise without a placeholder.
      */
-    public @DrawableRes int getMediaUnCheckedRes() {
+    public @DrawableRes
+    int getMediaUnCheckedRes() {
         return mMediaUnCheckedRes;
     }
 
     /**
      * get the media unchecked drawable resource by {@link BoxingConfig#withMediaPlaceHolderRes(int)}.
+     *
      * @return >0, set a valid drawable resource; otherwise without a placeholder.
      */
-    public @DrawableRes int getCameraRes() {
+    public @DrawableRes
+    int getCameraRes() {
         return mCameraRes;
     }
 
     /**
      * get the album drawable resource by {@link BoxingConfig#withAlbumPlaceHolderRes(int)}.
+     *
      * @return >0, set a valid drawable resource; otherwise without a placeholder.
      */
-    public @DrawableRes int getAlbumPlaceHolderRes() {
+    public @DrawableRes
+    int getAlbumPlaceHolderRes() {
         return mAlbumPlaceHolderRes;
     }
 
     /**
      * get the video drawable resource by {@link BoxingConfig#withVideoDurationRes(int)}.
+     *
      * @return >0, set a valid drawable resource; otherwise without a placeholder.
      */
-    public @DrawableRes int getVideoDurationRes() {
+    public @DrawableRes
+    int getVideoDurationRes() {
         return mVideoDurationRes;
     }
 
@@ -185,6 +197,11 @@ public class BoxingConfig implements Parcelable {
         return this;
     }
 
+    public BoxingConfig needCamera() {
+        this.mNeedCamera = true;
+        return this;
+    }
+
     /**
      * call this means paging is needed,by default is true.
      */
@@ -205,6 +222,7 @@ public class BoxingConfig implements Parcelable {
 
     /**
      * set the max count of selected medias in {@link Mode#MULTI_IMG}
+     *
      * @param count max count
      */
     public BoxingConfig withMaxCount(int count) {

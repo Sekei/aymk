@@ -15,6 +15,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +51,7 @@ import com.live.tv.bean.LiveBean;
 import com.live.tv.bean.MerchantHotBean;
 import com.live.tv.bean.NewsBean;
 import com.live.tv.bean.UserBean;
+import com.live.tv.mvp.activity.ContentActivity;
 import com.live.tv.mvp.activity.live.LivePlaybackActivity;
 import com.live.tv.mvp.activity.live.PlaybackActivity;
 import com.live.tv.mvp.adapter.home.DoctorAdapter;
@@ -77,6 +79,7 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 
 import static android.app.Activity.RESULT_OK;
+import static android.content.Context.TELEPHONY_SERVICE;
 
 /**
  * @author Created by stone
@@ -295,7 +298,6 @@ public class HomeFragment extends BaseFragment<IHomeView, HomePresenter> impleme
                             } else {
                                 startLogin();
                             }
-
                             break;
                         case 3:
                             if (userBean != null) {
@@ -338,11 +340,8 @@ public class HomeFragment extends BaseFragment<IHomeView, HomePresenter> impleme
         liveAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-
                 LiveBean liveBean = liveAdapter.getItem(position);
-
                 if (userBean != null) {
-
                     if (liveBean.getLive_state().equals("1")) {
                         Intent intent = new Intent(getActivity(), PlaybackActivity.class);
                         intent.putExtra("videoPath", liveBean.getLive_play_rtmp_url());
@@ -525,7 +524,13 @@ public class HomeFragment extends BaseFragment<IHomeView, HomePresenter> impleme
         LiveparamsInfo();//名医直播参数请求
         getPresenter().getHomeHealth(map);//获取养生知识
         getPresenter().getMerchantHot(map);
-
+        //
+        TelephonyManager tm=(TelephonyManager)getActivity().getSystemService(TELEPHONY_SERVICE);
+        Map<String,String> deviceMap=new HashMap<>();
+        deviceMap.put("member_id",userBean.getMember_id());
+        deviceMap.put("member_token",userBean.getMember_token());
+        deviceMap.put("device_tokens","device_tokens");
+        //getPresenter().getDevice_tokens(deviceMap);
         ////////////
         //申请权限
         List<String> permissions = new ArrayList<>();
@@ -559,14 +564,35 @@ public class HomeFragment extends BaseFragment<IHomeView, HomePresenter> impleme
     private void clickBannerItem(BannerBean banner) {
         //1不跳转；2web链接;3个人中心；4商品
         if (banner != null) {
-
-            if (banner.getSort().equals("2")) {
-
-                startWeb(banner.getBanner_title(), banner.getBanner_url(), "2");
-            } else {
-
-                // ToastUtils.showToast(getActivity(), "状态值不确定");
+            BannerBean data = banner;
+            //chain:外链 goods:商品 merchants:商家 doctor:医生 house:家政
+            if (data.getBanner_type().equals("chain")) {
+                startWeb("爱医美康", banner.getBanner_url(), "2");
+            } else if (data.getBanner_type().equals("goods")) {
+                Intent intent = new Intent(getActivity(), ContentActivity.class);
+                intent.putExtra(Constants.KEY_FRAGMENT, Constants.GOOD_DETAIL_FRAGMENT);
+                intent.putExtra("goods_id", data.getGoods_id());
+                startActivity(intent);
+            } else if (data.getBanner_type().equals("merchants")) {
+                Intent intent = new Intent(getActivity(), ContentActivity.class);
+                intent.putExtra(Constants.KEY_FRAGMENT, Constants.Merchants_Detail_Fragment);
+                intent.putExtra("merchants_id", data.getMerchants_id());
+                startActivity(intent);
+            } else if (data.getBanner_type().equals("doctor")) {
+                Intent intent = getFragmentIntent(Constants.DOCTOR_DETAIL);
+                intent.putExtra(Constants.DOCTOR_ID, data.getDoctor_id());
+                startActivity(intent);
+            } else if (data.getBanner_type().equals("house")) {
+                startHouseKeepingDetailFragment(data.getHouse_service_id());
             }
+
+//            if (banner.getSort().equals("2")) {
+//
+//                startWeb(banner.getBanner_title(), banner.getBanner_url(), "2");
+//            } else {
+//
+//                // ToastUtils.showToast(getActivity(), "状态值不确定");
+//            }
 
         }
     }

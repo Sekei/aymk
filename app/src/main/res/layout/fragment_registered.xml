@@ -23,11 +23,11 @@
         android:layout_height="40dp"
         android:layout_marginEnd="30dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="105dp"
-        android:maxLength="15"
+        android:layout_marginTop="85dp"
         android:background="@drawable/setbar_zb"
         android:gravity="center_vertical"
         android:hint="昵称"
+        android:maxLength="15"
         android:paddingLeft="10dp"
         android:textColor="@color/colorTextG3"
         android:textColorHint="@color/colorTextGC"
@@ -58,39 +58,39 @@
         android:id="@+id/yzm"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
         android:background="@drawable/setbar_zb"
         android:gravity="center_vertical"
         android:hint="验证码"
         android:inputType="number"
         android:maxLength="6"
         android:paddingLeft="10dp"
-        app:layout_constraintRight_toLeftOf="@+id/getYzm"
-        app:layout_constraintHorizontal_weight="3"
         android:textColor="@color/colorTextG3"
         android:textColorHint="@color/colorTextGC"
+        app:layout_constraintHorizontal_weight="3"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/getYzm"
         app:layout_constraintTop_toBottomOf="@+id/phone" />
 
     <TextView
         android:id="@+id/getYzm"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/setbar_seach"
         android:gravity="center"
-        android:text="获取验证码"
-        app:layout_constraintHorizontal_weight="2"
         android:paddingLeft="10dp"
+        android:text="获取验证码"
         android:textColor="@color/colorPrimary"
         android:textColorHint="@color/colorTextGC"
-        app:layout_constraintLeft_toRightOf="@+id/yzm"
-        android:layout_marginRight="30dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/yzm"
         app:layout_constraintBottom_toBottomOf="@+id/yzm"
-        android:layout_marginBottom="0dp" />
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintLeft_toRightOf="@+id/yzm"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/yzm" />
 
     <EditText
         android:id="@+id/pwd"
@@ -130,6 +130,25 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pwd" />
 
+    <EditText
+        android:id="@+id/fill_invitation_code"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/setbar_zb"
+        android:gravity="center_vertical"
+        android:hint="邀请码（选填）"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorTextG3"
+        android:textColorHint="@color/colorTextGC"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwdTwo" />
+
     <TextView
         android:id="@+id/ok"
         android:layout_width="0dp"
@@ -143,7 +162,7 @@
         android:textColor="@color/pure_white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pwdTwo" />
+        app:layout_constraintTop_toBottomOf="@+id/fill_invitation_code" />
 
 
     <ImageView
@@ -156,6 +175,7 @@
         app:layout_constraintRight_toRightOf="@+id/pwd"
         app:layout_constraintTop_toTopOf="@+id/pwd"
         app:srcCompat="@drawable/register_eye_closed" />
+
     <ImageView
         android:id="@+id/seePwdTwo"
         android:layout_width="wrap_content"

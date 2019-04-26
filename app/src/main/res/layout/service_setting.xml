@@ -178,7 +178,7 @@
         android:id="@+id/tex3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="元/15min"
+        android:text="元/次"
         app:layout_constraintTop_toTopOf="@+id/tv_price_2"
         app:layout_constraintBottom_toBottomOf="@+id/tv_price_2"
         app:layout_constraintLeft_toRightOf="@+id/tv_price_2" />
@@ -292,7 +292,7 @@
         android:id="@+id/tex33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="元/15min"
+        android:text="元/次"
         app:layout_constraintTop_toTopOf="@+id/tv_price_3"
         app:layout_constraintBottom_toBottomOf="@+id/tv_price_3"
         app:layout_constraintLeft_toRightOf="@+id/tv_price_3" />

@@ -45,6 +45,9 @@ public class BannerBean {
     private String goods_uuid;
     private String goods_class_name;
     private String chain_url;
+    private String merchants_id;
+    private String doctor_id;
+    private String house_service_id;
 
     public int getBanner_id() {
         return banner_id;
@@ -180,5 +183,29 @@ public class BannerBean {
 
     public void setChain_url(String chain_url) {
         this.chain_url = chain_url;
+    }
+
+    public String getMerchants_id() {
+        return merchants_id;
+    }
+
+    public void setMerchants_id(String merchants_id) {
+        this.merchants_id = merchants_id;
+    }
+
+    public String getDoctor_id() {
+        return doctor_id;
+    }
+
+    public void setDoctor_id(String doctor_id) {
+        this.doctor_id = doctor_id;
+    }
+
+    public String getHouse_service_id() {
+        return house_service_id;
+    }
+
+    public void setHouse_service_id(String house_service_id) {
+        this.house_service_id = house_service_id;
     }
 }

@@ -19,8 +19,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bilibili.boxing.Boxing;
+import com.bilibili.boxing.BoxingMediaLoader;
+import com.bilibili.boxing.model.config.BoxingConfig;
+import com.bilibili.boxing.model.config.BoxingCropOption;
+import com.bilibili.boxing.model.entity.BaseMedia;
+import com.bilibili.boxing.model.entity.impl.ImageMedia;
+import com.bilibili.boxing.utils.BoxingFileHelper;
+import com.bilibili.boxing_impl.ui.BoxingActivity;
 import com.king.base.util.ToastUtils;
 import com.live.tv.Constants;
+import com.live.tv.util.LoadingUtil;
 import com.ysjk.health.iemk.R;
 import com.live.tv.bean.Group;
 import com.live.tv.bean.Note;
@@ -49,6 +58,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -69,6 +79,7 @@ import okhttp3.RequestBody;
 import static android.app.Activity.RESULT_OK;
 import static android.content.ContentValues.TAG;
 import static android.content.Context.INPUT_METHOD_SERVICE;
+import static com.king.base.BaseInterface.REQUEST_CODE;
 import static com.live.tv.Constants.REQUEST_CODE_CHOOSE;
 import static com.ysjk.health.iemk.R.id.et_new_content;
 import static com.ysjk.health.iemk.R.id.et_new_title;
@@ -131,6 +142,8 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
     TextView tvRight;
     @BindView(R.id.et_zuozhe)
     EditText editText;
+    @BindView(R.id.image_icon)
+    ImageView imageUrl;
 //    @BindView(R.id.content_new)
 //    LinearLayout contentNew;
 
@@ -155,28 +168,24 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
     private String title;
     private String plateId;
 
-
+    String imageStatus, path, uploadImg = "";
     Unbinder unbinder;
     private ArrayList<File> files;
     private String titlename;
 
     public static PostedFragment newInstance(Note note, int flage) {
-
         PostedFragment fragment = new PostedFragment();
         fragment.note = note;
         fragment.flag = flage;
-
         return fragment;
-
-
     }
 
-    public static PostedFragment newInstance(int flag,String plateId) {
+    public static PostedFragment newInstance(int flag, String plateId) {
 
         PostedFragment fragment = new PostedFragment();
         fragment.note = new Note();
         fragment.flag = flag;
-        fragment.plateId=plateId;
+        fragment.plateId = plateId;
         return fragment;
 
 
@@ -268,10 +277,15 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
             loadingDialog.show();
 
             tvTitle.setText("编辑帖子");
-            tvNewTime.setText(note.getCreateTime());
+            if (null != note.getCreateTime() && !"".equals(note.getCreateTime())) {
+                String createTime = note.getCreateTime();
+                tvNewTime.setText(createTime.substring(0, 10));
+            }
+            //会员昵称
+            editText.setText(userBean.getMember_nick_name());
             tvNewGroup.setText(myGroupName);
             etNewTitle.setText(note.getTitle());
-            plateId=note.getPlateId();
+            plateId = note.getPlateId();
             etNewContent.post(new Runnable() {
                 @Override
                 public void run() {
@@ -287,7 +301,7 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
             }
             tvNewGroup.setText(myGroupName);
             myNoteTime = CommonUtil.date2string(new Date());
-            tvNewTime.setText(myNoteTime);
+            tvNewTime.setText(myNoteTime.substring(0, 10));
         }
 
     }
@@ -337,7 +351,7 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
 
     @Override
     public void onError(Throwable e) {
-
+        ToastUtils.showToast(getActivity(), e.getMessage());
     }
 
     @Override
@@ -386,7 +400,7 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
         String noteContent = getEditData();
         String groupName = tvNewGroup.getText().toString();
         String noteTime = tvNewTime.getText().toString();
-        String author="";//作者
+        String author = "";//作者
         String title;
         Group group = groupDao.queryGroupByName(myGroupName);
         if (group != null) {
@@ -398,7 +412,7 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
                 }
             }
             int groupId = group.getId();
-            titlename=noteTitle;
+            titlename = noteTitle;
             note.setPlateId(plateId);
             note.setTitle(noteTitle);
             note.setContent(noteContent);
@@ -423,16 +437,16 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
                         Intent intent = new Intent();
                         getActivity().setResult(RESULT_OK, intent);
                         //finish();
-                        author=editText.getText().toString();
-                        if (author!=null&&!author.equals("")){
+                        author = editText.getText().toString();
+                        if (author != null && !author.equals("")) {
 
-                          title="<h3>"+noteTitle+"</h3><h5>"+CommonUtil.date2string(new Date())+"</h5><h5>"+author+"</h5><br>";
+                            title = "<h3>" + noteTitle + "</h3><h5>" + CommonUtil.date2string(new Date()) + "</h5><h5>" + author + "</h5><br>";
 
-                        }else {
-                            title="<h3>"+noteTitle+"</h3><h5>"+CommonUtil.date2string(new Date())+"</h5><h5>未知</h5><br>";
+                        } else {
+                            title = "<h3>" + noteTitle + "</h3><h5>" + CommonUtil.date2string(new Date()) + "</h5><h5>未知</h5><br>";
 
                         }
-                        setupData(title+noteContent);
+                        setupData(title + noteContent);
                     }
                 }
             } else if (flag == 1) {//编辑笔记
@@ -441,15 +455,15 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
                     noteDao.updateNote(note);
                 }
                 if (!isBackground) {
-                    if (author!=null&&!author.equals("")){
+                    if (author != null && !author.equals("")) {
 
-                        title="<h3>"+noteTitle+"</h3><h5>"+CommonUtil.date2string(new Date())+"</h5><h5>"+author+"</h5><br>";
+                        title = "<h3>" + noteTitle + "</h3><h5>" + CommonUtil.date2string(new Date()) + "</h5><h5>" + author + "</h5><br>";
 
-                    }else {
-                        title="<h3>"+noteTitle+"</h3><h5>"+CommonUtil.date2string(new Date())+"</h5><h5>未知</h5><br>";
+                    } else {
+                        title = "<h3>" + noteTitle + "</h3><h5>" + CommonUtil.date2string(new Date()) + "</h5><h5>未知</h5><br>";
 
                     }
-                    setupData(title+noteContent);
+                    setupData(title + noteContent);
                 }
             }
         }
@@ -473,7 +487,7 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
 
     @OnClick({R.id.tvRight, R.id.ivLeft, R.id.iv_black,
             R.id.iv_grey, R.id.iv_bule, R.id.iv_green, R.id.iv_red, R.id.iv_yellow, R.id.iv_tvbig,
-            R.id.iv_tvnomal, R.id.iv_tvsmall, R.id.iv_image, R.id.iv_textcolor, R.id.iv_textsize})
+            R.id.iv_tvnomal, R.id.iv_tvsmall, R.id.iv_image, R.id.iv_textcolor, R.id.iv_textsize, R.id.image_icon})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.tvRight:
@@ -484,6 +498,7 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
                 dealwithExit();
                 break;
             case R.id.iv_image:
+                imageStatus = "1";
                 closeSoftKeyInput();//关闭软键盘
                 callGallery();
                 // show_img(IMAGE);
@@ -552,6 +567,25 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
                 etNewContent.setRtTextColor(Constants.COLOR_BLUE);
                 llTextcolor.setVisibility(View.GONE);
                 break;
+            case R.id.image_icon:
+                imageStatus = "0";
+                closeSoftKeyInput();//关闭软键盘
+                String cachePath = BoxingFileHelper.getCacheDir(context);
+                if (TextUtils.isEmpty(cachePath)) {
+                    ToastUtils.showToast(context.getApplicationContext(), R.string.boxing_storage_deny);
+                    return;
+                }
+                Uri destUri = new Uri.Builder()
+                        .scheme("file")
+                        .appendPath(cachePath)
+                        .appendPath(String.format(Locale.US, "%s.jpg", System.currentTimeMillis()))
+                        .build();
+                BoxingConfig singleCropImgConfig = new BoxingConfig(BoxingConfig.Mode.SINGLE_IMG)
+                        .needCamera(R.drawable.ic_boxing_camera_white)
+                        .withCropOption(new BoxingCropOption(destUri))
+                        .withMediaPlaceHolderRes(R.drawable.ic_boxing_default_image);
+                Boxing.of(singleCropImgConfig).withIntent(context, BoxingActivity.class).start(this, REQUEST_CODE);
+                break;
 
         }
 
@@ -595,11 +629,40 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (data != null) {
-                if (requestCode == 1) {
-                    //处理调用系统图库
-                } else if (requestCode == REQUEST_CODE_CHOOSE) {
-                    //异步方式插入图片
-                    insertImagesSync(data);
+                if ("0".equals(imageStatus)) {
+                    final ArrayList<BaseMedia> medias = Boxing.getResult(data);
+                    if (medias.get(0) instanceof ImageMedia) {
+                        path = ((ImageMedia) medias.get(0)).getThumbnailPath();
+                    } else {
+                        path = medias.get(0).getPath();
+                    }
+                    BoxingMediaLoader.getInstance().displayThumbnail(imageUrl, path, 480, 480);
+                    String outFilePath = context.getExternalCacheDir().getPath() + System.currentTimeMillis() + ".jpg";
+                    ImageFactory imageFactory = new ImageFactory();
+                    Bitmap ratio = imageFactory.ratio(path, 480, 480);
+                    try {
+                        imageFactory.storeImage(ratio, outFilePath);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } finally {
+                        if (ratio != null) {
+                            ratio.recycle();
+                            ratio = null;
+                        }
+                    }
+                    File _file = new File(outFilePath);
+                    RequestBody requestBody = new MultipartBody.Builder().setType(MultipartBody.FORM)
+                            .addFormDataPart("file", _file.getName(), RequestBody.create(MediaType.parse("image/*"), _file))
+                            .build();
+                    getPresenter().uploadImg(requestBody);
+                    LoadingUtil.showLoading(context, getResources().getString(R.string.img_put));
+                } else {
+                    if (requestCode == 1) {
+                        //处理调用系统图库
+                    } else if (requestCode == REQUEST_CODE_CHOOSE) {
+                        //异步方式插入图片（这里判断是封面图还是什么图？）
+                        insertImagesSync(data);
+                    }
                 }
             }
         }
@@ -763,7 +826,7 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
      */
     @Override
     public void onpostsuccess(String data) {
-        ToastUtils.showToast(getActivity(),"发帖成功");
+        ToastUtils.showToast(getActivity(), "发帖成功");
         finish();
     }
 
@@ -819,14 +882,15 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
         map.put("member_id", userBean.getMember_id());
         map.put("member_token", userBean.getMember_token());
         map.put("post_url", content);
-        map.put("plate_id",plateId);
-        if (titlename!=null&&!titlename.equals("")){
-            map.put("post_title",titlename);
-        }else {
-            map.put("post_title","爱医美康");
+        map.put("plate_id", plateId);
+        map.put("post_image", uploadImg);
+        if (titlename != null && !titlename.equals("")) {
+            map.put("post_title", titlename);
+        } else {
+            map.put("post_title", "爱医美康");
         }
         try {
-        map.put("doctor_id", userBean.getDoctorBean().getDoctor_id());
+            map.put("doctor_id", userBean.getDoctorBean().getDoctor_id());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -835,4 +899,11 @@ public class PostedFragment extends BaseFragment<IPostedFragmentView, PostedFrag
 
     }
 
+
+    @Override
+    public void uploadImg(String data) {
+        LoadingUtil.hideLoading();
+        ToastUtils.showToast(getActivity(), "封面上传成功");
+        this.uploadImg = data;
+    }
 }

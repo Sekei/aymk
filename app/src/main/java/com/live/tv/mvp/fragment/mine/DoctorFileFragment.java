@@ -197,7 +197,7 @@ public class DoctorFileFragment extends BaseFragment<IDoctorFileView, DoctorFile
                 .diskCacheStrategy(DiskCacheStrategy.SOURCE).into(avatar);
 
         age.setText(data.getDoctor_age() + "岁");
-        sex.setText(data.getDoctor_sex());
+        sex.setText("m".equals(data.getDoctor_sex()) ? "男" : "女");
         name.setText(data.getDoctor_name());
 
         baseinfo.SetDoctorInfo(data);

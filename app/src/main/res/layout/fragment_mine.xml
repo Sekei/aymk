@@ -133,6 +133,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/name"
                 app:layout_constraintLeft_toRightOf="@+id/name"
                 app:layout_constraintTop_toTopOf="@+id/name" />
+
             <TextView
                 android:id="@+id/home_page"
                 android:layout_width="wrap_content"
@@ -144,9 +145,9 @@
                 android:drawableRight="@drawable/mine_right_copy"
                 android:padding="15dp"
                 android:text="查看主页"
-                android:visibility="invisible"
                 android:textColor="@color/pure_white"
                 android:textSize="10sp"
+                android:visibility="invisible"
                 app:layout_constraintBottom_toBottomOf="@+id/bg_two"
                 app:layout_constraintRight_toRightOf="@+id/bg_two"
                 app:layout_constraintTop_toTopOf="@+id/bg_two" />
@@ -515,11 +516,11 @@
                 android:drawableRight="@drawable/me_right"
                 android:gravity="center_vertical"
                 android:paddingLeft="15dp"
-                android:visibility="gone"
                 android:paddingRight="15dp"
                 android:text="我的会员"
                 android:textColor="@color/colorTextG3"
                 android:textSize="16sp"
+                android:visibility="gone"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -597,9 +598,9 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:text="我的服务"
-                android:visibility="gone"
                 android:textColor="@color/colorTextG3"
                 android:textSize="16sp"
+                android:visibility="gone"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/myDoctors" />
@@ -677,12 +678,13 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="15dp"
                 android:text="商家订单"
-                android:visibility="gone"
                 android:textColor="@color/colorTextG3"
                 android:textSize="16sp"
+                android:visibility="gone"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/myshouyi" />
+
             <TextView
                 android:id="@+id/merchantmessage"
                 android:layout_width="0dp"
@@ -701,6 +703,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/merchantform" />
+
             <TextView
                 android:id="@+id/yisheng_dangan"
                 android:layout_width="0dp"
@@ -776,6 +779,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/healthy_user" />
+
             <TextView
                 android:id="@+id/my_live"
                 android:layout_width="0dp"
@@ -795,13 +799,32 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/my_posted" />
 
+            <TextView
+                android:id="@+id/message_list"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/pure_white"
+                android:drawableLeft="@drawable/mine_icon_mess"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/me_right"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="消息列表"
+                android:textColor="@color/colorTextG3"
+                android:textSize="16sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/my_live" />
+
             <View
                 android:id="@+id/my_live2"
                 android:layout_width="0dp"
                 android:layout_height="46dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/my_live" />
+                app:layout_constraintTop_toBottomOf="@+id/message_list" />
 
 
         </android.support.constraint.ConstraintLayout>

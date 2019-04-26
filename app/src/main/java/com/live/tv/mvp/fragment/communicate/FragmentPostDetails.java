@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.king.base.util.ToastUtils;
 import com.live.tv.Constants;
 import com.ysjk.health.iemk.R;
@@ -85,15 +86,15 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
     Unbinder unbinder;
     private PlateListBean mlistBean;
     private String postId;
-    private List<PlateListBean.CommentPostBeansBeanX> list1=new ArrayList<>();
-    private List<PlateListBean.PostBeanBeanX.CommentPostBeansBean> list2=new ArrayList<>();
+    private List<PlateListBean.CommentPostBeansBeanX> list1 = new ArrayList<>();
+    private List<PlateListBean.PostBeanBeanX.CommentPostBeansBean> list2 = new ArrayList<>();
     private UMImage mImage;
     private String mShareUrl;
     private String mTitle;
     private TCInputTextMsgDialog mInputTextMsgDialog;
     private String number;
 
-    public static FragmentPostDetails newInstance(String  postId) {
+    public static FragmentPostDetails newInstance(String postId) {
 
         FragmentPostDetails fragment = new FragmentPostDetails();
         fragment.postId = postId;
@@ -124,26 +125,31 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
         easyRecyclerView.setAdapter(adapter);
         mInputTextMsgDialog = new TCInputTextMsgDialog(getActivity(), R.style.InputDialog);
         mInputTextMsgDialog.setmOnTextSendListener(this);
-
     }
 
     @Override
     public void initData() {
-       // map.put("post_id",postId);
         setdata();
+        //修改帖子阅读次数
+        Map<String, String> map = new HashMap<>();
+        map.put("member_id", userBean.getMember_id());
+        map.put("member_token", userBean.getMember_token());
+        map.put("post_id", postId);
+        getPresenter().getUpdatePost(map);
     }
 
-    private void setdata(){
+    private void setdata() {
         try {
-            map.put("post_id",postId);
-            map.put("member_id",userBean.getMember_id());
+            map.put("post_id", postId);
+            map.put("member_id", userBean.getMember_id());
             getPresenter().getPoastDetial(map);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             startLogin();
         }
 
     }
+
     @Override
     public PostDetailsPresenter createPresenter() {
         return new PostDetailsPresenter(getApp());
@@ -186,41 +192,42 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
     public void onPoastDetial(final PlateListBean listBean) {
 
         if (listBean != null) {
-            mlistBean=listBean;
+            mlistBean = listBean;
             if (listBean.getPostBean() != null && listBean.getPostBean().getForward_num() != null) {
                 /**
                  * 逻辑判断(转发的)
                  */
-               // webView.loadUrl("http://meikang.zhongfeigou.com/html1/post/20180821192640758783.html");
-             getActivity().runOnUiThread(new Runnable() {
-                 @Override
-                 public void run() {
-                     tvTitle.setText(listBean.getPostBean().getPost_title());
-                     mShareUrl=Constants.BASE_URL+listBean.getPostBean().getPost_html_desc();
-                      webView.loadUrl(Constants.BASE_URL+listBean.getPostBean().getPost_html_desc());
-                     tvGood.setText(listBean.getPraise_num());
-                     number=listBean.getPraise_num();
-                     if (listBean.getIs_praise().equals("1")){
-                         ivgood.setBackgroundResource(R.drawable.heart_icom);
-                     }else {
-                         ivgood.setBackgroundResource(R.drawable.unheart_icon);
+                // webView.loadUrl("http://meikang.zhongfeigou.com/html1/post/20180821192640758783.html");
+                getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        tvTitle.setText(listBean.getPostBean().getPost_title());
+                        mShareUrl = Constants.BASE_URL + listBean.getPostBean().getPost_html_desc();
+                        webView.loadUrl(Constants.BASE_URL + listBean.getPostBean().getPost_html_desc());
+                        tvGood.setText(listBean.getPraise_num());
+                        tvRead.setText(listBean.getRead_num()+"人阅读");
+                        number = listBean.getPraise_num();
+                        if (listBean.getIs_praise().equals("1")) {
+                            ivgood.setBackgroundResource(R.drawable.heart_icom);
+                        } else {
+                            ivgood.setBackgroundResource(R.drawable.unheart_icon);
 
-                     }
+                        }
 
-                     list1=listBean.getCommentPostBeans();
-                         if (list1!=null&&list1.size()>0){
-                             tvOmmenct.setVisibility(View.VISIBLE);
-                             tvOmmenct.setText("留言("+list1.size()+")");
-                             adapter.clear();
-                             adapter.addAll(list1);
-                             adapter.notifyDataSetChanged();
-                         }else {
-                             tvOmmenct.setVisibility(View.VISIBLE);
-                             tvOmmenct.setText("留言(0)");
+                        list1 = listBean.getCommentPostBeans();
+                        if (list1 != null && list1.size() > 0) {
+                            tvOmmenct.setVisibility(View.VISIBLE);
+                            tvOmmenct.setText("留言(" + list1.size() + ")");
+                            adapter.clear();
+                            adapter.addAll(list1);
+                            adapter.notifyDataSetChanged();
+                        } else {
+                            tvOmmenct.setVisibility(View.VISIBLE);
+                            tvOmmenct.setText("留言(0)");
 
-                         }
-                 }
-             });
+                        }
+                    }
+                });
 
 
             } else {
@@ -231,25 +238,26 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        mShareUrl=Constants.BASE_URL+listBean.getPost_html_desc();
-                        webView.loadUrl(Constants.BASE_URL+listBean.getPost_html_desc());
+                        mShareUrl = Constants.BASE_URL + listBean.getPost_html_desc();
+                        webView.loadUrl(Constants.BASE_URL + listBean.getPost_html_desc());
                         tvGood.setText(listBean.getPraise_num());
-                        number=listBean.getPraise_num();
-                        if (listBean.getIs_praise().equals("1")){
+                        tvRead.setText(listBean.getRead_num()+"人阅读");
+                        number = listBean.getPraise_num();
+                        if (listBean.getIs_praise().equals("1")) {
                             ivgood.setBackgroundResource(R.drawable.heart_icom);
-                        }else {
+                        } else {
                             ivgood.setBackgroundResource(R.drawable.unheart_icon);
 
                         }
-                        list1=listBean.getCommentPostBeans();
-                        if (list1!=null&&list1.size()>0){
+                        list1 = listBean.getCommentPostBeans();
+                        if (list1 != null && list1.size() > 0) {
                             tvOmmenct.setVisibility(View.VISIBLE);
-                            tvOmmenct.setText("留言("+list1.size()+")");
+                            tvOmmenct.setText("留言(" + list1.size() + ")");
                             adapter.clear();
                             adapter.addAll(list1);
                             adapter.notifyDataSetChanged();
 
-                        }else {
+                        } else {
                             tvOmmenct.setVisibility(View.VISIBLE);
                             tvOmmenct.setText("留言(0)");
                         }
@@ -261,7 +269,6 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
         }
 
 
-
     }
 
     /***
@@ -270,11 +277,11 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
      */
     @Override
     public void onpraisePost(String listBean) {
-        ToastUtils.showToast(context.getApplicationContext(),"点赞成功");
+        ToastUtils.showToast(context.getApplicationContext(), "点赞成功");
         ivgood.setBackgroundResource(R.drawable.heart_icom);
         try {
-            tvGood.setText(Integer.parseInt(number)+1+"");
-        }catch (Exception e){
+            tvGood.setText(Integer.parseInt(number) + 1 + "");
+        } catch (Exception e) {
             e.printStackTrace();
             tvGood.setText("1");
         }
@@ -283,7 +290,7 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
 
     @Override
     public void onpraisePosterror(Throwable msg) {
-        ToastUtils.showToast(getActivity(),msg.getMessage());
+        ToastUtils.showToast(getActivity(), msg.getMessage());
     }
 
     /***
@@ -293,7 +300,7 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
     @Override
     public void onpcommentPost(String msg) {
 
-        ToastUtils.showToast(getActivity(),"留言成功");
+        ToastUtils.showToast(getActivity(), "留言成功");
         scrollView.fullScroll(ScrollView.FOCUS_DOWN);
         setdata();
     }
@@ -305,18 +312,18 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
      */
     @Override
     public void onTextSend(String msg, boolean tanmuOpen) {
-       if (userBean!=null){
-           map.clear();
-           map.put("member_id",userBean.getMember_id());
-           map.put("member_token",userBean.getMember_token());
-           map.put("comment_desc",msg);
-           map.put("member_nick_name",userBean.getMember_nick_name());
-           map.put("member_head_image",userBean.getMember_head_image());
-           map.put("post_id",postId);
-           getPresenter().getpcommentPost(map);
-       }else {
-           startLogin();
-       }
+        if (userBean != null) {
+            map.clear();
+            map.put("member_id", userBean.getMember_id());
+            map.put("member_token", userBean.getMember_token());
+            map.put("comment_desc", msg);
+            map.put("member_nick_name", userBean.getMember_nick_name());
+            map.put("member_head_image", userBean.getMember_head_image());
+            map.put("post_id", postId);
+            getPresenter().getpcommentPost(map);
+        } else {
+            startLogin();
+        }
 
 
     }
@@ -350,7 +357,7 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
         }
     }
 
-    @OnClick({R.id.ivLeft, R.id.ivRight,R.id.iv_good ,R.id.write_message})
+    @OnClick({R.id.ivLeft, R.id.ivRight, R.id.iv_good, R.id.write_message})
 
     public void onclik(View view) {
 
@@ -360,20 +367,20 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
                 finish();
                 break;
             case R.id.ivRight:
-                if (mlistBean!=null){
-                    if (mlistBean.getPostBean() != null && mlistBean.getPostBean().getForward_num() != null){
+                if (mlistBean != null) {
+                    if (mlistBean.getPostBean() != null && mlistBean.getPostBean().getForward_num() != null) {
 
-                        mImage = new UMImage(getContext(),  Constants.BASE_URL+mlistBean.getPostBean().getMember_head_image());
+                        mImage = new UMImage(getContext(), Constants.BASE_URL + mlistBean.getPostBean().getMember_head_image());
                         mTitle = mlistBean.getPostBean().getPost_title();
 
-                    }else {
+                    } else {
 
-                        mImage = new UMImage(getContext(), Constants.BASE_URL+mlistBean.getMember_head_image());
+                        mImage = new UMImage(getContext(), Constants.BASE_URL + mlistBean.getMember_head_image());
                         mTitle = mlistBean.getPost_title();
                     }
 
 
-                }else {
+                } else {
                     mImage = new UMImage(getContext(), R.drawable.avatar);
                     mTitle = "爱医美康分享标题";
                 }
@@ -382,14 +389,14 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
 
                 break;
             case R.id.iv_good:
-                if (userBean!=null){
+                if (userBean != null) {
                     map.clear();
-                    map.put("member_id",userBean.getMember_id());
-                    map.put("member_token",userBean.getMember_token());
-                    map.put("post_id",postId);
+                    map.put("member_id", userBean.getMember_id());
+                    map.put("member_token", userBean.getMember_token());
+                    map.put("post_id", postId);
                     getPresenter().getpraisePost(map);
 
-                }else {
+                } else {
                     startLogin();
                 }
 
@@ -404,7 +411,6 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
 
 
     }
-
 
 
     /**

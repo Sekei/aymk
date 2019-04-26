@@ -215,6 +215,15 @@ public interface APIService {
     @POST("memberInterfaces.api?bindingWx")
     Observable<HttpResult<String>> bindingWx(@FieldMap Map<String, String> parmer);
 
+    /**
+     * 获取getDevice_tokens
+     * @param parmer
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("memberInterfaces.api?getDevice_tokens")
+    Observable<HttpResult<String>> getDevice_tokens(@FieldMap Map<String, String> parmer);
+
 
     /**
      * 用户详情
@@ -443,6 +452,7 @@ public interface APIService {
     @FormUrlEncoded
     @POST("healthRecordInterfaces.api?insertRecord")
     Observable<HttpResult<String>> insertRecord(@FieldMap Map<String, String> parmer);
+
     /**
      * 添加地址(家政)
      *
@@ -461,6 +471,7 @@ public interface APIService {
     @FormUrlEncoded
     @POST("healthRecordInterfaces.api?deleteRecord")
     Observable<HttpResult<String>> DelRecord(@FieldMap Map<String, String> parmer);
+
     /**
      * 服务范围
      *
@@ -794,6 +805,7 @@ public interface APIService {
     @FormUrlEncoded
     @POST("orderInterfaces.api?payRealOrders")
     Observable<HttpResult<String>> buyGood(@FieldMap Map<String, String> parmer);
+
     /**
      * 购买家政
      *
@@ -887,6 +899,15 @@ public interface APIService {
     @POST("memberInterfaces.api?getMemberMsgs")
     Observable<HttpResult<List<MemberMsgsBean>>> getMemberMsgs(@FieldMap Map<String, String> parmer);
 
+    /**
+     * 直播消息发送
+     *
+     * @param parmer
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("settingInterfaces.api?sendSMessages")
+    Observable<HttpResult<String>> getSendSMessages(@FieldMap Map<String, String> parmer);
 
     /**
      * 医生筛选
@@ -915,6 +936,7 @@ public interface APIService {
     @FormUrlEncoded
     @POST("orderInterfaces.api?buyTextConsult")
     Observable<HttpResult<TextandImgBean>> buyTextConsult(@FieldMap Map<String, String> parmer);
+
     /**
      * 购买图文咨询(直接支付)
      *
@@ -1789,24 +1811,39 @@ public interface APIService {
      */
     @FormUrlEncoded
     @POST("plateInterfaces.api?praisePost")
-    Observable<HttpResult<String>> getpraisePost(@FieldMap Map<String, String> parmer);/***
+    Observable<HttpResult<String>> getpraisePost(@FieldMap Map<String, String> parmer);
+
+    /***
      * 帖子评论
      */
     @FormUrlEncoded
     @POST("plateInterfaces.api?commentPost")
     Observable<HttpResult<String>> getpcommentPost(@FieldMap Map<String, String> parmer);
 
+    /**
+     * 修改帖子阅读次数
+     *
+     * @param parmer
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("plateInterfaces.api?updatePost")
+    Observable<HttpResult<String>> getUpdatePost(@FieldMap Map<String, String> parmer);
+
 
     /**
      * 编辑服务
+     *
      * @param parmer
      * @return
      */
     @FormUrlEncoded
     @POST("memberInterfaces.api?insertServiceRange")
     Observable<HttpResult<String>> geteditService(@FieldMap Map<String, String> parmer);
+
     /**
      * 删除家政地址
+     *
      * @param parmer
      * @return
      */
@@ -1817,21 +1854,27 @@ public interface APIService {
 
     /**
      * 家政评论列表
+     *
      * @param parmer
      * @return
      */
     @FormUrlEncoded
     @POST("memberInterfaces.api?getAssessmentHouseService")
     Observable<HttpResult<List<ServiceCommentBean>>> getAssessmentList(@FieldMap Map<String, String> parmer);
+
     /**
      * 修改商家信息
+     *
      * @param parmer
      * @return
      */
     @FormUrlEncoded
     @POST("memberInterfaces.api?updateHouseServiceDetail")
-    Observable<HttpResult<String>> getChangemessage(@FieldMap Map<String, String> parmer); /**
+    Observable<HttpResult<String>> getChangemessage(@FieldMap Map<String, String> parmer);
+
+    /**
      * 投诉
+     *
      * @param parmer
      * @return
      */
@@ -1840,7 +1883,6 @@ public interface APIService {
     Observable<HttpResult<String>> getinsertComplains(@FieldMap Map<String, String> parmer);
 
     /**
-     *
      * @param parmer
      * @return
      */
@@ -1850,87 +1892,84 @@ public interface APIService {
 
     /**
      * @param parmer
-     * @return
-     * 个人中心我的帖子
+     * @return 个人中心我的帖子
      */
     @FormUrlEncoded
     @POST("plateInterfaces.api?getMyPosts")
-    Observable<HttpResult<List<PlateListBean>>> getPostList(@FieldMap Map<String, String> parmer);/**
+    Observable<HttpResult<List<PlateListBean>>> getPostList(@FieldMap Map<String, String> parmer);
 
     /**
-     * @param parmer
-     * @return
-     * 健康管理服务列表
+     * /**
      *
+     * @param parmer
+     * @return 健康管理服务列表
      */
     @FormUrlEncoded
     @POST("memberInterfaces.api?getHealthManager")
-    Observable<HttpResult<List<HealthManagerBeans>>> getservicetypeList(@FieldMap Map<String, String> parmer);/**
+    Observable<HttpResult<List<HealthManagerBeans>>> getservicetypeList(@FieldMap Map<String, String> parmer);
 
+    /**
      * @param parmer
-     * @return
-     * 修改健康管理服务
+     * @return 修改健康管理服务
      */
     @FormUrlEncoded
     @POST("memberInterfaces.api?updateHealthManager")
-    Observable<HttpResult<String>>getupdata(@FieldMap Map<String, String> parmer);
+    Observable<HttpResult<String>> getupdata(@FieldMap Map<String, String> parmer);
 
     /**
-     *
      * @param parmer
      * @return
      */
     @FormUrlEncoded
     @POST("memberInterfaces.api?insertHealthManager")
-    Observable<HttpResult<String>>getaddhealth(@FieldMap Map<String, String> parmer);
+    Observable<HttpResult<String>> getaddhealth(@FieldMap Map<String, String> parmer);
+
     /**
-     *
      * @param parmer
-     * @return
-     * 确认收货
+     * @return 确认收货
      */
     @FormUrlEncoded
     @POST("orderInterfaces.api?receiveOrder")
-    Observable<HttpResult<String>>getreceiveOrder(@FieldMap Map<String, String> parmer);
+    Observable<HttpResult<String>> getreceiveOrder(@FieldMap Map<String, String> parmer);
+
     /**
-     *
      * 请求选择
      */
     @GET("settingInterfaces.api?getSystemHtmls")
-    Observable<HttpResult<List<SystemHtmlBean>>>gethtmllist();
+    Observable<HttpResult<List<SystemHtmlBean>>> gethtmllist();
+
     /**
-     *
      * 首页推送消息
      */
     @FormUrlEncoded
     @POST("settingInterfaces.api?getSMessages")
-    Observable<HttpResult<List<HomeMessageBean>>>getmessagelist(@FieldMap Map<String, String> parmer);/**
-     *
+    Observable<HttpResult<List<HomeMessageBean>>> getmessagelist(@FieldMap Map<String, String> parmer);
+
+    /**
      * 修改家政服务
      */
     @FormUrlEncoded
     @POST("memberInterfaces.api?updateServiceRange")
-    Observable<HttpResult<String>>getupdateServiceRange(@FieldMap Map<String, String> parmer);
+    Observable<HttpResult<String>> getupdateServiceRange(@FieldMap Map<String, String> parmer);
+
     /**
-     *
      * you推送绑定
      */
     @FormUrlEncoded
     @POST("memberInterfaces.api?getDevice_token")
-    Observable<HttpResult<String>>getDeviceTokens(@FieldMap Map<String, String> parmer);
+    Observable<HttpResult<String>> getDeviceTokens(@FieldMap Map<String, String> parmer);
+
     /**
-     *
      * you推送注销
      */
     @FormUrlEncoded
     @POST("memberInterfaces.api?logoutDeviceToken")
+    Observable<HttpResult<String>> logoutDeviceTokens(@FieldMap Map<String, String> parmer);
 
-    Observable<HttpResult<String>>logoutDeviceTokens(@FieldMap Map<String, String> parmer);
     /**
-     *
-     *环信推送
+     * 环信推送
      */
     @FormUrlEncoded
     @POST("memberInterfaces.api?pushConsultMessage")
-    Observable<HttpResult<String>>DeviceTokensHuanXin(@FieldMap Map<String, String> parmer);
+    Observable<HttpResult<String>> DeviceTokensHuanXin(@FieldMap Map<String, String> parmer);
 }

@@ -31,6 +31,7 @@ public class ShopPresenter extends BasePresenter<IShopView>{
         if (isViewAttached()) {
             getView().showProgress();
         }
+        parmer.put("is_home_banner","1");
         getAppComponent().getAPIService()
                 .getBanner(parmer)
                 .subscribeOn(Schedulers.io())

@@ -10,6 +10,8 @@ import java.util.List;
  * @since 2018/1/27
  */
 
-public interface IMsgListView extends BaseView{
+public interface IMsgListView extends BaseView {
     void onGetMemberMsgs(List<MemberMsgsBean> data);
+
+    void onSendMsg(String data);
 }

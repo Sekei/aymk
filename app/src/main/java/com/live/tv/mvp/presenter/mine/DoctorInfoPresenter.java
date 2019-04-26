@@ -105,13 +105,13 @@ public class DoctorInfoPresenter extends BasePresenter<IDoctorInfoView>{
                 });
     }
 
-    //修改医生信息
+    //修改医生信息.updateDoctorInfo(parmer)
     public void updateDetail(Map<String, String> parmer) {
         if (isViewAttached()) {
             getView().showProgress();
         }
         getAppComponent().getAPIService()
-                .updateDoctorInfo(parmer)
+                .updateMemberDetail(parmer)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<HttpResult<String>>() {

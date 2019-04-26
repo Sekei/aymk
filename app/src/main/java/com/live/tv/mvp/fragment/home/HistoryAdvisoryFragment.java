@@ -33,11 +33,12 @@ import butterknife.Unbinder;
 
 /**
  * 我的历史咨询
+ *
  * @author Created by stone
  * @since 2018/1/18
  */
 
-public class HistoryAdvisoryFragment extends BaseFragment<IMyAdvisoryView,MyAdvisoryPresenter>implements IMyAdvisoryView {
+public class HistoryAdvisoryFragment extends BaseFragment<IMyAdvisoryView, MyAdvisoryPresenter> implements IMyAdvisoryView {
     @BindView(R.id.ivLeft)
     ImageView ivLeft;
     @BindView(R.id.tvTitle)
@@ -79,20 +80,20 @@ public class HistoryAdvisoryFragment extends BaseFragment<IMyAdvisoryView,MyAdvi
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                ConsultBean consultBean =  adapter.getItem(position);
-                if ("text".equals(consultBean.getConsult_type())){
-//                    startActivity(new Intent(getActivity(), ChatActivity.class)
-//                            .putExtra("userId",consultBean.getHx_account())
-//                            .putExtra("APP_user_name",consultBean.getDoctor_name())
-//                            .putExtra("health_record_id",consultBean.getHealth_record_id())
-//                            .putExtra("doctor_id",consultBean.getDoctor_id())
-//                            .putExtra("consult_record_id",consultBean.getConsult_record_id())
-//                            .putExtra("to_head_image",consultBean.getMember_head_image())
-//                            .putExtra("to_username",consultBean.getMember_nick_name())
-//                            .putExtra("consultation_type","0")
-//                    );
-                }else {
-                    //startVoiceVideoCallFragment(consultBean,"user");
+                ConsultBean consultBean = adapter.getItem(position);
+                if ("text".equals(consultBean.getConsult_type())) {
+                    startActivity(new Intent(getActivity(), ChatActivity.class)
+                            .putExtra("userId", consultBean.getHx_account())
+                            .putExtra("APP_user_name", consultBean.getDoctor_name())
+                            .putExtra("health_record_id", consultBean.getHealth_record_id())
+                            .putExtra("doctor_id", consultBean.getDoctor_id())
+                            .putExtra("consult_record_id", consultBean.getConsult_record_id())
+                            .putExtra("to_head_image", consultBean.getMember_head_image())
+                            .putExtra("to_username", consultBean.getMember_nick_name())
+                            .putExtra("consultation_type", "0")
+                    );
+                } else {
+                    startVoiceVideoCallFragment(consultBean,"user");
                 }
 //                ConsultBean consultBean=   adapter.getAllData().get(position);
 //                startDoctorDetailFragment(consultBean.getDoctor_id());
@@ -134,18 +135,18 @@ public class HistoryAdvisoryFragment extends BaseFragment<IMyAdvisoryView,MyAdvi
     @Override
     public void initData() {
 
-        Map<String,String> mMap= new HashMap<>();
-        mMap.put("member_id",userBean.getMember_id());
-        mMap.put("is_done","1");
-        mMap.put("page","1");
-       getPresenter().getConsultList(mMap);
+        Map<String, String> mMap = new HashMap<>();
+        mMap.put("member_id", userBean.getMember_id());
+        mMap.put("is_done", "1");
+        mMap.put("page", "1");
+        getPresenter().getConsultList(mMap);
     }
 
 
     private void RequestParameters() {
-        Map<String,String> mMap= new HashMap<>();
-        mMap.put("member_id",userBean.getMember_id());
-        mMap.put("is_done","1");
+        Map<String, String> mMap = new HashMap<>();
+        mMap.put("member_id", userBean.getMember_id());
+        mMap.put("is_done", "1");
         mMap.put("page", String.valueOf(page));
         getPresenter().getConsultList(mMap);
 

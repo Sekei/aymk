@@ -217,6 +217,7 @@ public class HealthFileFragment extends BaseFragment<IHealthFileView, HealthFile
         userBean = SpSingleInstance.getSpSingleInstance().getUserBean();
         map.put("member_id", userBean.getMember_id());
         map.put("member_token", userBean.getMember_token());
+        map.put("health_record_id", userBean.getHealthRecordBean().getHealth_record_id());
         getPresenter().myHealthRecordDetail(map);
         LoadingUtil.showLoading(context);
     }
@@ -466,17 +467,17 @@ public class HealthFileFragment extends BaseFragment<IHealthFileView, HealthFile
                 picker.setRangeEnd(3017, 1, 11);
                 try {
 
-                   if (!tvbitthday.getText().toString().equals("")){
-                       String[] strings=tvbitthday.getText().toString().split("-");
-                       picker.setSelectedItem(Integer.parseInt(strings[0]), Integer.parseInt(strings[1]), Integer.parseInt(strings[2]));
+                    if (!tvbitthday.getText().toString().equals("")) {
+                        String[] strings = tvbitthday.getText().toString().split("-");
+                        picker.setSelectedItem(Integer.parseInt(strings[0]), Integer.parseInt(strings[1]), Integer.parseInt(strings[2]));
 
-                   }else {
-                       picker.setSelectedItem(1993, 7, 7);
+                    } else {
+                        picker.setSelectedItem(1993, 7, 7);
 
-                   }
+                    }
 
 
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                     picker.setSelectedItem(1993, 7, 7);
 
@@ -677,25 +678,25 @@ public class HealthFileFragment extends BaseFragment<IHealthFileView, HealthFile
 
                 switch (tag) {
                     case 1:
-                    //职业
+                        //职业
                         Map<String, String> map1 = new HashMap<>();
                         map1.put("member_id", userBean.getMember_id());
                         map1.put("member_token", userBean.getMember_token());
                         map1.put("health_record_id", health_record_id);
-                        map1.put("career",tv.getText().toString());
+                        map1.put("career", tv.getText().toString());
                         getPresenter().UpdateRecord(map1);
                         break;
                     case 2:
-                     //家族疾病的名称
+                        //家族疾病的名称
                         Map<String, String> map2 = new HashMap<>();
                         map2.put("member_id", userBean.getMember_id());
                         map2.put("member_token", userBean.getMember_token());
                         map2.put("health_record_id", health_record_id);
-                        map2.put("inherited_disease_name",tv.getText().toString());
+                        map2.put("inherited_disease_name", tv.getText().toString());
                         getPresenter().UpdateRecord(map2);
                         break;
                     case 3:
-                     //个人患病名称
+                        //个人患病名称
                         Map<String, String> map3 = new HashMap<>();
                         map3.put("member_id", userBean.getMember_id());
                         map3.put("member_token", userBean.getMember_token());
@@ -704,12 +705,12 @@ public class HealthFileFragment extends BaseFragment<IHealthFileView, HealthFile
                         getPresenter().UpdateRecord(map3);
                         break;
                     case 4:
-                     //用药名称
+                        //用药名称
                         Map<String, String> map4 = new HashMap<>();
                         map4.put("member_id", userBean.getMember_id());
                         map4.put("member_token", userBean.getMember_token());
                         map4.put("health_record_id", health_record_id);
-                        map4.put("pharmacy_name",tv.getText().toString());
+                        map4.put("pharmacy_name", tv.getText().toString());
                         getPresenter().UpdateRecord(map4);
                         break;
 
@@ -783,12 +784,12 @@ public class HealthFileFragment extends BaseFragment<IHealthFileView, HealthFile
                                 tvisfamiliaythrowback.setVisibility(View.GONE);
 
                             }
-                        Map<String, String> map1 = new HashMap<>();
-                        map1.put("member_id", userBean.getMember_id());
-                        map1.put("member_token", userBean.getMember_token());
-                        map1.put("health_record_id", health_record_id);
-                        map1.put("is_inherited_disease",tv.getText().toString());
-                        getPresenter().UpdateRecord(map1);
+                            Map<String, String> map1 = new HashMap<>();
+                            map1.put("member_id", userBean.getMember_id());
+                            map1.put("member_token", userBean.getMember_token());
+                            map1.put("health_record_id", health_record_id);
+                            map1.put("is_inherited_disease", tv.getText().toString());
+                            getPresenter().UpdateRecord(map1);
 
                         }
 
@@ -824,7 +825,7 @@ public class HealthFileFragment extends BaseFragment<IHealthFileView, HealthFile
                             map2.put("member_id", userBean.getMember_id());
                             map2.put("member_token", userBean.getMember_token());
                             map2.put("health_record_id", health_record_id);
-                            map2.put("is_disease",tv.getText().toString());
+                            map2.put("is_disease", tv.getText().toString());
                             getPresenter().UpdateRecord(map2);
 
                         }
@@ -837,36 +838,36 @@ public class HealthFileFragment extends BaseFragment<IHealthFileView, HealthFile
                         map3.put("member_id", userBean.getMember_id());
                         map3.put("member_token", userBean.getMember_token());
                         map3.put("health_record_id", health_record_id);
-                        map3.put("patient",tv.getText().toString());
+                        map3.put("patient", tv.getText().toString());
                         getPresenter().UpdateRecord(map3);
                         break;
                     case 4:
 
-                          //家族是否隔代遗传
+                        //家族是否隔代遗传
 
                         Map<String, String> map4 = new HashMap<>();
                         map4.put("member_id", userBean.getMember_id());
                         map4.put("member_token", userBean.getMember_token());
                         map4.put("health_record_id", health_record_id);
-                       map4.put("is_hereditary",tv.getText().toString());
+                        map4.put("is_hereditary", tv.getText().toString());
                         getPresenter().UpdateRecord(map4);
                         break;
                     case 5:
-                    //个人是否遗传
+                        //个人是否遗传
                         Map<String, String> map5 = new HashMap<>();
                         map5.put("member_id", userBean.getMember_id());
                         map5.put("member_token", userBean.getMember_token());
                         map5.put("health_record_id", health_record_id);
-                         map5.put("is_inherited",tv.getText().toString());
+                        map5.put("is_inherited", tv.getText().toString());
                         getPresenter().UpdateRecord(map5);
                         break;
                     case 6:
-                     //确诊时间
+                        //确诊时间
                         Map<String, String> map6 = new HashMap<>();
                         map6.put("member_id", userBean.getMember_id());
                         map6.put("member_token", userBean.getMember_token());
                         map6.put("health_record_id", health_record_id);
-                        map6.put("diagnose_time",tv.getText().toString());
+                        map6.put("diagnose_time", tv.getText().toString());
                         getPresenter().UpdateRecord(map6);
                         break;
 
@@ -1043,63 +1044,60 @@ public class HealthFileFragment extends BaseFragment<IHealthFileView, HealthFile
         weight.setText(data.getWeight().equals("") ? "0kg" : data.getWeight());
         isMarry.setText(data.getIs_marriage().equals("") ? "未知" : data.getIs_marriage());
         isAllergy.setText(data.getAllergy().equals("") ? "未知" : data.getAllergy());
-        if (!data.getAllergy().equals("")){
-            if (data.getAllergy().equals("是")){
+        if (!data.getAllergy().equals("")) {
+            if (data.getAllergy().equals("是")) {
 
                 allergyContentTittle.setVisibility(View.VISIBLE);
-            }else {
+            } else {
                 allergyContentTittle.setVisibility(View.GONE);
             }
         }
         allergyContentTittle.setText(data.getAllergy_desc().equals("") ? "在这里编辑过敏内容" : data.getAllergy_desc());
 
         verified.setText(data.getAuthentication_show());
-if (data.getIs_inherited_disease()!=null&&!data.getIs_inherited_disease().equals("")){
-    if (data.getIs_inherited_disease().equals("是")){
-        tvfamiliaydiseasename.setVisibility(View.VISIBLE);
-        tvfamiliaydiseasecontent.setVisibility(View.VISIBLE);
-        tvfamiliayperson.setVisibility(View.VISIBLE);
-        tvfamiliaypersoncontent.setVisibility(View.VISIBLE);
-        tvfamiliaythrowback.setVisibility(View.VISIBLE);
-        tvisfamiliaythrowback.setVisibility(View.VISIBLE);
-    }else {
-        tvfamiliaydiseasename.setVisibility(View.GONE);
-        tvfamiliaydiseasecontent.setVisibility(View.GONE);
-        tvfamiliayperson.setVisibility(View.GONE);
-        tvfamiliaypersoncontent.setVisibility(View.GONE);
-        tvfamiliaythrowback.setVisibility(View.GONE);
-        tvisfamiliaythrowback.setVisibility(View.GONE);
-    }
-}
+        if (data.getIs_inherited_disease() != null && !data.getIs_inherited_disease().equals("")) {
+            if (data.getIs_inherited_disease().equals("是")) {
+                tvfamiliaydiseasename.setVisibility(View.VISIBLE);
+                tvfamiliaydiseasecontent.setVisibility(View.VISIBLE);
+                tvfamiliayperson.setVisibility(View.VISIBLE);
+                tvfamiliaypersoncontent.setVisibility(View.VISIBLE);
+                tvfamiliaythrowback.setVisibility(View.VISIBLE);
+                tvisfamiliaythrowback.setVisibility(View.VISIBLE);
+            } else {
+                tvfamiliaydiseasename.setVisibility(View.GONE);
+                tvfamiliaydiseasecontent.setVisibility(View.GONE);
+                tvfamiliayperson.setVisibility(View.GONE);
+                tvfamiliaypersoncontent.setVisibility(View.GONE);
+                tvfamiliaythrowback.setVisibility(View.GONE);
+                tvisfamiliaythrowback.setVisibility(View.GONE);
+            }
+        }
 
-if (data.getIs_disease()!=null&&!data.getIs_disease().equals("")){
-    if (data.getIs_disease().equals("是")){
+        if (data.getIs_disease() != null && !data.getIs_disease().equals("")) {
+            if (data.getIs_disease().equals("是")) {
 
-        fapersonname.setVisibility(View.VISIBLE);
-        fapersoncontent.setVisibility(View.VISIBLE);
-        personheredity.setVisibility(View.VISIBLE);
-        ispersonheredity.setVisibility(View.VISIBLE);
-        persontime.setVisibility(View.VISIBLE);
-        persontimeshow.setVisibility(View.VISIBLE);
-        pharmacyname.setVisibility(View.VISIBLE);
-        pharmacynameshow.setVisibility(View.VISIBLE);
+                fapersonname.setVisibility(View.VISIBLE);
+                fapersoncontent.setVisibility(View.VISIBLE);
+                personheredity.setVisibility(View.VISIBLE);
+                ispersonheredity.setVisibility(View.VISIBLE);
+                persontime.setVisibility(View.VISIBLE);
+                persontimeshow.setVisibility(View.VISIBLE);
+                pharmacyname.setVisibility(View.VISIBLE);
+                pharmacynameshow.setVisibility(View.VISIBLE);
 
-    }else {
-        fapersonname.setVisibility(View.GONE);
-        fapersoncontent.setVisibility(View.GONE);
-        personheredity.setVisibility(View.GONE);
-        ispersonheredity.setVisibility(View.GONE);
-        persontime.setVisibility(View.GONE);
-        persontimeshow.setVisibility(View.GONE);
-        pharmacyname.setVisibility(View.GONE);
-        pharmacynameshow.setVisibility(View.GONE);
-    }
-
-
+            } else {
+                fapersonname.setVisibility(View.GONE);
+                fapersoncontent.setVisibility(View.GONE);
+                personheredity.setVisibility(View.GONE);
+                ispersonheredity.setVisibility(View.GONE);
+                persontime.setVisibility(View.GONE);
+                persontimeshow.setVisibility(View.GONE);
+                pharmacyname.setVisibility(View.GONE);
+                pharmacynameshow.setVisibility(View.GONE);
+            }
 
 
-
-}
+        }
 
 
         if (data.getHealthPlanBeans() != null && data.getHealthPlanBeans().size() > 0) {
@@ -1146,28 +1144,28 @@ if (data.getIs_disease()!=null&&!data.getIs_disease().equals("")){
             ispersonheredity.setText(data.getIs_inherited());
             persontimeshow.setText(data.getDiagnose_time());
             pharmacynameshow.setText(data.getPharmacy_name());
-            height.setText(data.getHeight().equals("") ? "0cm" : data.getHeight());
-            weight.setText(data.getWeight().equals("") ? "0kg" : data.getWeight());
-            isMarry.setText(data.getIs_marriage().equals("") ? "未知" : data.getIs_marriage());
-            isAllergy.setText(data.getAllergy().equals("") ? "未知" : data.getAllergy());
-            if (!data.getAllergy().equals("")){
-                if (data.getAllergy().equals("是")){
+            height.setText("".equals(data.getHeight()) ? "0cm" : data.getHeight());
+            weight.setText("".equals(data.getWeight()) ? "0kg" : data.getWeight());
+            isMarry.setText("".equals(data.getIs_marriage()) ? "未知" : data.getIs_marriage());
+            isAllergy.setText("".equals(data.getAllergy()) ? "未知" : data.getAllergy());
+            if (!"".equals(data.getAllergy())) {
+                if ("是".equals(data.getAllergy())) {
 
                     allergyContentTittle.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     allergyContentTittle.setVisibility(View.GONE);
                 }
             }
 
-            if (data.getIs_inherited_disease()!=null&&!data.getIs_inherited_disease().equals("")){
-                if (data.getIs_inherited_disease().equals("是")){
+            if (null != data.getIs_inherited_disease() && !"".equals(data.getIs_inherited_disease())) {
+                if ("是".equals(data.getIs_inherited_disease())) {
                     tvfamiliaydiseasename.setVisibility(View.VISIBLE);
                     tvfamiliaydiseasecontent.setVisibility(View.VISIBLE);
                     tvfamiliayperson.setVisibility(View.VISIBLE);
                     tvfamiliaypersoncontent.setVisibility(View.VISIBLE);
                     tvfamiliaythrowback.setVisibility(View.VISIBLE);
                     tvisfamiliaythrowback.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     tvfamiliaydiseasename.setVisibility(View.GONE);
                     tvfamiliaydiseasecontent.setVisibility(View.GONE);
                     tvfamiliayperson.setVisibility(View.GONE);
@@ -1177,9 +1175,8 @@ if (data.getIs_disease()!=null&&!data.getIs_disease().equals("")){
                 }
             }
 
-            if (data.getIs_disease()!=null&&!data.getIs_disease().equals("")) {
-                if (data.getIs_disease().equals("是")) {
-
+            if (null != data.getIs_disease() && !"".equals(data.getIs_disease())) {
+                if ("是".equals(data.getIs_disease())) {
                     fapersonname.setVisibility(View.VISIBLE);
                     fapersoncontent.setVisibility(View.VISIBLE);
                     personheredity.setVisibility(View.VISIBLE);
@@ -1200,7 +1197,7 @@ if (data.getIs_disease()!=null&&!data.getIs_disease().equals("")){
                     pharmacynameshow.setVisibility(View.GONE);
                 }
             }
-            allergyContentTittle.setText(data.getAllergy_desc().equals("") ? "在这里编辑过敏内容" : data.getAllergy_desc());
+            allergyContentTittle.setText("".equals(data.getAllergy_desc()) ? "在这里编辑过敏内容" : data.getAllergy_desc());
             verified.setText(data.getAuthentication_show());
 
 

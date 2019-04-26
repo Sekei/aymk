@@ -1,6 +1,7 @@
 package com.live.tv.mvp.fragment.shop;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
@@ -20,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.live.tv.Constants;
+import com.live.tv.mvp.activity.ContentActivity;
 import com.ysjk.health.iemk.R;
 import com.live.tv.bean.BannerBean;
 import com.live.tv.bean.ClassBean;
@@ -67,9 +69,9 @@ public class ShopFragment extends BaseFragment<IShopView, ShopPresenter> impleme
     private ShopClassAdapter shopClassAdapter;
     private HotGoodsAdapter hotGoodsAdapter;
     private RecommendGoodsAdapter recommendGoodsAdapter;
-    private List<ClassBean>  classBeanList;
-    private List<GoodsBean>  goodsBeanList;
-    private List<GoodsBean>  recommendGoodsList;
+    private List<ClassBean> classBeanList;
+    private List<GoodsBean> goodsBeanList;
+    private List<GoodsBean> recommendGoodsList;
 
     public static ShopFragment newInstance() {
         Bundle args = new Bundle();
@@ -111,8 +113,6 @@ public class ShopFragment extends BaseFragment<IShopView, ShopPresenter> impleme
         recommendGoodsList = new ArrayList<>();
 
 
-
-
         //商品分类
         shopClassAdapter = new ShopClassAdapter(context, classBeanList);
         classRecycleView.setLayoutManager(new GridLayoutManager(context, 5));
@@ -120,11 +120,11 @@ public class ShopFragment extends BaseFragment<IShopView, ShopPresenter> impleme
         shopClassAdapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                ClassBean classBean =shopClassAdapter.getAllData().get(position);
+                ClassBean classBean = shopClassAdapter.getAllData().get(position);
                 //
-                if (shopClassAdapter.getAllData().size()==position+1){
+                if (shopClassAdapter.getAllData().size() == position + 1) {
                     startAllClassFragment();
-                }else {
+                } else {
                     startClassGoosListFragment(classBean.getClass_uuid());
                 }
             }
@@ -142,9 +142,9 @@ public class ShopFragment extends BaseFragment<IShopView, ShopPresenter> impleme
 
                 GoodsBean goodsBean = hotGoodsAdapter.getItem(position);
 
-                if ("common_goods".equals(goodsBean.getGoods_type())){
+                if ("common_goods".equals(goodsBean.getGoods_type())) {
                     startGoodDetailFragment(goodsBean.getGoods_id());
-                }else {
+                } else {
 
                     startServiceGoodDetailFragment(goodsBean.getGoods_id());
                 }
@@ -153,7 +153,7 @@ public class ShopFragment extends BaseFragment<IShopView, ShopPresenter> impleme
 
 
         recommendGoodsAdapter = new RecommendGoodsAdapter(context, recommendGoodsList);
-        recommendRecycleView.setLayoutManager(new GridLayoutManager(context,2));
+        recommendRecycleView.setLayoutManager(new GridLayoutManager(context, 2));
         recommendRecycleView.setAdapter(recommendGoodsAdapter);
         recommendRecycleView.setNestedScrollingEnabled(false);//防止向上滑动时卡顿
 
@@ -162,9 +162,9 @@ public class ShopFragment extends BaseFragment<IShopView, ShopPresenter> impleme
             @Override
             public void onItemClick(int position) {
                 GoodsBean goodsBean = recommendGoodsAdapter.getItem(position);
-                if ("common_goods".equals(goodsBean.getGoods_type())){
+                if ("common_goods".equals(goodsBean.getGoods_type())) {
                     startGoodDetailFragment(goodsBean.getGoods_id());
-                }else {
+                } else {
 
                     startServiceGoodDetailFragment(goodsBean.getGoods_id());
                 }
@@ -186,6 +186,27 @@ public class ShopFragment extends BaseFragment<IShopView, ShopPresenter> impleme
     private void clickBannerItem(BannerBean banner) {
         //1不跳转；2web链接;3个人中心；4商品
         if (banner != null) {
+            BannerBean data = banner;
+            //chain:外链 goods:商品 merchants:商家 doctor:医生 house:家政
+            if (data.getBanner_type().equals("chain")) {
+                startWeb("",banner.getBanner_url());
+            } else if (data.getBanner_type().equals("goods")) {
+                Intent intent = new Intent(getActivity(), ContentActivity.class);
+                intent.putExtra(Constants.KEY_FRAGMENT, Constants.GOOD_DETAIL_FRAGMENT);
+                intent.putExtra("goods_id", data.getGoods_id());
+                startActivity(intent);
+            } else if (data.getBanner_type().equals("merchants")) {
+                Intent intent = new Intent(getActivity(), ContentActivity.class);
+                intent.putExtra(Constants.KEY_FRAGMENT, Constants.Merchants_Detail_Fragment);
+                intent.putExtra("merchants_id", data.getMerchants_id());
+                startActivity(intent);
+            } else if (data.getBanner_type().equals("doctor")) {
+                Intent intent = getFragmentIntent(Constants.DOCTOR_DETAIL);
+                intent.putExtra(Constants.DOCTOR_ID, data.getDoctor_id());
+                startActivity(intent);
+            } else if (data.getBanner_type().equals("house")) {
+                startHouseKeepingDetailFragment(data.getHouse_service_id());
+            }
         }
     }
 
@@ -212,6 +233,7 @@ public class ShopFragment extends BaseFragment<IShopView, ShopPresenter> impleme
 
     /**
      * 获取商品分类的
+     *
      * @param data
      */
 
@@ -287,7 +309,7 @@ public class ShopFragment extends BaseFragment<IShopView, ShopPresenter> impleme
         errorHandle(e);
     }
 
-    @OnClick({R.id.msg,R.id.more_hot_good,R.id.tv_search})
+    @OnClick({R.id.msg, R.id.more_hot_good, R.id.tv_search})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.msg:

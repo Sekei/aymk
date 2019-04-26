@@ -125,13 +125,12 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
             if (mess.equals("token failed")) {
                 ToastUtils.showToast(context.getApplicationContext(), "账号过期，请重新登录");
                 startLogin();
-            }else {
+            } else {
                 ToastUtils.showToast(context.getApplicationContext(), mess);
             }
-        }catch (Exception ee){
+        } catch (Exception ee) {
             ToastUtils.showToast(context.getApplicationContext(), mess);
         }
-
 
 
     }
@@ -245,29 +244,33 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
         Intent intent = getFragmentIntent(Constants.LOGIN_FRAGMENT);
         startActivity(intent);
     }
+
     //投诉
     protected void startComplantFragment(String houseid) {
         Intent intent = getFragmentIntent(Constants.COMPLAINTFRAGMENT);
-        intent.putExtra(Constants.TYPE,houseid);
+        intent.putExtra(Constants.TYPE, houseid);
         startActivity(intent);
     }
+
     //商家简介
     protected void startermerchantaboutFragment() {
         Intent intent = getFragmentIntent(Constants.MERCHANTABOUT);
         startActivity(intent);
     }
+
     //商家更多地址
     protected void merchantamoreaddreFragment(String serviceId) {
         Intent intent = getFragmentIntent(Constants.MERCHANTMOREADDRESS);
-        intent.putExtra("house_service_id",serviceId);
+        intent.putExtra("house_service_id", serviceId);
         startActivity(intent);
     }
+
     //注册
-    protected void statrRegistered(String type,String tag,String code) {
+    protected void statrRegistered(String type, String tag, String code) {
         Intent intent = getFragmentIntent(Constants.REGISTER);
-        intent.putExtra(Constants.TYPE,type);
-        intent.putExtra(Constants.TAG,tag);
-        intent.putExtra(Constants.OPENID,code);
+        intent.putExtra(Constants.TYPE, type);
+        intent.putExtra(Constants.TAG, tag);
+        intent.putExtra(Constants.OPENID, code);
         startActivity(intent);
     }
 
@@ -276,28 +279,33 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
         Intent intent = getFragmentIntent(Constants.DOCTOR_LIST);
         startActivity(intent);
     }
+
     //编辑服务
     protected void startEditserviceFragment() {
         Intent intent = getFragmentIntent(Constants.EDITSERVICE);
         startActivity(intent);
     }
+
     //编辑服务
     protected void startEditserviceFragment(ServiceCopeBean serviceCopeBean) {
         Intent intent = getFragmentIntent(Constants.EDITSERVICE);
-       Gson gson= new Gson();
-        intent.putExtra(Constants.TAG,gson.toJson(serviceCopeBean));
+        Gson gson = new Gson();
+        intent.putExtra(Constants.TAG, gson.toJson(serviceCopeBean));
         startActivity(intent);
     }
+
     //服务范围
     protected void startservicecopeFragment() {
         Intent intent = getFragmentIntent(Constants.SERVICECOPE);
         startActivity(intent);
     }
+
     //商家消息
     protected void startMerchantmessagefragment() {
         Intent intent = getFragmentIntent(Constants.MERCHANTMESSAGE);
         startActivity(intent);
     }
+
     //服务详情
     protected void startServiceDetailFragment() {
         Intent intent = getFragmentIntent(Constants.SERVICEDETILS);
@@ -307,9 +315,10 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
     //服务更多评论
     protected void startServiceMoreFragment(String serviceId) {
         Intent intent = getFragmentIntent(Constants.SERVICEMOREASSESSMENT);
-        intent.putExtra(Constants.TYPE,serviceId);
+        intent.putExtra(Constants.TYPE, serviceId);
         startActivity(intent);
     }
+
     //发帖
     protected void startPostedFragment(Note note) {
         Intent intent = getFragmentIntent(Constants.POSTEDFRGAMENT);
@@ -319,11 +328,12 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
         intent.putExtra("flag", 1);//编辑笔记
         startActivity(intent);
     }
+
     //发帖
     protected void startPostedFragment(String mPlateid) {
         Intent intent = getFragmentIntent(Constants.POSTEDFRGAMENT);
         intent.putExtra("flag", 0);//编辑笔记
-        intent.putExtra(Constants.PLATE_ID,mPlateid);
+        intent.putExtra(Constants.PLATE_ID, mPlateid);
         startActivity(intent);
     }
 
@@ -333,29 +343,43 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
         startActivity(intent);
     }
 
+    protected void startMessageListFragment() {
+        Intent intent = getFragmentIntent(Constants.MESSAGELIST);
+        startActivity(intent);
+    }
+
+    protected void startMessageSendFragment() {
+        Intent intent = getFragmentIntent(Constants.MESSAGESEND);
+        startActivity(intent);
+    }
+
     /***
      *商家订单
      */
     protected void startformtFragment(String s) {
         Intent intent = getFragmentIntent(Constants.MERCHANTFORMFRAGMENT);
-        intent.putExtra(Constants.TYPE,s);
+        intent.putExtra(Constants.TYPE, s);
         startActivity(intent);
     }
+
     /***
      *商家订单
      */
     protected void addhealthmanagefragment(String s) {
         Intent intent = getFragmentIntent(Constants.ADDHEALTHMANAGE);
-        intent.putExtra(Constants.TYPE,s);
+        intent.putExtra(Constants.TYPE, s);
         startActivity(intent);
-    }/***
+    }
+
+    /***
      *商家订单
      */
     protected void addhealthmanagefragment(HealthManagerBeans bean) {
         Intent intent = getFragmentIntent(Constants.ADDHEALTHMANAGE);
-        intent.putExtra(Constants.HEALTH_RECORD_ID,bean);
+        intent.putExtra(Constants.HEALTH_RECORD_ID, bean);
         startActivity(intent);
     }
+
     //医生详情
     protected void startDoctorDetailFragment(String doctor_id) {
         Intent intent = getFragmentIntent(Constants.DOCTOR_DETAIL);
@@ -489,19 +513,21 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
     //健康详情界面
     protected void startPostDetailsFragment(String post) {
         Intent intent = getFragmentIntent(Constants.POSTEDETAILS);
-        intent.putExtra(Constants.PLATELISTBEAN,post);
+        intent.putExtra(Constants.PLATELISTBEAN, post);
         startActivity(intent);
     }
+
     //测试完成
     protected void startTestCompleteFragment(String health_record_id) {
         Intent intent = getFragmentIntent(Constants.TEST_COMPLETE);
         intent.putExtra(HEALTH_RECORD_ID, health_record_id);
         startActivity(intent);
     }
- //交流社区
+
+    //交流社区
     protected void startCommunicateFragment(String str) {
         Intent intent = getFragmentIntent(Constants.COMMUNICATEFRAGMENT);
-        intent.putExtra(Constants.TYPE,str);
+        intent.putExtra(Constants.TYPE, str);
         startActivity(intent);
     }
 
@@ -703,10 +729,10 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
     }
 
     //帖子列表
-    protected void startCommunityListFragment(String plateid,String title) {
+    protected void startCommunityListFragment(String plateid, String title) {
         Intent intent = getFragmentIntent(Constants.COMMUNTITY_LIST);
         intent.putExtra(Constants.PLATE_ID, plateid);
-        intent.putExtra("name",title);
+        intent.putExtra("name", title);
         startActivity(intent);
     }
 
@@ -760,19 +786,19 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
 
     protected void startJoinShopFragment(String htmlurl) {
         Intent intent = getFragmentIntent(Constants.JOIN_SHOP);
-        intent.putExtra(Constants.TYPE,htmlurl);
+        intent.putExtra(Constants.TYPE, htmlurl);
         startActivity(intent);
     }
 
     protected void startJoinDoctorFragment(String htmlurl) {
         Intent intent = getFragmentIntent(Constants.JOIN_DOCTOR);
-        intent.putExtra(Constants.TYPE,htmlurl);
+        intent.putExtra(Constants.TYPE, htmlurl);
         startActivity(intent);
     }
 
     protected void startJoinHouseFragment(String htmlurl) {
         Intent intent = getFragmentIntent(Constants.JOIN_HOUSE);
-        intent.putExtra(Constants.TYPE,htmlurl);
+        intent.putExtra(Constants.TYPE, htmlurl);
         startActivity(intent);
     }
 
@@ -884,14 +910,14 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
     }
 
     //购买图文咨询
-    protected void startBuyConsultImageFragment(String orderid, String doctorName, String Hx_account,String price,List<String> list,String desc) {
+    protected void startBuyConsultImageFragment(String orderid, String doctorName, String Hx_account, String price, List<String> list, String desc) {
         Intent intent = getFragmentIntent(Constants.BUYCONSULTIMAGE_FRAGMENT);
         intent.putExtra("doctorName", doctorName);
         intent.putExtra("Hx_account", Hx_account);
-        intent.putExtra("order_id",orderid);
-        intent.putExtra("price",price);
+        intent.putExtra("order_id", orderid);
+        intent.putExtra("price", price);
         intent.putExtra("list", (Serializable) list);
-        intent.putExtra("desc",desc);
+        intent.putExtra("desc", desc);
         startActivity(intent);
     }
 
@@ -1133,12 +1159,14 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
         intent.putExtra("goods_id", goods_id);
         startActivity(intent);
     }
+
     //帖子详情
     protected void startPlateDetailFragment(String plate) {
         Intent intent = getFragmentIntent(Constants.COMMUNITYDETAILS);
         intent.putExtra(Constants.PLATE_ID, plate);
         startActivity(intent);
     }
+
     //服务商品详情
     protected void startServiceGoodDetailFragment(String goods_id) {
         Intent intent = getFragmentIntent(Constants.SERVICE_GOOD_DETAIL_FRAGMENT);
@@ -1148,7 +1176,7 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
 
     //提交服务订单
     protected void startConfirmServiceGoodOrderFragment(GoodsBean goodsBean) {
-        Gson gson=new Gson();
+        Gson gson = new Gson();
         Intent intent = getFragmentIntent(Constants.CONFIRM_SERVICEGOODORDER_FRAGMENT);
         intent.putExtra("goodsBean", gson.toJson(goodsBean));
         startActivity(intent);
@@ -1206,6 +1234,11 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
         startActivity(intent);
     }
 
+    protected void startAboutUsFragment() {
+        Intent intent = getFragmentIntent(Constants.ABOUTUS);
+        startActivity(intent);
+    }
+
     //评价医生
     protected void startAssessmentDoctorFragment(String doctor_id) {
         Intent intent = getFragmentIntent(Constants.ASSESSMENT_DOCTOR_FRAGMENT);
@@ -1228,10 +1261,11 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
         intent.putExtra("addressBean", addressBean);
         startActivityForResult(intent, Constants.REQUESTCODE);
     }
+
     //添加地址(家政)
-    protected void  ServiceAddAddressFragment(String serviceId) {
+    protected void ServiceAddAddressFragment(String serviceId) {
         Intent intent = getFragmentIntent(Constants.ADDADDRESS);
-        intent.putExtra("house_service_id",serviceId);
+        intent.putExtra("house_service_id", serviceId);
         startActivity(intent);
     }
 
@@ -1242,12 +1276,13 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
         intent.putExtra("order_price", order_price);
         startActivity(intent);
     }
+
     //支付商品和家政服务
-    protected void startBuyGoodFragment(String order_ids, String order_price,String type) {
+    protected void startBuyGoodFragment(String order_ids, String order_price, String type) {
         Intent intent = getFragmentIntent(Constants.BUY_GOOD_FRAGMENT);
         intent.putExtra("order_ids", order_ids);
         intent.putExtra("order_price", order_price);
-        intent.putExtra(Constants.TYPE,type);
+        intent.putExtra(Constants.TYPE, type);
         startActivity(intent);
     }
 
@@ -1308,11 +1343,11 @@ public abstract class BaseFragment<V extends BaseView, P extends BasePresenter<V
     }
 
     //更多附近门店
-    protected void startMoreNearbyShopListFragment(String city,double lat,double log) {
+    protected void startMoreNearbyShopListFragment(String city, double lat, double log) {
         Intent intent = getFragmentIntent(Constants.MORE_NEARBY_SHOPLIST_FRAGMENT);
-        intent.putExtra(Constants.LOCALITY,city);
-        intent.putExtra(Constants.LATITUDE,lat);
-        intent.putExtra(Constants.LONGITUDE,log);
+        intent.putExtra(Constants.LOCALITY, city);
+        intent.putExtra(Constants.LATITUDE, lat);
+        intent.putExtra(Constants.LONGITUDE, log);
         startActivity(intent);
     }
 

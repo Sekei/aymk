@@ -20,10 +20,11 @@ import io.reactivex.schedulers.Schedulers;
  * @since 2018/1/27
  */
 
-public class MsgListPresenter extends BasePresenter<IMsgListView>{
+public class MsgListPresenter extends BasePresenter<IMsgListView> {
     public MsgListPresenter(App app) {
         super(app);
     }
+
     //用户消息列表
     public void getMemberMsgs(Map<String, String> parmer) {
         if (isViewAttached()) {
@@ -58,6 +59,49 @@ public class MsgListPresenter extends BasePresenter<IMsgListView>{
                         if (userBeanHttpResult != null) {
                             if (isViewAttached())
                                 getView().onGetMemberMsgs(userBeanHttpResult.getData());
+                        }
+                    }
+                });
+    }
+
+    /**
+     * 消息放送
+     *
+     * @param parmer
+     */
+    public void getMemberMsgsSend(Map<String, String> parmer) {
+        if (isViewAttached()) {
+            getView().showProgress();
+        }
+        getAppComponent().getAPIService()
+                .getSendSMessages(parmer)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<HttpResult<String>>() {
+
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (isViewAttached())
+                            getView().onError(e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(HttpResult<String> userBeanHttpResult) {
+                        LogUtils.d("Response:" + userBeanHttpResult);
+                        if (userBeanHttpResult != null) {
+                            if (isViewAttached())
+                                getView().onSendMsg(userBeanHttpResult.getStatus());
                         }
                     }
                 });

@@ -144,4 +144,37 @@ public class PostDetailsPresenter extends BasePresenter<IPostDetailsView> {
                 });
     }
 
+    public void  getUpdatePost(Map<String, String> parmer) {
+        getAppComponent().getAPIService()
+                .getUpdatePost(parmer)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<HttpResult<String>>() {
+                    @Override
+                    public void onError(Throwable e) {
+                        if (isViewAttached())
+                            getView().onpraisePosterror(e);
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(HttpResult<String> userBeanHttpResult) {
+                        LogUtils.d("Response:" + userBeanHttpResult);
+                        if (userBeanHttpResult != null) {
+                            //if (isViewAttached())
+                                //getView().onpcommentPost(userBeanHttpResult.getData());
+                        }
+                    }
+                });
+    }
+
 }

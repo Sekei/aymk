@@ -102,6 +102,7 @@ import com.live.tv.mvp.fragment.home.editAllergyContentFragment;
 import com.live.tv.mvp.fragment.huanxin.HuaxinHealthStepFragment;
 import com.live.tv.mvp.fragment.huanxin.SendHealthFileFragment;
 import com.live.tv.mvp.fragment.huanxin.VoiceVIdeoCallFragment;
+import com.live.tv.mvp.fragment.mine.AboutUsFragment;
 import com.live.tv.mvp.fragment.mine.AccountSecurityFragment;
 import com.live.tv.mvp.fragment.mine.AddAddressFragment;
 import com.live.tv.mvp.fragment.mine.AddHealthManageFragment;
@@ -135,7 +136,9 @@ import com.live.tv.mvp.fragment.mine.JoinShopFragment;
 import com.live.tv.mvp.fragment.mine.JoindoctorSuccessFragment;
 import com.live.tv.mvp.fragment.mine.MerchantAboutFragment;
 import com.live.tv.mvp.fragment.mine.MerchantFormFragment;
+import com.live.tv.mvp.fragment.mine.MessageListFragment;
 import com.live.tv.mvp.fragment.mine.MessageRemindFragment;
+import com.live.tv.mvp.fragment.mine.MessageSendFragment;
 import com.live.tv.mvp.fragment.mine.MyAccountFragment;
 import com.live.tv.mvp.fragment.mine.MyCollectionFragment;
 import com.live.tv.mvp.fragment.mine.MyLiveListFragment;
@@ -808,6 +811,9 @@ public class ContentActivity extends AppCompatActivity {
             case Constants.FANKUI_FRAGMENT://意见反馈
                 replaceFragment(FankuiFragment.newInstance());
                 break;
+            case Constants.ABOUTUS:
+                replaceFragment(AboutUsFragment.newInstance());
+                break;
             case Constants.ASSESSMENT_DOCTOR_FRAGMENT://评价医生
 
                 doctor_id = getIntent().getStringExtra("doctor_id");
@@ -1049,7 +1055,14 @@ public class ContentActivity extends AppCompatActivity {
                 replaceFragment(CommunicateFragment.newInstance(str));
                 break;
 
-
+            case Constants.MESSAGELIST:
+                //消息列表
+                replaceFragment(MessageListFragment.newInstance());
+                break;
+            case Constants.MESSAGESEND:
+                //消息发送
+                replaceFragment(MessageSendFragment.newInstance());
+                break;
             default:
                 LogUtils.d("Not found fragment:" + Integer.toHexString(fragmentKey));
                 break;

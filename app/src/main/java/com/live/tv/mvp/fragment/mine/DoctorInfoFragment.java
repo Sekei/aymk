@@ -162,17 +162,24 @@ public class DoctorInfoFragment extends BaseFragment<IDoctorInfoView, DoctorInfo
                 break;
             case R.id.ok:
                 map.clear();
+//                map.put("member_id", userBean.getMember_id());
+//                map.put("member_token", userBean.getMember_token());
+//                map.put("doctor_id", userBean.getDoctorBean().getDoctor_id());
+//                map.put("doctor_name", name.getText().toString());
+//                map.put("doctor_phone", phone.getText().toString());
+//                map.put("doctor_birthday", birthday.getText().toString());
+//                map.put("doctor_sex", sex.getText().toString());
+
                 map.put("member_id", userBean.getMember_id());
                 map.put("member_token", userBean.getMember_token());
-                map.put("doctor_id", userBean.getDoctorBean().getDoctor_id());
-                map.put("doctor_name", name.getText().toString());
-                map.put("doctor_phone", phone.getText().toString());
-                map.put("doctor_birthday", birthday.getText().toString());
-                map.put("doctor_sex", sex.getText().toString());
+                map.put("member_nick_name", name.getText().toString());
+                map.put("member_phone", phone.getText().toString());
+                map.put("member_birthday", birthday.getText().toString());
+                map.put("member_sex", sex.getText().toString());
 
 
                 if (!"".equals(img_str)) {
-                    map.put("doctor_head_image", img_str);
+                    map.put("member_head_image", img_str);
                 }
 
 
@@ -286,8 +293,7 @@ public class DoctorInfoFragment extends BaseFragment<IDoctorInfoView, DoctorInfo
 
             name.setText(data.getDoctor_name());
             phone.setText(data.getDoctor_phone());
-
-            sex.setText(data.getDoctor_sex());
+            sex.setText("m".equals(data.getDoctor_sex()) ? "男" : "女");
             birthday.setText(data.getDoctor_birthday());
 
 

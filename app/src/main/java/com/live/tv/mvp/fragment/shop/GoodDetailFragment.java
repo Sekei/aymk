@@ -190,7 +190,6 @@ public class GoodDetailFragment extends BaseFragment<IGoodDetailView, GoodDetail
     public void initData() {
         listBanner = new ArrayList<>();
         map.clear();
-
         if (userBean != null) {
             map.put("member_id", userBean.getMember_id());
         }

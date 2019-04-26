@@ -38,6 +38,7 @@ public class HomePresenter extends BasePresenter<IHomeView> {
         if (isViewAttached()) {
             getView().showProgress();
         }
+        parmer.put("is_home_banner","0");
         getAppComponent().getAPIService()
                 .getBanner(parmer)
                 .subscribeOn(Schedulers.io())
@@ -392,7 +393,44 @@ public void getMerchantHot(Map<String,String> params){
 
 
 
+    public void getDevice_tokens(Map<String,String> params){
 
+        if (isViewAttached()){
+            getView().showProgress();
+        }
+        getAppComponent().getAPIService()
+                .getMerchanthotdata(params)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<HttpResult<List<MerchantHotBean>>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(HttpResult<List<MerchantHotBean>> listHttpResult) {
+                        if (isViewAttached()){
+
+                            //getView().onMerchantHot(listHttpResult.getData());
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (isViewAttached()){
+
+                            getView().onError(e);
+                        }
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
 
 
 

@@ -29,7 +29,7 @@ import butterknife.Unbinder;
  * @since 17/8/22
  */
 
-public class SettingFragment extends BaseFragment<ISettingView,SettingPresenter>implements ISettingView {
+public class SettingFragment extends BaseFragment<ISettingView, SettingPresenter> implements ISettingView {
 
 
     @BindView(R.id.tvTitle)
@@ -74,8 +74,8 @@ public class SettingFragment extends BaseFragment<ISettingView,SettingPresenter>
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
 
-              map.clear();
-                map.put("member_id",userBean.getMember_id());
+                map.clear();
+                map.put("member_id", userBean.getMember_id());
                 getPresenter().LogoutDeviceTokens(map);
                 dialog.dismiss();
             }
@@ -89,15 +89,16 @@ public class SettingFragment extends BaseFragment<ISettingView,SettingPresenter>
     }
 
 
-    @OnClick({R.id.ivLeft, R.id.clean, R.id.logout, R.id.suggest, R.id.about_us,R.id.account,
-            R.id.meaasge,R.id.address})
+    @OnClick({R.id.ivLeft, R.id.clean, R.id.logout, R.id.suggest, R.id.about_us, R.id.account,
+            R.id.meaasge, R.id.address})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.ivLeft:
                 finish();
                 break;
             case R.id.about_us:
-               getPresenter().GetAboutUs(map);
+                //getPresenter().GetAboutUs(map);
+                startAboutUsFragment();
                 break;
             case R.id.clean:
                 DataCleanManager.clearAllCache(context);
@@ -129,8 +130,7 @@ public class SettingFragment extends BaseFragment<ISettingView,SettingPresenter>
             case R.id.address:
 
                 startAddressFragment("");
-                 break;
-
+                break;
 
 
         }
@@ -158,14 +158,12 @@ public class SettingFragment extends BaseFragment<ISettingView,SettingPresenter>
     @Override
     public void onAboutUs(HtmlBean data) {
 
-        if (data!=null){
-
+        if (data != null) {
             startWeb("关于我们", Constants.BASE_URL + data.getHtml_url(), "3");
-
         }
-
     }
-//注销devicetoken
+
+    //注销devicetoken
     @Override
     public void logoutDeviceTokens(String str) {
         EventBus.getDefault().post(new FirstEvent("logout"));

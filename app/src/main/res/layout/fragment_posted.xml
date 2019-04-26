@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ct_content"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <include
         android:id="@+id/include2"
@@ -23,32 +22,35 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include2">
 
-        <EditText
-            android:id="@+id/et_new_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:ellipsize="end"
-            android:hint="请输入标题"
-            android:lines="2"
-            android:padding="10dp"
-            android:textColor="@color/gray"
-            android:textSize="14sp"
-            android:visibility="visible" />
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:visibility="visible">
+
+            <EditText
+                android:id="@+id/et_new_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="请输入标题"
+                android:lines="2"
+                android:textColor="@color/gray"
+                android:textSize="14sp"
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/tv_new_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
+                android:layout_marginTop="50dp"
+                android:text="2019-12-20"
                 android:textColor="@color/gray"
                 android:textSize="14sp" />
 
@@ -71,17 +73,27 @@
                 android:hint="请输入作者"
                 android:lines="1"
                 android:textColor="@color/gray"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/image_icon"
+                android:scaleType="centerCrop"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:background="@color/color_text_03" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="文章简介"
+                android:textColor="#333333"
+                android:textSize="15sp" />
         </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:paddingLeft="10dp"
-            android:text="文章简介"
-            android:textColor="@color/gray_20"
-            android:textSize="14sp" />
 
         <com.live.tv.uditTextandImage.RichTextEditor
             android:id="@+id/et_new_content"

@@ -317,6 +317,7 @@ public final class Constants {
     public static final int SEND_HEALTH_FILE_FRAGMENT = 0X123;//发送健康档案
     public static final int HUANXIN_HEALTH_STEP_FRAGMENT = 0X124;//环信查看发送的健康档案
     public static final int FANKUI_FRAGMENT = 0X125;//意见反馈
+    public static final int ABOUTUS = 0X225;//意见反馈
     public static final int ASSESSMENT_DOCTOR_FRAGMENT = 0X126;//评价医生
     public static final int CONFIRM_GOODORDER_FRAGMENT = 0X127;//提交订单
     public static final int ADD_ADDRESS_FRAGMENT = 0X128;//添加地址
@@ -366,6 +367,8 @@ public final class Constants {
     public static final int SHOPFRAGMENT = 0X172;//商城界面
     public static final int ADDHEALTHMANAGE = 0X173;//添加健康管理
     public static final int COMMUNICATEFRAGMENT = 0X174;//交流社区
+    public static final int MESSAGELIST = 0X204;//消息列表
+    public static final int MESSAGESEND = 0X205;//消息发送
 /***
  * 字体颜色
  */

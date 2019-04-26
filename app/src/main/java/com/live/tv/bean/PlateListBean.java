@@ -55,6 +55,9 @@ public class PlateListBean implements Parcelable {
     private String is_delete;
     private String create_time;
     private String update_time;
+    private String read_num;
+    private String post_image;
+
     public PlateListBean() {
     }
     protected PlateListBean(Parcel in) {
@@ -104,6 +107,14 @@ public class PlateListBean implements Parcelable {
     private PostBeanBeanX postBean;
     private List<PostImageBeansBeanX> postImageBeans;
     private List<CommentPostBeansBeanX> commentPostBeans;
+
+    public String getPost_image() {
+        return post_image;
+    }
+
+    public void setPost_image(String post_image) {
+        this.post_image = post_image;
+    }
 
     public int getPost_id() {
         return post_id;
@@ -195,6 +206,14 @@ public class PlateListBean implements Parcelable {
 
     public String getPraise_num() {
         return praise_num;
+    }
+
+    public String getRead_num() {
+        return read_num;
+    }
+
+    public void setRead_num(String read_num) {
+        this.read_num = read_num;
     }
 
     public void setPraise_num(String praise_num) {

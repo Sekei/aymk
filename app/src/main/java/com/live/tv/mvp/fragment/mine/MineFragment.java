@@ -27,6 +27,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import de.hdodenhof.circleimageview.CircleImageView;
+
 import static com.ysjk.health.iemk.R.id.my_live;
 import static com.ysjk.health.iemk.R.id.yisheng_dangan;
 
@@ -104,6 +105,8 @@ public class MineFragment extends BaseFragment<IMineView, MinePresenter> impleme
     TextView merchantmessage;
     @BindView(R.id.my_posted)
     TextView myposted;
+    @BindView(R.id.message_list)
+    TextView messageList;
 
     private UserBean userBean;
     private UserBean userBeanNet;
@@ -131,7 +134,7 @@ public class MineFragment extends BaseFragment<IMineView, MinePresenter> impleme
         myLive.setVisibility(View.GONE);
         merchantmessage.setVisibility(View.GONE);
         myposted.setVisibility(View.GONE);
-
+        messageList.setVisibility(View.GONE);
     }
 
     @Override
@@ -158,8 +161,8 @@ public class MineFragment extends BaseFragment<IMineView, MinePresenter> impleme
             R.id.home_page, R.id.bg_two, R.id.join, R.id.sign
             , R.id.myshouyi, yisheng_dangan, R.id.zixun_list, R.id.healthy_user,
             my_live, R.id.myAccount, R.id.allOrder, R.id.myDoctors, R.id.myVip, R.id.noUse
-            , R.id.noPay, R.id.noComment, R.id.afterSale, R.id.my_posted,R.id.merchantform,R.id.myService,
-            R.id.merchantmessage
+            , R.id.noPay, R.id.noComment, R.id.afterSale, R.id.my_posted, R.id.merchantform, R.id.myService,
+            R.id.merchantmessage, R.id.message_list
     })
     public void onClick(View v) {
         switch (v.getId()) {
@@ -289,7 +292,9 @@ public class MineFragment extends BaseFragment<IMineView, MinePresenter> impleme
                 startMerchantmessagefragment();
                 break;
 
-
+            case R.id.message_list:
+                startMessageListFragment();
+                break;
 
         }
     }
@@ -343,14 +348,13 @@ public class MineFragment extends BaseFragment<IMineView, MinePresenter> impleme
 
     private void bindData() {
 
-        if (userBean.getHouseService_type().equals("1")){
+        if (userBean.getHouseService_type().equals("1")) {
             merchantmessage.setVisibility(View.VISIBLE);
-        }else {
+        } else {
 
             merchantmessage.setVisibility(View.GONE);
 
         }
-
 
 
         if ("1".equals(userBean.getDoctor_type())) {
@@ -360,6 +364,7 @@ public class MineFragment extends BaseFragment<IMineView, MinePresenter> impleme
             healthyUser.setVisibility(View.VISIBLE);
             myLive.setVisibility(View.VISIBLE);
             myposted.setVisibility(View.VISIBLE);
+            messageList.setVisibility(View.VISIBLE);
         } else {
             myshouyi.setVisibility(View.GONE);
             yishengDangan.setVisibility(View.GONE);
@@ -367,7 +372,7 @@ public class MineFragment extends BaseFragment<IMineView, MinePresenter> impleme
             healthyUser.setVisibility(View.GONE);
             myLive.setVisibility(View.GONE);
             myposted.setVisibility(View.GONE);
-
+            messageList.setVisibility(View.GONE);
         }
 
 
