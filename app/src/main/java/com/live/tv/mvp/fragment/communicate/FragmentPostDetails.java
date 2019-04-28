@@ -290,7 +290,7 @@ public class FragmentPostDetails extends BaseFragment<IPostDetailsView, PostDeta
 
     @Override
     public void onpraisePosterror(Throwable msg) {
-        ToastUtils.showToast(getActivity(), msg.getMessage());
+        //ToastUtils.showToast(getActivity(), msg.getMessage());
     }
 
     /***

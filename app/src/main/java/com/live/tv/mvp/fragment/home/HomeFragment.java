@@ -64,6 +64,7 @@ import com.live.tv.mvp.base.BaseFragment;
 import com.live.tv.mvp.presenter.home.HomePresenter;
 import com.live.tv.mvp.view.home.IHomeView;
 import com.live.tv.util.HorizontalScrollTextView;
+import com.live.tv.util.LoadingUtil;
 import com.live.tv.util.SpSingleInstance;
 import com.live.tv.util.Utils;
 import com.ysjk.health.iemk.R;
@@ -293,14 +294,14 @@ public class HomeFragment extends BaseFragment<IHomeView, HomePresenter> impleme
                             startTestFragment();
                             break;
                         case 2:
-                            if (userBean != null) {
+                            if (null != userBean && null != userBean.getMember_id() && null != userBean.getMember_token()) {
                                 startHeartFileFragment();
                             } else {
                                 startLogin();
                             }
                             break;
                         case 3:
-                            if (userBean != null) {
+                            if (null != userBean && null != userBean.getMember_id() && null != userBean.getMember_token()) {
                                 startMedicalRecordsFragment();
                             } else {
                                 startLogin();
@@ -525,11 +526,11 @@ public class HomeFragment extends BaseFragment<IHomeView, HomePresenter> impleme
         getPresenter().getHomeHealth(map);//获取养生知识
         getPresenter().getMerchantHot(map);
         //
-        TelephonyManager tm=(TelephonyManager)getActivity().getSystemService(TELEPHONY_SERVICE);
-        Map<String,String> deviceMap=new HashMap<>();
-        deviceMap.put("member_id",userBean.getMember_id());
-        deviceMap.put("member_token",userBean.getMember_token());
-        deviceMap.put("device_tokens","device_tokens");
+        TelephonyManager tm = (TelephonyManager) getActivity().getSystemService(TELEPHONY_SERVICE);
+        Map<String, String> deviceMap = new HashMap<>();
+        deviceMap.put("member_id", userBean.getMember_id());
+        deviceMap.put("member_token", userBean.getMember_token());
+        deviceMap.put("device_tokens", "device_tokens");
         //getPresenter().getDevice_tokens(deviceMap);
         ////////////
         //申请权限

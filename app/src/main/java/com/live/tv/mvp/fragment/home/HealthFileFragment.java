@@ -215,11 +215,16 @@ public class HealthFileFragment extends BaseFragment<IHealthFileView, HealthFile
     @Override
     public void initData() {
         userBean = SpSingleInstance.getSpSingleInstance().getUserBean();
-        map.put("member_id", userBean.getMember_id());
-        map.put("member_token", userBean.getMember_token());
-        map.put("health_record_id", userBean.getHealthRecordBean().getHealth_record_id());
-        getPresenter().myHealthRecordDetail(map);
-        LoadingUtil.showLoading(context);
+        if (null != userBean && null != userBean.getMember_id() && null != userBean.getMember_token()) {
+            map.put("member_id", userBean.getMember_id());
+            map.put("member_token", userBean.getMember_token());
+            map.put("health_record_id", userBean.getHealthRecordBean().getHealth_record_id());
+            getPresenter().myHealthRecordDetail(map);
+            LoadingUtil.showLoading(context);
+        } else {
+            startLogin();
+        }
+
     }
 
     @Override

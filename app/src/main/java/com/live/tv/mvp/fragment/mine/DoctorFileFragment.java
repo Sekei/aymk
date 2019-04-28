@@ -190,7 +190,7 @@ public class DoctorFileFragment extends BaseFragment<IDoctorFileView, DoctorFile
     }
 
     private void setDataInfo(DoctorDetailBean data) {
-        Glide.with(context).load(Constants.BASE_URL + data.getDoctor_head_image())
+        Glide.with(context).load(Constants.BASE_URL + userBean.getMember_head_image())
                 .transform(new GlideCircleTransform(context))
                 .placeholder(R.drawable.pic_defaults)
                 .error(R.drawable.pic_defaults)
@@ -198,7 +198,7 @@ public class DoctorFileFragment extends BaseFragment<IDoctorFileView, DoctorFile
 
         age.setText(data.getDoctor_age() + "岁");
         sex.setText("m".equals(data.getDoctor_sex()) ? "男" : "女");
-        name.setText(data.getDoctor_name());
+        name.setText(userBean.getMember_nick_name());
 
         baseinfo.SetDoctorInfo(data);
         serviceSetting.SetServiceInfo(data);

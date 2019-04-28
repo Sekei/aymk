@@ -364,7 +364,7 @@ public class MineFragment extends BaseFragment<IMineView, MinePresenter> impleme
             healthyUser.setVisibility(View.VISIBLE);
             myLive.setVisibility(View.VISIBLE);
             myposted.setVisibility(View.VISIBLE);
-            messageList.setVisibility(View.VISIBLE);
+            //messageList.setVisibility(View.VISIBLE);
         } else {
             myshouyi.setVisibility(View.GONE);
             yishengDangan.setVisibility(View.GONE);
