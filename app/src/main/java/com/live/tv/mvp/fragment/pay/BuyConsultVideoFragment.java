@@ -113,7 +113,7 @@ public class BuyConsultVideoFragment extends BaseFragment<IBuyConsultVideoView, 
                 typeName.setText(doctorName);
                 typeContent.setText(price + getResources().getString(R.string.yuan_every));
                 priceTittle.setText(R.string.reserve_time);
-                reserveTime.setText(R.string.reserve_time+consultTimesBean.getStart_time());
+                reserveTime.setText("预约时间 "+consultTimesBean.getStart_time());
                 totalPrice.setText(price + getResources().getString(R.string.yuan_every));
                 break;
             case "video":
@@ -122,7 +122,7 @@ public class BuyConsultVideoFragment extends BaseFragment<IBuyConsultVideoView, 
                 typeName.setText(doctorName);
                 typeContent.setText(price + getResources().getString(R.string.yuan_every));
                 priceTittle.setText(R.string.reserve_time);
-                reserveTime.setText(R.string.reserve_time+consultTimesBean.getStart_time());
+                reserveTime.setText("预约时间 "+consultTimesBean.getStart_time());
                 totalPrice.setText(price + getResources().getString(R.string.yuan_every));
                 break;
         }

@@ -9,6 +9,10 @@ import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.ysjk.health.iemk.R;
 import com.live.tv.bean.ConsultTimesBean;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -49,22 +53,19 @@ public class WeekListAdapter extends RecyclerArrayAdapter<ConsultTimesBean> {
         @Override
         public void setData(ConsultTimesBean data) {
             super.setData(data);
-
-            time.setText(data.getStart_time().substring(10,16)+"~"+data.getEnd_time().substring(10,16));
-
-
-            if (data.getFlag().equals("2")){
+            String startTime = data.getStart_time();
+            String endTime = data.getEnd_time();
+            if (!"".equals(startTime) && !"".equals(endTime)) {
+                time.setText(parseTimeString2Date(startTime) + "~" + parseTimeString2Date(endTime));
+            }
+            if (data.getFlag().equals("2")) {
                 can.setText("可预约");
                 can.setTextColor(getContext().getResources().getColor(R.color.colorAccent));
 
-            }else {
-
+            } else {
                 can.setText("不可预约");
                 can.setTextColor(getContext().getResources().getColor(R.color.colorTextG6));
             }
-
-
-
 /*            List<String> list = new ArrayList<>();
             for (int i = 0; i < 6; i++) {
                 list.add("可预约");
@@ -106,4 +107,16 @@ public class WeekListAdapter extends RecyclerArrayAdapter<ConsultTimesBean> {
         void onOpen();
     }
 
+    public String parseTimeString2Date(String timeString) {
+        if ((timeString == null) || (timeString.equals(""))) {
+            return null;
+        }
+        String date = null;
+        try {
+            date = timeString.length() > 8 ? timeString.substring(10, 16) : timeString.substring(0, 5);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
 }

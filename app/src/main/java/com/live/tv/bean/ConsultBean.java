@@ -79,8 +79,21 @@ public class ConsultBean implements Parcelable {
     private String health_record_id;
     private String doctor_age;
     private String doctor_sex;
+    private String record_relation;
+    private String record_age;
+    private String record_sex;
+    private String record_name;
+
 
     private List<ConsultImagesBean> consultImages;
+
+    public String getRecord_name() {
+        return record_name;
+    }
+
+    public void setRecord_name(String record_name) {
+        this.record_name = record_name;
+    }
 
     public String getConsult_record_id() {
         return consult_record_id;
@@ -136,6 +149,22 @@ public class ConsultBean implements Parcelable {
 
     public void setConsult_start_time(String consult_start_time) {
         this.consult_start_time = consult_start_time;
+    }
+
+    public String getRecord_age() {
+        return record_age;
+    }
+
+    public void setRecord_age(String record_age) {
+        this.record_age = record_age;
+    }
+
+    public String getRecord_sex() {
+        return record_sex;
+    }
+
+    public void setRecord_sex(String record_sex) {
+        this.record_sex = record_sex;
     }
 
     public String getConsult_end_time() {
@@ -352,6 +381,14 @@ public class ConsultBean implements Parcelable {
 
     public void setConsultImages(List<ConsultImagesBean> consultImages) {
         this.consultImages = consultImages;
+    }
+
+    public String getRecord_relation() {
+        return record_relation;
+    }
+
+    public void setRecord_relation(String record_relation) {
+        this.record_relation = record_relation;
     }
 
     @Override
