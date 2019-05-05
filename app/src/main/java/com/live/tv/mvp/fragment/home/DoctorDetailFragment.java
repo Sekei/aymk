@@ -287,8 +287,10 @@ public class DoctorDetailFragment extends BaseFragment<IDoctorDetailView, Doctor
     public void initData() {
         userBean = SpSingleInstance.getSpSingleInstance().getUserBean();
         map.clear();
-        map.put("member_id", userBean.getMember_id());
-        map.put("member_token", userBean.getMember_token());
+        if (null != userBean && null != userBean.getMember_id() && null != userBean.getMember_token()) {
+            map.put("member_id", userBean.getMember_id());
+            map.put("member_token", userBean.getMember_token());
+        }
         map.put("doctor_id", doctor_id);
         getPresenter().getDoctorDetail(map);
         getPresenter().getAllDoctorAssesses(map);

@@ -84,17 +84,18 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
     private ShaixuanPopwindow shaixuanPopwindow;
     private ArrayList<DepartmentLevelOneBean> listOne = new ArrayList<>();
     private ArrayList<OfficeBean> listTwo;
-    private int  currentPage=1;
-    private String job_level="";
-    private String hospital_level="";
-    private String department_level2="";
-    private String doctor_province="";
-    private String doctor_city="";
-    private String doctor_country="";
+    private int currentPage = 1;
+    private String job_level = "";
+    private String hospital_level = "";
+    private String department_level2 = "";
+    private String doctor_province = "";
+    private String doctor_city = "";
+    private String doctor_country = "";
 
     View loadMore;
     private int page = 1;
     private boolean isMore = true;
+
     public static DoctorListFragment newInstance() {
         Bundle args = new Bundle();
         DoctorListFragment fragment = new DoctorListFragment();
@@ -118,7 +119,11 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
         adapter.setOnItemClickListener(new RecyclerArrayAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                startDoctorDetailFragment(adapter.getItem(position).getDoctor_id()+"");
+                if (null != userBean && null != userBean.getMember_id() && null != userBean.getMember_token()) {
+                    startDoctorDetailFragment(adapter.getItem(position).getDoctor_id() + "");
+                } else {
+                    startLogin();
+                }
             }
         });
         //刷新
@@ -156,14 +161,14 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
     private void RequestParameters() {
 
         map.clear();
-        if (userBean!=null){
-            map.put("member_id",userBean.getMember_id());
+        if (userBean != null && null != userBean.getMember_id()) {
+            map.put("member_id", userBean.getMember_id());
         }
-        map.put("job_level",job_level);
-        map.put("hospital_level",hospital_level);
-        map.put("doctor_province",doctor_province);
-        map.put("doctor_city",doctor_city);
-        map.put("doctor_country",doctor_country);
+        map.put("job_level", job_level);
+        map.put("hospital_level", hospital_level);
+        map.put("doctor_province", doctor_province);
+        map.put("doctor_city", doctor_city);
+        map.put("doctor_country", doctor_country);
         map.put("page", String.valueOf(page));
         getPresenter().getDoctorList(map);
 
@@ -177,12 +182,10 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
         map.clear();
         getPresenter().getDepartments(map);
         getPresenter().getSelectBeans(map);
-
-        if (userBean!=null){
-            map.put("member_id",userBean.getMember_id());
+        if (userBean != null&& null != userBean.getMember_id()) {
+            map.put("member_id", userBean.getMember_id());
         }
-
-        getPresenter().getDoctorList(map);
+        RequestParameters();
         LoadingUtil.showLoading(getActivity(), "数据加载中...");
 
 
@@ -236,12 +239,12 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
         listOne.addAll(data);
     }
 
-    ShaixuanBean  shaixuanBean;
+    ShaixuanBean shaixuanBean;
+
     @Override
     public void onGetSelectBeans(ShaixuanBean data) {
-        shaixuanBean=data;
+        shaixuanBean = data;
     }
-
 
 
     @Override
@@ -282,10 +285,10 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
                         address.setText(name);
                         address.setTextColor(getResources().getColor(R.color.colorTextG6));
                         address.setCompoundDrawables(null, null, setDrawableDown(), null);
-                        doctor_city=name;
-                        department_level2="";
-                        job_level="";
-                        hospital_level="";
+                        doctor_city = name;
+                        department_level2 = "";
+                        job_level = "";
+                        hospital_level = "";
 
                         map.clear();
                         map.put("doctor_city", name);
@@ -311,11 +314,11 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
                         department.setText(data.getDepartment_name());
                         department.setTextColor(getResources().getColor(R.color.colorTextG6));
                         department.setCompoundDrawables(null, null, setDrawableDown(), null);
-                        currentPage=1;
-                        department_level2=data.getDepartment_name();
-                        doctor_city="";
-                        job_level="";
-                        hospital_level="";
+                        currentPage = 1;
+                        department_level2 = data.getDepartment_name();
+                        doctor_city = "";
+                        job_level = "";
+                        hospital_level = "";
 
                         map.clear();
                         map.put("page", String.valueOf(currentPage));
@@ -373,17 +376,17 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
                 @Override
                 public void onShaixuanStr(String doc_str, String hos_str) {
 
-                    job_level=doc_str;
-                    hospital_level=hos_str;
-                    doctor_city="";
-                    department_level2="";
-                    page=1;
+                    job_level = doc_str;
+                    hospital_level = hos_str;
+                    doctor_city = "";
+                    department_level2 = "";
+                    page = 1;
                     map.clear();
-                    map.put("job_level",doc_str);
-                    map.put("hospital_level",hos_str);
+                    map.put("job_level", doc_str);
+                    map.put("hospital_level", hos_str);
                     map.put("page", String.valueOf(page));
-                    if (userBean!=null){
-                        map.put("member_id",userBean.getMember_id());
+                    if (userBean != null) {
+                        map.put("member_id", userBean.getMember_id());
                     }
                     getPresenter().getDoctorList(map);
                     shaixuanPopwindow.dismiss();
@@ -392,8 +395,6 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
         }
 
     }
-
-
 
 
     @OnClick({R.id.ivLeft, R.id.address, R.id.department, R.id.choose})
@@ -444,7 +445,6 @@ public class DoctorListFragment extends BaseFragment<IDoctorListView, DoctorList
                 break;
         }
     }
-
 
 
     private Drawable setDrawableUp() {
