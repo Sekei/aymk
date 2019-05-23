@@ -23,7 +23,7 @@ public class ChooseDoctorTitleAdapter extends BaseQuickAdapter<DoctorTitleBean, 
     @Override
     protected void convert(BaseViewHolder helper, DoctorTitleBean item) {
 
-        helper.setText(R.id.tv_title,item.getDoctor_title());
+        helper.setText(R.id.tv_title,item.getJob_level());
 
 
     }

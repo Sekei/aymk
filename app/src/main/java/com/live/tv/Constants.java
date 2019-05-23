@@ -8,7 +8,7 @@ package com.live.tv;
 public final class Constants {
 
 
-    public static final String BASE_URL = "http://meikang.zhongfeigou.com/";
+    public static final String BASE_URL = "http://www.yongshanjk.cn/";
     //public static final String BASE_URL = "http://192.168.2.18:8080/shop_iemk/";
 
     public static final String KEY_FRAGMENT = "key_fragment";

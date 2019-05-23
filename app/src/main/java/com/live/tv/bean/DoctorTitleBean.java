@@ -21,6 +21,8 @@ public class DoctorTitleBean {
     private String is_delete;
     private String create_time;
     private String update_time;
+    private String job_id;
+    private String job_level;//":"主任医师"
 
     public int getTitle_id() {
         return title_id;
@@ -60,5 +62,21 @@ public class DoctorTitleBean {
 
     public void setUpdate_time(String update_time) {
         this.update_time = update_time;
+    }
+
+    public String getJob_id() {
+        return job_id;
+    }
+
+    public void setJob_id(String job_id) {
+        this.job_id = job_id;
+    }
+
+    public String getJob_level() {
+        return job_level;
+    }
+
+    public void setJob_level(String job_level) {
+        this.job_level = job_level;
     }
 }

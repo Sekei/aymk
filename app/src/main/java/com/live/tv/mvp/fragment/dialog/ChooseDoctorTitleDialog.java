@@ -98,7 +98,7 @@ public class ChooseDoctorTitleDialog extends BottomSheetDialogFragment {
             public void onSimpleItemClick(BaseQuickAdapter adapter, View view, int position) {
 
                 DoctorTitleBean doctorTitleBean = (DoctorTitleBean) adapter.getData().get(position);
-                onclickListener.onOk(doctorTitleBean.getDoctor_title());
+                onclickListener.onOk(doctorTitleBean.getJob_level());
                 dismiss();
             }
         });

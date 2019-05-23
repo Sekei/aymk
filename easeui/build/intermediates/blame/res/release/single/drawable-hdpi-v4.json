@@ -404,12 +404,12 @@
         "source": "C:\\Users\\admin\\Desktop\\aymk\\aymk\\easeui\\src\\main\\res\\drawable-hdpi\\ease_chatfrom_voice_playing_f2.png"
     },
     {
-        "merged": "C:\\Users\\admin\\Desktop\\aymk\\aymk\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ee_20.png",
-        "source": "C:\\Users\\admin\\Desktop\\aymk\\aymk\\easeui\\src\\main\\res\\drawable-hdpi\\ee_20.png"
-    },
-    {
         "merged": "C:\\Users\\admin\\Desktop\\aymk\\aymk\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ee_23.png",
         "source": "C:\\Users\\admin\\Desktop\\aymk\\aymk\\easeui\\src\\main\\res\\drawable-hdpi\\ee_23.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\Desktop\\aymk\\aymk\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\ee_20.png",
+        "source": "C:\\Users\\admin\\Desktop\\aymk\\aymk\\easeui\\src\\main\\res\\drawable-hdpi\\ee_20.png"
     },
     {
         "merged": "C:\\Users\\admin\\Desktop\\aymk\\aymk\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\notify_panel_notification_icon_bg.png",
